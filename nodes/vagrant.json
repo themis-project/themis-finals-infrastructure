@@ -1,0 +1,14 @@
+{
+  "nginx": {
+    "version": "1.8.0",
+    "install_method": "source",
+    "default_site_enabled": true,
+    "source": {
+      "modules": ["nginx::http_gzip_static_module"],
+      "checksum": "23cca1239990c818d8f6da118320c4979aadf5386deda691b1b7c2c96b9df3d5"
+    }
+  },
+  "run_list": [
+    "recipe[nginx]"
+  ]
+}
