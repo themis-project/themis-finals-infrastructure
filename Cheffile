@@ -1,3 +1,5 @@
 site 'http://community.opscode.com/api/v1'
 
+cookbook 'runit', '~> 1.6.0'
 cookbook 'nginx', '~> 2.7.6'
+cookbook 'git', '~> 4.2.2'

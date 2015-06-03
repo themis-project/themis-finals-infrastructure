@@ -5,6 +5,13 @@ SITE
     bluepill (2.3.1)
       rsyslog (>= 0.0.0)
     build-essential (2.2.3)
+    chef_handler (1.1.9)
+    dmg (2.2.2)
+    git (4.2.2)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      windows (>= 0.0.0)
+      yum-epel (>= 0.0.0)
     nginx (2.7.6)
       apt (~> 2.2)
       bluepill (~> 2.3)
@@ -17,10 +24,14 @@ SITE
     rsyslog (2.0.0)
     runit (1.6.0)
       packagecloud (>= 0.0.0)
+    windows (1.37.0)
+      chef_handler (>= 0.0.0)
     yum (3.6.0)
     yum-epel (0.6.0)
       yum (~> 3.0)
 
 DEPENDENCIES
+  git (~> 4.2.2)
   nginx (~> 2.7.6)
+  runit (~> 1.6.0)
 
