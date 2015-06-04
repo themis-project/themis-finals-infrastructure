@@ -21,9 +21,13 @@ SITE
       yum-epel (~> 0.3)
     ohai (2.0.1)
     packagecloud (0.0.18)
+    redisio (2.3.0)
+      build-essential (>= 0.0.0)
+      ulimit (>= 0.1.2)
     rsyslog (2.0.0)
     runit (1.6.0)
       packagecloud (>= 0.0.0)
+    ulimit (0.3.3)
     windows (1.37.0)
       chef_handler (>= 0.0.0)
     yum (3.6.0)
@@ -33,5 +37,6 @@ SITE
 DEPENDENCIES
   git (~> 4.2.2)
   nginx (~> 2.7.6)
+  redisio (~> 2.3.0)
   runit (~> 1.6.0)
 
