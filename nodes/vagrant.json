@@ -16,10 +16,17 @@
   "redisio": {
     "version": "3.0.2"
   },
+  "postgresql": {
+    "version": "9.4",
+    "password": {
+      "postgres": "100cf32c205cbe9f41af3c738d12a4ee"
+    }
+  },
   "run_list": [
     "recipe[nginx::source]",
     "recipe[git::source]",
     "recipe[redisio]",
-    "recipe[redisio::enable]"
+    "recipe[redisio::enable]",
+    "recipe[postgresql::server]"
   ]
 }
