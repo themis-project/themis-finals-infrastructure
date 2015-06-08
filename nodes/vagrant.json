@@ -27,6 +27,7 @@
     "recipe[git::source]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
-    "recipe[postgresql::server]"
+    "recipe[postgresql::server]",
+    "recipe[themis]"
   ]
 }
