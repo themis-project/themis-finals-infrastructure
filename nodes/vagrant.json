@@ -22,12 +22,25 @@
       "postgres": "100cf32c205cbe9f41af3c738d12a4ee"
     }
   },
+  "beanstalkd": {
+    "start_during_boot": true,
+    "opts": {
+      "l": "127.0.0.1",
+      "p": 11300
+    }
+  },
+  "rbenv": {
+    "group_users": ["vagrant"]
+  },
   "run_list": [
     "recipe[nginx::source]",
     "recipe[git::source]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
     "recipe[postgresql::server]",
+    "recipe[beanstalkd]",
+    "recipe[rbenv::default]",
+    "recipe[rbenv::ruby_build]",
     "recipe[themis]"
   ]
 }

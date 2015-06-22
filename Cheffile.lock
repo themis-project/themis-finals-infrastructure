@@ -2,6 +2,7 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apt (2.7.0)
+    beanstalkd (0.1.5)
     bluepill (2.3.1)
       rsyslog (>= 0.0.0)
     build-essential (2.2.3)
@@ -28,6 +29,11 @@ SITE
       apt (>= 1.9.0)
       build-essential (>= 0.0.0)
       openssl (~> 4.0.0)
+    rbenv (1.7.1)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      git (>= 0.0.0)
+      ohai (>= 1.1)
     redisio (2.3.0)
       build-essential (>= 0.0.0)
       ulimit (>= 0.1.2)
@@ -42,9 +48,11 @@ SITE
       yum (~> 3.0)
 
 DEPENDENCIES
+  beanstalkd (~> 0.1.5)
   git (~> 4.2.2)
   nginx (~> 2.7.6)
   postgresql (~> 3.4.20)
+  rbenv (~> 1.7.1)
   redisio (~> 2.3.0)
   runit (~> 1.6.0)
 
