@@ -32,6 +32,12 @@
   "rbenv": {
     "group_users": ["vagrant"]
   },
+  "themis": {
+    "repository": "https://github.com/aspyatkin/themis-finals",
+    "revision": "master",
+    "user": "vagrant",
+    "group": "vagrant"
+  },
   "run_list": [
     "recipe[nginx::source]",
     "recipe[git::source]",

@@ -13,3 +13,12 @@ end
 rbenv_gem 'bundler' do
     ruby_version '2.2.2'
 end
+
+git '/var/themis/finals' do
+    repository node[:themis][:repository]
+    revision node[:themis][:revision]
+    enable_checkout false
+    user node[:themis][:user]
+    group node[:themis][:group]
+    action :sync
+end
