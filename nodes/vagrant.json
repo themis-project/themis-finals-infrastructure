@@ -20,6 +20,9 @@
     "version": "9.4",
     "password": {
       "postgres": "100cf32c205cbe9f41af3c738d12a4ee"
+    },
+    "server": {
+      "packages": ["libpq-dev", "postgresql-server-dev-all"]
     }
   },
   "beanstalkd": {
