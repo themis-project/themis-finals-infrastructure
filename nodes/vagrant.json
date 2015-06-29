@@ -50,6 +50,7 @@
     "recipe[beanstalkd]",
     "recipe[rbenv::default]",
     "recipe[rbenv::ruby_build]",
+    "recipe[nodejs::nodejs]",
     "recipe[themis]"
   ]
 }
