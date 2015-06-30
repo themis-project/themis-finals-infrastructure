@@ -34,3 +34,10 @@ postgresql_database 'themis' do
   connection postgresql_connection_info
   action :create
 end
+
+postgresql_database_user 'postgres' do
+    connection postgresql_connection_info
+    database_name 'themis'
+    privileges [:all]
+    action :grant
+end
