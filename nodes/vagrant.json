@@ -23,6 +23,10 @@
     },
     "server": {
       "packages": ["libpq-dev", "postgresql-server-dev-all"]
+    },
+    "config": {
+      "listen_addresses": "127.0.0.1",
+      "port": 5432
     }
   },
   "beanstalkd": {
@@ -51,6 +55,7 @@
     "recipe[rbenv::default]",
     "recipe[rbenv::ruby_build]",
     "recipe[nodejs::nodejs]",
+    "recipe[database::postgresql]",
     "recipe[themis]"
   ]
 }
