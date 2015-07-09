@@ -14,6 +14,10 @@ rbenv_gem 'bundler' do
     ruby_version '2.2.2'
 end
 
+rbenv_gem 'god' do
+    ruby_version '2.2.2'
+end
+
 git '/var/themis/finals' do
     repository node[:themis][:repository]
     revision node[:themis][:revision]
