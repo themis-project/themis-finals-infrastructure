@@ -37,7 +37,7 @@
     }
   },
   "rbenv": {
-    "group_users": ["vagrant"]
+    "group_users": ["vagrant", "root"]
   },
   "themis": {
     "repository": "https://github.com/aspyatkin/themis-finals",
