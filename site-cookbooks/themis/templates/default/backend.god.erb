@@ -1,0 +1,10 @@
+God.watch do |w|
+    w.name = 'backend'
+    w.dir = '<%= node.themis.basedir %>'
+    w.uid = '<%= node.themis.user %>'
+    w.gid = '<%= node.themis.group %>'
+    w.log = '<%= node.themis.basedir %>/logs/backend.log'
+    w.start = 'bundle exec ruby backend.rb'
+    w.keepalive
+    w.env = { 'PORT' => '3000' }
+end
