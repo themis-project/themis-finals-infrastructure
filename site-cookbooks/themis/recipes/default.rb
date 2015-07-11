@@ -1,6 +1,6 @@
 directory node[:themis][:basedir] do
-    owner 'vagrant'
-    group 'vagrant'
+    owner node[:themis][:user]
+    group node[:themis][:group]
     mode '0755'
     recursive true
     action :create

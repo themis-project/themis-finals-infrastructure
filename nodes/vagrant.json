@@ -45,6 +45,14 @@
     "user": "vagrant",
     "group": "vagrant"
   },
+  "sample-checker-rb": {
+    "user": "vagrant",
+    "group": "vagrant"
+  },
+  "sample-checker-py":{
+    "user": "vagrant",
+    "group": "vagrant"
+  },
   "run_list": [
     "recipe[nginx::source]",
     "recipe[git::source]",
@@ -56,6 +64,8 @@
     "recipe[rbenv::ruby_build]",
     "recipe[nodejs::nodejs]",
     "recipe[database::postgresql]",
-    "recipe[themis]"
+    "recipe[themis]",
+    "recipe[sample-checker-rb]",
+    "recipe[sample-checker-py]"
   ]
 }

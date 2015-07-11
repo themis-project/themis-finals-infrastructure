@@ -1,0 +1,17 @@
+God.watch do |w|
+    w.name = 'sample-checker-rb'
+    w.dir = '<%= node['sample-checker-rb'].basedir %>'
+    w.uid = '<%= node['sample-checker-rb'].user %>'
+    w.gid = '<%= node['sample-checker-rb'].group %>'
+    w.log = '<%= node['sample-checker-rb'].basedir %>/logs/checker.log'
+    w.start = 'bundle exec ruby checker.rb'
+    w.env = {
+        'BEANSTALKD_URI' => '127.0.0.1:11300',
+        'TUBE_PUSH' => 'volgactf.service.sample-checker-rb.push',
+        'TUBE_PULL' => 'volgactf.service.sample-checker-rb.pull',
+        'TUBE_REPORT_PUSH' => 'volgactf.service.sample-checker-rb.report-push',
+        'TUBE_REPORT_PULL' => 'volgactf.service.sample-checker-rb.report-pull'
+    }
+    w.stop_signal = 'INT'
+    w.keepalive
+end
