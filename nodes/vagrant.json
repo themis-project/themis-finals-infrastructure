@@ -53,6 +53,14 @@
     "user": "vagrant",
     "group": "vagrant"
   },
+  "checker-rb": {
+    "user": "vagrant",
+    "group": "vagrant"
+  },
+  "checker-py": {
+    "user": "vagrant",
+    "group": "vagrant"
+  },
   "run_list": [
     "recipe[nginx::source]",
     "recipe[git::source]",
@@ -66,6 +74,8 @@
     "recipe[database::postgresql]",
     "recipe[themis]",
     "recipe[sample-checker-rb]",
-    "recipe[sample-checker-py]"
+    "recipe[sample-checker-py]",
+    "recipe[checker-rb]",
+    "recipe[checker-py]"
   ]
 }
