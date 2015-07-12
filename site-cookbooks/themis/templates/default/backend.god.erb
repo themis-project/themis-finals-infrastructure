@@ -6,5 +6,9 @@ God.watch do |w|
     w.log = '<%= node.themis.basedir %>/logs/backend.log'
     w.start = 'bundle exec ruby backend.rb'
     w.keepalive
-    w.env = { 'PORT' => '3000' }
+    w.env = {
+        'PORT' => '3000',
+        'LOG_LEVEL' => '<%= node.themis.log_level %>',
+        'STDOUT_SYNC' => '<%= node.themis.stdout_sync %>'
+    }
 end

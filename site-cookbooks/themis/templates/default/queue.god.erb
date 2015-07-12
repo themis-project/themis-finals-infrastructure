@@ -5,5 +5,9 @@ God.watch do |w|
     w.gid = '<%= node.themis.group %>'
     w.log = '<%= node.themis.basedir %>/logs/queue.log'
     w.start = 'bundle exec ruby queue.rb'
+    w.env = {
+        'LOG_LEVEL' => '<%= node.themis.log_level %>',
+        'STDOUT_SYNC' => '<%= node.themis.stdout_sync %>'
+    }
     w.keepalive
 end

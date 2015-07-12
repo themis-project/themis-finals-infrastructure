@@ -41,7 +41,9 @@
   },
   "themis": {
     "user": "vagrant",
-    "group": "vagrant"
+    "group": "vagrant",
+    "log_level": "DEBUG",
+    "stdout_sync": "true"
   },
   "sample-checker-rb": {
     "user": "vagrant",
