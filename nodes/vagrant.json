@@ -40,8 +40,6 @@
     "group_users": ["vagrant", "root"]
   },
   "themis": {
-    "repository": "https://github.com/aspyatkin/themis-finals",
-    "revision": "master",
     "user": "vagrant",
     "group": "vagrant"
   },
