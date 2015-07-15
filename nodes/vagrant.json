@@ -56,7 +56,11 @@
     "user": "vagrant",
     "group": "vagrant"
   },
-  "checker-rb": {
+  "checker-server-rb": {
+    "user": "vagrant",
+    "group": "vagrant"
+  },
+  "checker-result-rb": {
     "user": "vagrant",
     "group": "vagrant"
   },
@@ -78,7 +82,8 @@
     "recipe[themis]",
     "recipe[sample-checker-rb]",
     "recipe[sample-checker-py]",
-    "recipe[checker-rb]",
+    "recipe[checker-server-rb]",
+    "recipe[checker-result-rb]",
     "recipe[checker-py]"
   ]
 }

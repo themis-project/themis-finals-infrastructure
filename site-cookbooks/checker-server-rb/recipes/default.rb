@@ -1,4 +1,4 @@
-node_id = 'checker-rb'
+node_id = 'checker-server-rb'
 
 directory node[node_id][:basedir] do
     owner node[node_id][:user]
