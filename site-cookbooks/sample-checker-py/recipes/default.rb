@@ -16,3 +16,14 @@ git node[node_id][:basedir] do
     group node[node_id][:group]
     action :sync
 end
+
+python_virtualenv "#{node[node_id][:basedir]}/.virtualenv" do
+    owner node[node_id][:user]
+    group node[node_id][:group]
+    action :create
+end
+
+template "#{node[:themis][:basedir]}/god.d/sample-checker-py.god" do
+    source 'sample-checker-py.god.erb'
+    mode '0644'
+end

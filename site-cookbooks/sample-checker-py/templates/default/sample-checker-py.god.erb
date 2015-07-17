@@ -1,0 +1,16 @@
+God.watch do |w|
+    w.name = '<%= node['sample-checker-py'].service %>'
+    w.dir = '<%= node['sample-checker-py'].basedir %>'
+    w.uid = '<%= node['sample-checker-py'].user %>'
+    w.gid = '<%= node['sample-checker-py'].group %>'
+    w.log = '<%= node['sample-checker-py'].basedir %>/logs/checker.log'
+    w.start = '<%= node['sample-checker-py'].basedir %>/.virtualenv/bin/python checker.py'
+    w.env = {
+        'BEANSTALKD_URI' => '127.0.0.1:11300',
+        'LOG_LEVEL' => '<%= node['sample-checker-py'].log_level %>',
+        'TUBE_LISTEN' => 'volgactf.service.<%= node['sample-checker-py'].service %>.listen',
+        'TUBE_REPORT' => 'volgactf.service.<%= node['sample-checker-py'].service %>.report'
+    }
+    w.stop_signal = 'INT'
+    w.keepalive
+end

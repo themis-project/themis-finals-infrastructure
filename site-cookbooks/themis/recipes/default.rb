@@ -61,3 +61,5 @@ template "#{node[:themis][:basedir]}/god.d/backend.god" do
     source 'backend.god.erb'
     mode '0644'
 end
+
+python_pip 'twine'

@@ -53,8 +53,10 @@
     "stdout_sync": "true"
   },
   "sample-checker-py":{
+    "service": "service_2",
     "user": "vagrant",
-    "group": "vagrant"
+    "group": "vagrant",
+    "log_level": "DEBUG"
   },
   "checker-server-rb": {
     "user": "vagrant",
@@ -68,6 +70,8 @@
     "user": "vagrant",
     "group": "vagrant"
   },
+  "python": {
+  },
   "run_list": [
     "recipe[nginx::source]",
     "recipe[git::source]",
@@ -79,6 +83,9 @@
     "recipe[rbenv::ruby_build]",
     "recipe[nodejs::nodejs]",
     "recipe[database::postgresql]",
+    "recipe[python::default]",
+    "recipe[python::pip]",
+    "recipe[python::virtualenv]",
     "recipe[themis]",
     "recipe[sample-checker-rb]",
     "recipe[sample-checker-py]",
