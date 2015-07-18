@@ -63,3 +63,4 @@ template "#{node[:themis][:basedir]}/god.d/backend.god" do
 end
 
 python_pip 'twine'
+python_pip 'wheel'
