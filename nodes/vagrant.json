@@ -43,32 +43,38 @@
     "user": "vagrant",
     "group": "vagrant",
     "log_level": "DEBUG",
-    "stdout_sync": "true"
+    "stdout_sync": "true",
+    "repository": "git@github.com:aspyatkin/themis-finals"
   },
   "sample-checker-rb": {
     "service": "service_1",
     "user": "vagrant",
     "group": "vagrant",
     "log_level": "DEBUG",
-    "stdout_sync": "true"
+    "stdout_sync": "true",
+    "repository": "git@github.com:aspyatkin/themis-sample-checker-rb"
   },
   "sample-checker-py":{
     "service": "service_2",
     "user": "vagrant",
     "group": "vagrant",
-    "log_level": "DEBUG"
+    "log_level": "DEBUG",
+    "repository": "git@github.com:aspyatkin/themis-sample-checker-py"
   },
   "checker-server-rb": {
     "user": "vagrant",
-    "group": "vagrant"
+    "group": "vagrant",
+    "repository": "git@github.com:aspyatkin/themis-checker-server"
   },
   "checker-result-rb": {
     "user": "vagrant",
-    "group": "vagrant"
+    "group": "vagrant",
+    "repository": "git@github.com:aspyatkin/themis-checker-result"
   },
   "checker-py": {
     "user": "vagrant",
-    "group": "vagrant"
+    "group": "vagrant",
+    "repository": "git@github.com:aspyatkin/themis-checker-py"
   },
   "python": {
   },
