@@ -10,4 +10,5 @@ God.watch do |w|
         'STDOUT_SYNC' => '<%= node.themis.stdout_sync %>'
     }
     w.keepalive
+    w.stop_signal = 'INT'
 end
