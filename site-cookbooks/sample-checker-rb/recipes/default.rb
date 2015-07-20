@@ -17,6 +17,14 @@ git node[node_id][:basedir] do
     action :sync
 end
 
+rbenv_execute 'Install bundle' do
+    command 'bundle'
+    ruby_version '2.2.2'
+    cwd node[node_id][:basedir]
+    user node[node_id][:user]
+    group node[node_id][:group]
+end
+
 template "#{node[:themis][:basedir]}/god.d/sample-checker-rb.god" do
     source 'sample-checker-rb.god.erb'
     mode '0644'
