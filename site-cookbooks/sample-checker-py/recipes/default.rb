@@ -23,6 +23,14 @@ python_virtualenv "#{node[node_id][:basedir]}/.virtualenv" do
     action :create
 end
 
+python_pip "#{node[node_id][:basedir]}/requirements.txt" do
+    user node[node_id][:user]
+    group node[node_id][:group]
+    virtualenv "#{node[node_id][:basedir]}/.virtualenv"
+    action :install
+    options '-r'
+end
+
 template "#{node[:themis][:basedir]}/god.d/sample-checker-py.god" do
     source 'sample-checker-py.god.erb'
     mode '0644'
