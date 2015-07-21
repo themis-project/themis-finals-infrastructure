@@ -1,0 +1,14 @@
+server {
+    listen 80 default;
+
+    access_log <%= node.themis.basedir %>/logs/nginx_access.log;
+    error_log <%= node.themis.basedir %>/logs/nginx_error.log;
+
+    keepalive_timeout 100;
+    charset utf-8;
+
+    location / {
+        root <%= node.themis.basedir %>/www;
+        index index.html;
+    }
+}
