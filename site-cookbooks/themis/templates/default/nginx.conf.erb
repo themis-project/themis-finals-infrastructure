@@ -13,7 +13,7 @@ server {
 
     location / {
         root <%= node.themis.basedir %>/www;
-        index index.html;
+        rewrite ^(.*)$ /index.html break;
     }
 
     location /api/ {
