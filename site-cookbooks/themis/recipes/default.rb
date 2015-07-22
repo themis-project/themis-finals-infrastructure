@@ -6,6 +6,8 @@ directory node[:themis][:basedir] do
     action :create
 end
 
+ENV['CONFIGURE_OPTS'] = '--disable-install-rdoc'
+
 rbenv_ruby '2.2.2' do
     ruby_version '2.2.2'
     global true
