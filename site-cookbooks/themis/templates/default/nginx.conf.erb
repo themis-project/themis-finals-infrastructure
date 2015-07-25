@@ -12,8 +12,12 @@ server {
     charset utf-8;
 
     location / {
-        root <%= node.themis.basedir %>/www/build;
+        root <%= node.themis.basedir %>/www/build/html;
         rewrite ^(.*)$ /index.html break;
+    }
+
+    location /assets/ {
+        root <%= node.themis.basedir %>/www/build;
     }
 
     location /api/ {
