@@ -6,7 +6,8 @@
     "source": {
       "modules": [
         "nginx::http_gzip_static_module",
-        "nginx::http_spdy_module"
+        "nginx::http_spdy_module",
+        "nginx::http_realip_module"
       ],
       "checksum": "23cca1239990c818d8f6da118320c4979aadf5386deda691b1b7c2c96b9df3d5"
     },
