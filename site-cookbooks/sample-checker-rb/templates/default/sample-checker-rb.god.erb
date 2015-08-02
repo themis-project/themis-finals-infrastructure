@@ -9,8 +9,8 @@ God.watch do |w|
         'BEANSTALKD_URI' => '127.0.0.1:11300',
         'LOG_LEVEL' => '<%= node['sample-checker-rb'].log_level %>',
         'STDOUT_SYNC' => '<%= node['sample-checker-rb'].stdout_sync %>',
-        'TUBE_LISTEN' => 'volgactf.service.<%= node['sample-checker-rb'].service %>.listen',
-        'TUBE_REPORT' => 'volgactf.service.<%= node['sample-checker-rb'].service %>.report'
+        'TUBE_LISTEN' => 'themis.service.<%= node['sample-checker-rb'].service %>.listen',
+        'TUBE_REPORT' => 'themis.service.<%= node['sample-checker-rb'].service %>.report'
     }
     w.stop_signal = 'INT'
     w.keepalive
