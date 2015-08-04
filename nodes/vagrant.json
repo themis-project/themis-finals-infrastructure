@@ -81,6 +81,11 @@
     "group": "vagrant",
     "repository": "git@github.com:aspyatkin/themis-checker-py"
   },
+  "attack-result-rb": {
+    "user": "vagrant",
+    "group": "vagrant",
+    "repository": "git@github.com:aspyatkin/themis-attack-result"
+  },
   "python": {
   },
   "nodejs": {
@@ -110,6 +115,7 @@
     "recipe[sample-checker-py]",
     "recipe[checker-server-rb]",
     "recipe[checker-result-rb]",
+    "recipe[attack-result-rb]",
     "recipe[checker-py]"
   ]
 }
