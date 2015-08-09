@@ -30,6 +30,14 @@ git node[:themis][:basedir] do
     action :sync
 end
 
+rbenv_execute 'Install bundle' do
+    command 'bundle'
+    ruby_version '2.2.2'
+    cwd node[:themis][:basedir]
+    user node[:themis][:user]
+    group node[:themis][:group]
+end
+
 postgresql_connection_info = {
     :host => '127.0.0.1',
     :port => node['postgresql']['config']['port'],
@@ -74,3 +82,18 @@ template "#{node[:nginx][:dir]}/sites-available/themis.conf" do
 end
 
 nginx_site 'themis.conf'
+
+nodejs_npm '.' do
+    path node[:themis][:basedir]
+    json true
+    user node[:themis][:user]
+    group node[:themis][:group]
+end
+
+execute 'Build assets' do
+    command 'npm run gulp'
+    cwd node[:themis][:basedir]
+    user node[:themis][:user]
+    group node[:themis][:group]
+    environment({ 'HOME' => "/home/#{node[:themis][:user]}" })
+end
