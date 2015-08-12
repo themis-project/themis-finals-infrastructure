@@ -48,43 +48,20 @@
     "user": "vagrant",
     "group": "vagrant",
     "log_level": "DEBUG",
-    "stdout_sync": "true",
-    "repository": "git@github.com:aspyatkin/themis-finals"
+    "stdout_sync": "true"
   },
   "sample-checker-rb": {
     "service": "service_1",
     "user": "vagrant",
     "group": "vagrant",
     "log_level": "DEBUG",
-    "stdout_sync": "true",
-    "repository": "git@github.com:aspyatkin/themis-sample-checker-rb"
+    "stdout_sync": "true"
   },
   "sample-checker-py":{
     "service": "service_2",
     "user": "vagrant",
     "group": "vagrant",
-    "log_level": "DEBUG",
-    "repository": "git@github.com:aspyatkin/themis-sample-checker-py"
-  },
-  "checker-server-rb": {
-    "user": "vagrant",
-    "group": "vagrant",
-    "repository": "git@github.com:aspyatkin/themis-checker-server"
-  },
-  "checker-result-rb": {
-    "user": "vagrant",
-    "group": "vagrant",
-    "repository": "git@github.com:aspyatkin/themis-checker-result"
-  },
-  "checker-py": {
-    "user": "vagrant",
-    "group": "vagrant",
-    "repository": "git@github.com:aspyatkin/themis-checker-py"
-  },
-  "attack-result-rb": {
-    "user": "vagrant",
-    "group": "vagrant",
-    "repository": "git@github.com:aspyatkin/themis-attack-result"
+    "log_level": "DEBUG"
   },
   "python": {
   },
@@ -112,10 +89,6 @@
     "recipe[python::virtualenv]",
     "recipe[themis]",
     "recipe[sample-checker-rb]",
-    "recipe[sample-checker-py]",
-    "recipe[checker-server-rb]",
-    "recipe[checker-result-rb]",
-    "recipe[attack-result-rb]",
-    "recipe[checker-py]"
+    "recipe[sample-checker-py]"
   ]
 }
