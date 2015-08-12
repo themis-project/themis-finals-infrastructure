@@ -1,0 +1,10 @@
+ram: 1536
+network:
+    public_network:
+        ip: '192.168.163.100'
+        bridge: 'en0: Wi-Fi (AirPort)'
+synced_folder:
+    -   host: .
+        guest: /vagrant
+        opts:
+            disabled: yes
