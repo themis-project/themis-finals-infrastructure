@@ -1,5 +1,7 @@
 upstream app {
-    server 127.0.0.1:3000;
+    <% (0...node[:themis][:queue][:processes]).to_a.each do |num| %>
+    server 127.0.0.1:<%= 3000 + num %>;
+    <% end %>
 }
 
 server {

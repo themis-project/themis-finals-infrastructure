@@ -48,20 +48,28 @@
     "user": "vagrant",
     "group": "vagrant",
     "log_level": "DEBUG",
-    "stdout_sync": "true"
+    "stdout_sync": "true",
+    "queue": {
+      "processes": 2
+    },
+    "backend": {
+      "processes": 2
+    }
   },
   "sample-checker-rb": {
     "service": "service_1",
     "user": "vagrant",
     "group": "vagrant",
     "log_level": "DEBUG",
-    "stdout_sync": "true"
+    "stdout_sync": "true",
+    "processes": 2
   },
   "sample-checker-py":{
     "service": "service_2",
     "user": "vagrant",
     "group": "vagrant",
-    "log_level": "DEBUG"
+    "log_level": "DEBUG",
+    "processes": 2
   },
   "python": {
   },
