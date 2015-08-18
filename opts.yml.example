@@ -1,3 +1,4 @@
+name: themis-finals
 ram: 1536
 network:
     public_network:

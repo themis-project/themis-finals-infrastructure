@@ -36,6 +36,13 @@ Vagrant.configure(2) do |config|
     end
   end
 
+  if vm_opts.has_key? 'name'
+    config.vm.provider :virtualbox do |v|
+      v.name = vm_opts['name']
+    end
+  end
+
+
   if vm_opts.has_key? 'ram'
     config.vm.provider :virtualbox do |v|
       v.memory = vm_opts['ram']
