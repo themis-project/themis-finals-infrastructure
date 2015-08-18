@@ -51,6 +51,7 @@ Vagrant.configure(2) do |config|
 
   node_opts = get_node_opts
 
+  config.librarian_chef.cheffile_dir = '.'
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ['site-cookbooks', 'cookbooks']
     chef.roles_path = 'roles'
