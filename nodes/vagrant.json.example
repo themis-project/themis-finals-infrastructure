@@ -87,6 +87,23 @@
       }
     }
   },
+  "oh-my-zsh": {
+    "entries": [
+      {
+        "user": "vagrant",
+        "group": "vagrant"
+      },
+      {
+        "user": "root",
+        "group": "root"
+      }
+    ],
+    "plugins": [
+      "git",
+      "rbenv",
+      "virtualenv"
+    ]
+  },
   "ntp": {
     "servers": [
       "0.pool.ntp.org",
@@ -96,6 +113,7 @@
     ]
   },
   "run_list": [
+    "recipe[oh-my-zsh]",
     "recipe[nginx::source]",
     "recipe[git::source]",
     "recipe[redisio]",
