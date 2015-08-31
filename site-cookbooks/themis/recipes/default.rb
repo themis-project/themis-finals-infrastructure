@@ -72,6 +72,11 @@ template "#{node[:themis][:basedir]}/god.d/backend.god" do
     mode '0644'
 end
 
+template "#{node[:themis][:basedir]}/god.d/stream.god" do
+    source 'stream.god.erb'
+    mode '0644'
+end
+
 python_pip 'twine'
 python_pip 'wheel'
 
@@ -96,4 +101,11 @@ execute 'Build assets' do
     user node[:themis][:user]
     group node[:themis][:group]
     environment({ 'HOME' => "/home/#{node[:themis][:user]}" })
+end
+
+nodejs_npm '.' do
+    path "#{node[:themis][:basedir]}/stream"
+    json true
+    user node[:themis][:user]
+    group node[:themis][:group]
 end

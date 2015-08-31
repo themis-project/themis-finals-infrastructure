@@ -1,0 +1,15 @@
+(0...<%= node.themis.stream.processes %>).to_a.each do |num|
+    God.watch do |w|
+        w.group = 'streams'
+        w.name = "stream-#{num}"
+        w.dir = '<%= node.themis.basedir %>/stream'
+        w.uid = '<%= node.themis.user %>'
+        w.gid = '<%= node.themis.group %>'
+        w.log = "<%= node.themis.basedir %>/logs/stream-#{num}.log"
+        w.start = './bin/app'
+        w.keepalive
+        w.env = {
+            'PORT' => "#{4000 + num}"
+        }
+    end
+end

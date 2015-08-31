@@ -60,6 +60,9 @@
     },
     "backend": {
       "processes": 2
+    },
+    "stream": {
+      "processes": 2
     }
   },
   "sample-checker-rb": {

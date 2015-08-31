@@ -1,6 +1,12 @@
-upstream app {
-    <% (0...node[:themis][:queue][:processes]).to_a.each do |num| %>
+upstream backend {
+    <% (0...node[:themis][:backend][:processes]).to_a.each do |num| %>
     server 127.0.0.1:<%= 3000 + num %>;
+    <% end %>
+}
+
+upstream stream {
+    <% (0...node[:themis][:stream][:processes]).to_a.each do |num| %>
+    server 127.0.0.1:<%= 4000 + num %>;
     <% end %>
 }
 
@@ -27,7 +33,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header Host $http_host;
 
-        proxy_pass http://app/;
+        proxy_pass http://backend/;
         proxy_redirect off;
 
         proxy_http_version 1.1;
@@ -36,5 +42,20 @@ server {
         proxy_cache off;
 
         client_max_body_size 1k;
+    }
+
+    location /stream/ {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $http_host;
+
+        proxy_pass http://stream/;
+        proxy_redirect off;
+
+        proxy_http_version 1.1;
+        chunked_transfer_encoding off;
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 1h;
     }
 }
