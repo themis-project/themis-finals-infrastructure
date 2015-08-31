@@ -84,7 +84,7 @@ end
 nginx_site 'themis.conf'
 
 nodejs_npm '.' do
-    path node[:themis][:basedir]
+    path "#{node[:themis][:basedir]}/www"
     json true
     user node[:themis][:user]
     group node[:themis][:group]
@@ -92,7 +92,7 @@ end
 
 execute 'Build assets' do
     command 'npm run gulp'
-    cwd node[:themis][:basedir]
+    cwd "#{node[:themis][:basedir]}/www"
     user node[:themis][:user]
     group node[:themis][:group]
     environment({ 'HOME' => "/home/#{node[:themis][:user]}" })
