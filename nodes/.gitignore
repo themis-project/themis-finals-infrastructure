@@ -1,1 +1,2 @@
-vagrant.json
+*
+!vagrant.json.example
