@@ -11,7 +11,12 @@
         w.env = {
             'PORT' => "#{3000 + num}",
             'LOG_LEVEL' => '<%= node.themis.log_level %>',
-            'STDOUT_SYNC' => '<%= node.themis.stdout_sync %>'
+            'STDOUT_SYNC' => '<%= node.themis.stdout_sync %>',
+            <% if node.themis.production %>
+            'RACK_ENV' => 'production'
+            <% else %>
+            'RACK_ENV' => 'development'
+            <% end %>
         }
     end
 end

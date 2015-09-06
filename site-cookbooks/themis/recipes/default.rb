@@ -100,7 +100,15 @@ execute 'Build assets' do
     cwd "#{node[:themis][:basedir]}/www"
     user node[:themis][:user]
     group node[:themis][:group]
-    environment({ 'HOME' => "/home/#{node[:themis][:user]}" })
+
+    default_env = {
+        'HOME' => "/home/#{node[:themis][:user]}"
+    }
+    if node[:themis][:production]
+        default_env['NODE_ENV'] = 'production'
+    end
+
+    environment default_env
 end
 
 nodejs_npm '.' do
