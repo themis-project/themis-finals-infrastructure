@@ -95,6 +95,14 @@ nodejs_npm '.' do
     group node[:themis][:group]
 end
 
+execute 'Copy customization file' do
+    command 'cp customize.js.example customize.js'
+    cwd "#{node[:themis][:basedir]}/www"
+    user node[:themis][:user]
+    group node[:themis][:group]
+    not_if "test -e #{node[:themis][:basedir]}/www/customize.js"
+end
+
 execute 'Build assets' do
     command 'npm run gulp'
     cwd "#{node[:themis][:basedir]}/www"
