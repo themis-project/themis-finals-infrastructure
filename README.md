@@ -1,4 +1,7 @@
 # Themis Finals Infrastructure
+[![Latest Version](https://img.shields.io/github/release/aspyatkin/themis-finals-infrastructure.svg?style=flat-square)](https://github.com/aspyatkin/themis-finals-infrastructure/releases)
+[![License](https://img.shields.io/github/license/aspyatkin/themis-finals-infrastructure.svg?style=flat-square)](https://github.com/aspyatkin/themis-finals-infrastructure/blob/master/LICENSE)
+[![Dependencies status](https://img.shields.io/gemnasium/aspyatkin/themis-finals-infrastructure.svg?style=flat-square)](https://gemnasium.com/aspyatkin/themis-finals-infrastructure)  
 Chef Solo configuration for [Themis Finals](https://github.com/aspyatkin/themis-finals) CTF contest checking system.
 
 ## See also
