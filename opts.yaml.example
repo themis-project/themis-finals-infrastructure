@@ -1,0 +1,26 @@
+vm:
+  box: ubuntu/trusty64  # required
+  name: sample-vm  # required
+  memory: 1024  # default 512 MB
+  cpus: 2  # default 1 processor
+  hostname: sample.example.com  # not required
+  network:
+    # forward ports in NAT network
+    # forwarded_ports:
+    #   - guest: 80
+    #     host: 8080
+
+    # set up bridged network
+    # public:
+    #   - ip: 192.168.163.100
+    #     bridge: 'en0: Wi-Fi (AirPort)'
+
+    # set up host-only network
+    # private:
+    #   - type: dhcp
+  synced_folders:
+    # disable current directory syncing
+    - host: .
+      guest: /vagrant
+      opts:
+        disabled: yes

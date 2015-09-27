@@ -1,4 +1,4 @@
 .vagrant
 /cookbooks/
 /tmp/librarian/
-opts.yml
+opts.yaml
