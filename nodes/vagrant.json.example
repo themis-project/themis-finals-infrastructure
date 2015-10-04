@@ -13,11 +13,6 @@
     },
     "server_tokens": "off"
   },
-  "git": {
-    "version": "2.4.2",
-    "url": "https://www.kernel.org/pub/software/scm/git/git-2.4.2.tar.gz",
-    "checksum": "8edd564051fb776a41b4c475ed2d6105de82b674b8903a9efafe8a0633e4876e"
-  },
   "redisio": {
     "version": "3.0.2"
   },
@@ -118,7 +113,7 @@
   "run_list": [
     "recipe[oh-my-zsh]",
     "recipe[nginx::source]",
-    "recipe[git::source]",
+    "recipe[local-git]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
     "recipe[postgresql::server]",

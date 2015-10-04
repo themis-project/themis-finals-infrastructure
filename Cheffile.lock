@@ -16,7 +16,7 @@ SITE
     database (4.0.6)
       postgresql (>= 1.0.0)
     dmg (2.2.2)
-    git (4.2.2)
+    git (4.3.4)
       build-essential (>= 0.0.0)
       dmg (>= 0.0.0)
       windows (>= 0.0.0)
@@ -69,7 +69,7 @@ SITE
 DEPENDENCIES
   beanstalkd (~> 0.1.5)
   database (~> 4.0.6)
-  git (~> 4.2.2)
+  git (~> 4.3.4)
   nginx (~> 2.7.6)
   nodejs (~> 2.4.0)
   ntp (~> 1.8.6)

@@ -2,7 +2,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'runit', '~> 1.6.0'
 cookbook 'nginx', '~> 2.7.6'
-cookbook 'git', '~> 4.2.2'
+cookbook 'git', '~> 4.3.4'
 cookbook 'redisio', '~> 2.3.0'
 cookbook 'postgresql', '~> 3.4.20'
 cookbook 'beanstalkd', '~> 0.1.5'
