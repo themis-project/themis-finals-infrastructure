@@ -1,3 +1,5 @@
+include_recipe 'local-git'
+
 node_id = 'checker-result-rb'
 
 directory node[node_id][:basedir] do
