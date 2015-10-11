@@ -1,3 +1,8 @@
+include_recipe 'local-git'
+include_recipe 'local-nginx'
+include_recipe 'local-nodejs'
+
+
 directory node[:themis][:basedir] do
     owner node[:themis][:user]
     group node[:themis][:group]
