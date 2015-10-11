@@ -1,3 +1,5 @@
+include_recipe 'local-git'
+
 node_id = 'attack-result-rb'
 
 directory node[node_id][:basedir] do
