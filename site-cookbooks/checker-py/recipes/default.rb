@@ -1,3 +1,5 @@
+include_recipe 'local-git'
+
 node_id = 'checker-py'
 
 directory node[node_id][:basedir] do
