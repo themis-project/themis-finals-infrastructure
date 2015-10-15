@@ -28,7 +28,7 @@
       "p": 11300
     }
   },
-  "rbenv": {
+  "local-rbenv": {
     "group_users": ["vagrant", "root"]
   },
   "themis": {
@@ -94,8 +94,6 @@
     "recipe[redisio::enable]",
     "recipe[postgresql::server]",
     "recipe[beanstalkd]",
-    "recipe[rbenv::default]",
-    "recipe[rbenv::ruby_build]",
     "recipe[database::postgresql]",
     "recipe[python::default]",
     "recipe[python::pip]",
