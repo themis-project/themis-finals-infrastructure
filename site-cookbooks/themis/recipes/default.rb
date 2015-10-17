@@ -1,4 +1,4 @@
-include_recipe 'local-git'
+include_recipe 'latest-git'
 include_recipe 'local-nginx'
 include_recipe 'local-nodejs'
 include_recipe 'local-rbenv'

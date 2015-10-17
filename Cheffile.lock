@@ -66,10 +66,18 @@ SITE
     yum-epel (0.6.0)
       yum (~> 3.0)
 
+GIT
+  remote: https://github.com/aspyatkin/latest-git.git
+  ref: v1.0.0
+  sha: 188b281d08ec522ab533884e100b543d4cc3e218
+  specs:
+    latest-git (1.0.0)
+      git (= 4.3.4)
+
 DEPENDENCIES
   beanstalkd (~> 0.1.5)
   database (~> 4.0.6)
-  git (~> 4.3.4)
+  latest-git (>= 0)
   nginx (~> 2.7.6)
   nodejs (~> 2.4.2)
   ntp (~> 1.8.6)

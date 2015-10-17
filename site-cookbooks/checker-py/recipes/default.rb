@@ -1,4 +1,4 @@
-include_recipe 'local-git'
+include_recipe 'latest-git'
 
 node_id = 'checker-py'
 
