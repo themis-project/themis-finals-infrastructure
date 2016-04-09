@@ -1,0 +1,15 @@
+vm:
+  box: aspyatkin/ubuntu-14.04-server-amd64
+  name: finals.volgactf.dev
+  memory: 2048
+  cpus: 2
+  hostname: finals.volgactf.dev
+  network:
+    public:
+      - ip: 172.20.0.2
+        bridge: 'en0: Wi-Fi (AirPort)'
+  synced_folders:
+    - host: .
+      guest: /vagrant
+      opts:
+        disabled: yes
