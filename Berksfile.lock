@@ -9,8 +9,8 @@ DEPENDENCIES
     tag: v1.0.0
   latest-git
     git: https://github.com/aspyatkin/latest-git
-    revision: 86b819da2e1b5874d50b53d106bda173ddc88c9f
-    tag: v1.1.5
+    revision: 2564bd6357cbcd57a55b0e5cb14a2ac6d1b82e07
+    tag: v1.1.6
   latest-nodejs
     git: https://github.com/aspyatkin/latest-nodejs
     revision: 98a9e0337b02eff22a7ca8070d7595adb3c921ef
@@ -40,7 +40,7 @@ GRAPH
   dotfiles (1.2.0)
     vim (~> 2.0.0)
     zsh (~> 1.0.3)
-  git (4.3.7)
+  git (4.4.1)
     build-essential (>= 0.0.0)
     dmg (>= 0.0.0)
     windows (>= 0.0.0)
@@ -48,9 +48,9 @@ GRAPH
   git2 (1.0.0)
   homebrew (2.1.0)
     build-essential (>= 2.1.2)
-  latest-git (1.1.5)
+  latest-git (1.1.6)
     build-essential (~> 2.2.4)
-    git (~> 4.3.7)
+    git (~> 4.4.0)
   latest-nodejs (1.2.4)
     nodejs (~> 2.4.4)
   latest-redis (1.1.2)

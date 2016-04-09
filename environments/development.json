@@ -1,0 +1,19 @@
+{
+  "name": "development",
+  "description": "Development environment",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "latest-nodejs": {
+      "install": "stable"
+    },
+    "resolver": {
+      "nameservers": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "208.67.222.222",
+        "208.67.220.220"
+      ]
+    }
+  }
+}

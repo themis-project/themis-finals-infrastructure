@@ -5,9 +5,8 @@ vm:
   cpus: 2
   hostname: finals.volgactf.dev
   network:
-    public:
+    private:
       - ip: 172.20.0.2
-        bridge: 'en0: Wi-Fi (AirPort)'
   synced_folders:
     - host: .
       guest: /vagrant
