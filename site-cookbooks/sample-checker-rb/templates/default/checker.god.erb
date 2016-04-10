@@ -1,0 +1,20 @@
+(0...<%= node['themis-finals-sample-checker-rb']['processes'] %>).to_a.each do |num|
+  God.watch do |w|
+    w.group = '<%= node['themis-finals-sample-checker-rb']['service_alias'] %>'
+    w.name = "<%= node['themis-finals-sample-checker-rb']['service_alias'] %>-#{num}"
+    w.dir = '<%= node['themis-finals-sample-checker-rb']['basedir'] %>'
+    w.uid = '<%= node['themis-finals-sample-checker-rb']['user'] %>'
+    w.gid = '<%= node['themis-finals-sample-checker-rb']['group'] %>'
+    w.log = "<%= node['themis-finals-sample-checker-rb']['basedir'] %>/logs/checker-#{num}.log"
+    w.start = 'bundle exec ruby checker.rb'
+    w.env = {
+      'BEANSTALKD_URI' => '<%= node['themis-finals']['beanstalkd']['listen']['address'] %>:<%= node['themis-finals']['beanstalkd']['listen']['port'] %>',
+      'LOG_LEVEL' => '<%= node['themis-finals-sample-checker-rb']['log_level'] %>',
+      'STDOUT_SYNC' => '<%= node['themis-finals-sample-checker-rb']['stdout_sync'] %>',
+      'TUBE_LISTEN' => 'themis.service.<%= node['themis-finals-sample-checker-rb']['service_alias'] %>.listen',
+      'TUBE_REPORT' => 'themis.service.<%= node['themis-finals-sample-checker-rb']['service_alias'] %>.report'
+    }
+    w.stop_signal = 'INT'
+    w.keepalive
+  end
+end

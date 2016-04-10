@@ -1,7 +1,13 @@
-node_id = 'sample-checker-rb'
+id = 'themis-finals-sample-checker-rb'
 
-default[node_id][:basedir] = '/var/themis/sample-checker-rb'
-default[node_id][:repository] = 'https://github.com/aspyatkin/themis-sample-checker-rb'
-default[node_id][:revision] = 'master'
-default[node_id][:log_level] = 'INFO'
-default[node_id][:stdout_sync] = 'false'
+default[id][:basedir] = '/var/themis/finals/checkers/sample-checker-rb'
+default[id][:repository] = 'aspyatkin/themis-finals-sample-checker-rb'
+default[id][:revision] = 'master'
+default[id][:user] = 'vagrant'
+default[id][:group] = 'vagrant'
+
+default[id][:log_level] = 'DEBUG'
+default[id][:stdout_sync] = false
+default[id][:service_alias] = 'service_1'
+default[id][:processes] = 2
+default[id][:ruby_version] = '2.3.0'

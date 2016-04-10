@@ -1,37 +1,63 @@
-node_id = 'sample-checker-py'
+id = 'themis-finals-sample-checker-py'
 
-directory node[node_id][:basedir] do
-    owner node[node_id][:user]
-    group node[node_id][:group]
-    mode '0755'
-    recursive true
-    action :create
+include_recipe 'python::default'
+include_recipe 'python::pip'
+include_recipe 'python::virtualenv'
+
+directory node[id][:basedir] do
+  owner node[id][:user]
+  group node[id][:group]
+  mode 0755
+  recursive true
+  action :create
 end
 
-git node[node_id][:basedir] do
-    repository node[node_id][:repository]
-    revision node[node_id][:revision]
-    enable_checkout false
-    user node[node_id][:user]
-    group node[node_id][:group]
-    action :sync
+url_repository = "https://github.com/#{node[id][:repository]}"
+
+if node.chef_environment.start_with? 'development'
+  ssh_key_map = data_bag_item('ssh', node.chef_environment).to_hash.fetch('keys', {})
+
+  if ssh_key_map.size > 0
+    url_repository = "git@github.com:#{node[id][:repository]}.git"
+  end
 end
 
-python_virtualenv "#{node[node_id][:basedir]}/.virtualenv" do
-    owner node[node_id][:user]
-    group node[node_id][:group]
-    action :create
+git2 node[id][:basedir] do
+  url url_repository
+  branch node[id][:revision]
+  user node[id][:user]
+  group node[id][:group]
+  action :create
 end
 
-python_pip "#{node[node_id][:basedir]}/requirements.txt" do
-    user node[node_id][:user]
-    group node[node_id][:group]
-    virtualenv "#{node[node_id][:basedir]}/.virtualenv"
-    action :install
-    options '-r'
+if node.chef_environment.start_with? 'development'
+  data_bag_item('git', node.chef_environment).to_hash.fetch('config', {}).each do |key, value|
+    git_config "Git config #{key} at #{node[id][:basedir]}" do
+      key key
+      value value
+      scope 'local'
+      path node[id][:basedir]
+      user node[id][:user]
+      action :set
+    end
+  end
 end
 
-template "#{node[:themis][:basedir]}/god.d/sample-checker-py.god" do
-    source 'sample-checker-py.god.erb'
-    mode '0644'
+python_virtualenv "#{node[id][:basedir]}/.virtualenv" do
+  owner node[id][:user]
+  group node[id][:group]
+  action :create
+end
+
+python_pip "#{node[id][:basedir]}/requirements.txt" do
+  user node[id][:user]
+  group node[id][:group]
+  virtualenv "#{node[id][:basedir]}/.virtualenv"
+  action :install
+  options '-r'
+end
+
+template "#{node['themis-finals'][:basedir]}/god.d/sample-checker-py.god" do
+  source 'checker.god.erb'
+  mode 0644
 end

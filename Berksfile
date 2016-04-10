@@ -9,3 +9,5 @@ cookbook 'modern_nginx', git: 'https://github.com/aspyatkin/modern_nginx', tag: 
 cookbook 'git2', git: 'https://github.com/aspyatkin/git2-cookbook', tag: 'v1.0.0'
 
 cookbook 'themis-finals', path: '../themis-finals-cookbook'
+cookbook 'themis-finals-sample-checker-rb', path: 'site-cookbooks/sample-checker-rb'
+cookbook 'themis-finals-sample-checker-py', path: 'site-cookbooks/sample-checker-py'

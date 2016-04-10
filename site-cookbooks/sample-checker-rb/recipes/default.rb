@@ -1,31 +1,68 @@
-node_id = 'sample-checker-rb'
+id = 'themis-finals-sample-checker-rb'
 
-directory node[node_id][:basedir] do
-    owner node[node_id][:user]
-    group node[node_id][:group]
-    mode '0755'
-    recursive true
-    action :create
+include_recipe 'latest-git::default'
+include_recipe 'rbenv::default'
+include_recipe 'rbenv::ruby_build'
+
+directory node[id][:basedir] do
+  owner node[id][:user]
+  group node[id][:group]
+  mode 0755
+  recursive true
+  action :create
 end
 
-git node[node_id][:basedir] do
-    repository node[node_id][:repository]
-    revision node[node_id][:revision]
-    enable_checkout false
-    user node[node_id][:user]
-    group node[node_id][:group]
-    action :sync
+url_repository = "https://github.com/#{node[id][:repository]}"
+
+if node.chef_environment.start_with? 'development'
+  ssh_key_map = data_bag_item('ssh', node.chef_environment).to_hash.fetch('keys', {})
+
+  if ssh_key_map.size > 0
+    url_repository = "git@github.com:#{node[id][:repository]}.git"
+  end
 end
 
-rbenv_execute 'Install bundle' do
-    command 'bundle'
-    ruby_version '2.2.2'
-    cwd node[node_id][:basedir]
-    user node[node_id][:user]
-    group node[node_id][:group]
+git2 node[id][:basedir] do
+  url url_repository
+  branch node[id][:revision]
+  user node[id][:user]
+  group node[id][:group]
+  action :create
 end
 
-template "#{node[:themis][:basedir]}/god.d/sample-checker-rb.god" do
-    source 'sample-checker-rb.god.erb'
-    mode '0644'
+if node.chef_environment.start_with? 'development'
+  data_bag_item('git', node.chef_environment).to_hash.fetch('config', {}).each do |key, value|
+    git_config "Git config #{key} at #{node[id][:basedir]}" do
+      key key
+      value value
+      scope 'local'
+      path node[id][:basedir]
+      user node[id][:user]
+      action :set
+    end
+  end
+end
+
+ENV['CONFIGURE_OPTS'] = '--disable-install-rdoc'
+
+rbenv_ruby node[id][:ruby_version] do
+  ruby_version node[id][:ruby_version]
+  global true
+end
+
+rbenv_gem 'bundler' do
+  ruby_version node[id][:ruby_version]
+end
+
+rbenv_execute "Install bundle at #{node[id][:basedir]}" do
+  command 'bundle'
+  ruby_version node[id][:ruby_version]
+  cwd node[id][:basedir]
+  user node[id][:user]
+  group node[id][:group]
+end
+
+template "#{node['themis-finals'][:basedir]}/god.d/sample-checker-rb.god" do
+  source 'checker.god.erb'
+  mode 0644
 end

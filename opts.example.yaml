@@ -1,14 +1,46 @@
-vm:
-  box: aspyatkin/ubuntu-14.04-server-amd64
-  name: finals.volgactf.dev
-  memory: 2048
-  cpus: 2
-  hostname: finals.volgactf.dev
-  network:
-    private:
-      - ip: 172.20.0.2
-  synced_folders:
-    - host: .
-      guest: /vagrant
-      opts:
-        disabled: yes
+vms:
+  master:
+    box: aspyatkin/ubuntu-14.04-server-amd64
+    name: finals.volgactf.dev
+    memory: 2048
+    cpus: 2
+    hostname: finals.volgactf.dev
+    network:
+      private:
+        - ip: 172.20.0.2
+          netmask: 255.255.0.0
+    synced_folders:
+      - host: .
+        guest: /vagrant
+        opts:
+          disabled: yes
+  team1:
+    box: box-cutter/ubuntu1404-desktop
+    name: team1.finals.volgactf.dev
+    memory: 1024
+    cpus: 2
+    hostname: team1.finals.volgactf.dev
+    network:
+      private:
+        - ip: 172.20.1.2
+          netmask: 255.255.0.0
+    synced_folders:
+      - host: .
+        guest: /vagrant
+        opts:
+          disabled: yes
+  team2:
+    box: box-cutter/ubuntu1404-desktop
+    name: team2.finals.volgactf.dev
+    memory: 1024
+    cpus: 2
+    hostname: team2.finals.volgactf.dev
+    network:
+      private:
+        - ip: 172.20.2.2
+          netmask: 255.255.0.0
+    synced_folders:
+      - host: .
+        guest: /vagrant
+        opts:
+          disabled: yes
