@@ -19,7 +19,7 @@ Vagrant development environment and Chef server configuration for Themis Finals.
 ## Get the code
 ```sh
 $ cd /path/to/projects/directory  # for instance
-$ git clone https://github.com/aspyatkin/themis-finals-infrastructure
+$ git clone -b develop https://github.com/aspyatkin/themis-finals-infrastructure
 $ git clone https://github.com/aspyatkin/themis-finals-cookbook
 ```
 
