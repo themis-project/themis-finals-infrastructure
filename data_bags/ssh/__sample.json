@@ -1,0 +1,7 @@
+{
+  "id": "__sample",
+  "keys": {
+    // key type: key contents (with newlines escaped)
+    "id_ed25519": "-----BEGIN OPENSSH PRIVATE KEY-----\n..........\n-----END OPENSSH PRIVATE KEY-----\n"
+  }
+}

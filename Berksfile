@@ -7,3 +7,5 @@ cookbook 'latest-nodejs', git: 'https://github.com/aspyatkin/latest-nodejs', tag
 cookbook 'latest-redis', git: 'https://github.com/aspyatkin/latest-redis', tag: 'v1.1.2'
 cookbook 'modern_nginx', git: 'https://github.com/aspyatkin/modern_nginx', tag: 'v1.2.5'
 cookbook 'git2', git: 'https://github.com/aspyatkin/git2-cookbook', tag: 'v1.0.0'
+
+cookbook 'themis-finals', path: '../themis-finals-cookbook'

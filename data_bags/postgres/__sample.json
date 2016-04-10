@@ -1,0 +1,7 @@
+{
+  "id": "__sample",
+  "credentials": {
+    "postgres": "",  // root user password
+    "themis_finals_user": ""  // application user password
+  }
+}
