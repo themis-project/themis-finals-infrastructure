@@ -13,8 +13,8 @@ DEPENDENCIES
     tag: v1.1.6
   latest-nodejs
     git: https://github.com/aspyatkin/latest-nodejs
-    revision: 98a9e0337b02eff22a7ca8070d7595adb3c921ef
-    tag: v1.2.4
+    revision: 4c41af85540ccb217db8a4855b603873f296f4c4
+    tag: v1.2.5
   latest-redis
     git: https://github.com/aspyatkin/latest-redis
     revision: 86af17e5d446da6e6a0486e472d3c51400dbafe1
@@ -65,7 +65,7 @@ GRAPH
   latest-git (1.1.6)
     build-essential (~> 2.2.4)
     git (~> 4.4.0)
-  latest-nodejs (1.2.4)
+  latest-nodejs (1.2.5)
     nodejs (~> 2.4.4)
   latest-redis (1.1.2)
     redisio (~> 2.3.0)
