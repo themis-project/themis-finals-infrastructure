@@ -8,6 +8,10 @@ cookbook 'latest-redis', git: 'https://github.com/aspyatkin/latest-redis', tag: 
 cookbook 'modern_nginx', git: 'https://github.com/aspyatkin/modern_nginx', tag: 'v1.2.5'
 cookbook 'git2', git: 'https://github.com/aspyatkin/git2-cookbook', tag: 'v1.0.0'
 
-cookbook 'themis-finals', path: '../themis-finals-cookbook'
-cookbook 'themis-finals-sample-checker-rb', path: 'site-cookbooks/sample-checker-rb'
-cookbook 'themis-finals-sample-checker-py', path: 'site-cookbooks/sample-checker-py'
+cookbook 'themis-finals', git: 'https://github.com/aspyatkin/themis-finals-cookbook', tag: 'v1.0.1'
+cookbook 'themis-finals-sample-checker-rb', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook', tag: 'v1.0.1'
+cookbook 'themis-finals-sample-checker-py', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook', tag: 'v1.0.1'
+
+# cookbook 'themis-finals', path: '../themis-finals-cookbook'
+# cookbook 'themis-finals-sample-checker-rb', path: '../themis-finals-sample-checker-rb-cookbook'
+# cookbook 'themis-finals-sample-checker-py', path: '../themis-finals-sample-checker-py-cookbook'
