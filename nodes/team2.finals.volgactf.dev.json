@@ -1,0 +1,10 @@
+{
+  "run_list": [
+    "recipe[resolver::default]",
+    "recipe[python::default]",
+    "recipe[themis-finals-sample-image::default]"
+  ],
+  "automatic": {
+    "ipaddress": "team2.finals.volgactf.dev"
+  }
+}

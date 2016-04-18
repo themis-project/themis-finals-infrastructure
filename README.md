@@ -18,7 +18,7 @@ Vagrant development environment and Chef server configuration for Themis Finals.
 
 ## Get the code
 ```sh
-$ cd /path/to/projects/directory  # for instance
+$ cd ~/Documents/projects
 $ git clone -b develop https://github.com/aspyatkin/themis-finals-infrastructure
 ```
 
@@ -26,18 +26,18 @@ $ git clone -b develop https://github.com/aspyatkin/themis-finals-infrastructure
 ### Create data bag encryption key
 
 ```sh
-$ cd /path/to/projects/directory/themis-finals-infrastructure/
+$ cd ~/Documents/projects/themis-finals-infrastructure/
 $ openssl rand -base64 512 | tr -d '\r\n' > encryption_keys/development_key
 ```
 
 ### For developers
-For development purposes, several encrypted data bags should be added to your Chef repository.
+For development purposes, several encrypted data bags should be placed into your Chef repository - *ssh* and *git*. If you don't have push access to Themis Finals project repositories, you don't need to configure them and you can proceed to *System config* section right away.
 
 #### *ssh* data bag
-Contains your private OpenSSH GitHub key. To create the data bag, run
+Contains your private OpenSSH GitHub key. To create a data bag, run
 
 ```sh
-$ cd /path/to/projects/directory/themis-finals-infrastructure
+$ cd ~/Documents/projects/themis-finals-infrastructure
 $ knife solo data bag create ssh development
 ```
 
@@ -53,10 +53,10 @@ Below is the sample:
 ```
 
 #### *git* data bag
-Contains your git configuration, such as `user.email` and `user.name` settings. To create the data bag, run
+Contains your git configuration, such as `user.email` and `user.name` settings. To create a data bag, run
 
 ```sh
-$ cd /path/to/projects/directory/themis-finals-infrastructure
+$ cd ~/Document/projects/themis-finals-infrastructure
 $ knife solo data bag create git development
 ```
 
@@ -73,14 +73,13 @@ Below is the sample:
 ```
 
 ### System config
-Common options are stored in `themis-finals` cookbook's attributes or environment file.
-Sensitive (passwords, API keys and so on) options are stored in the encrypted data bags.
+Most options are stored in `themis-finals` cookbook's attributes or environment file. However, sensitive ones (passwords, API keys and so on) are stored in encrypted data bags.
 
 #### *postgres* data bag
-Contains PostgreSQL account passwords. To create the data bag, run
+Contains PostgreSQL account passwords. To create a data bag, run
 
 ```sh
-$ cd /path/to/projects/directory/themis-finals-infrastructure
+$ cd ~/Documents/projects/themis-finals-infrastructure
 $ knife solo data bag create postgres development
 ```
 
@@ -97,7 +96,7 @@ Below is the sample:
 ```
 
 ## Setup
-The following actions are supposed to be executed in the directory with the cloned `themis-finals-infrastructure` repository.
+The following actions should be executed in a directory with `themis-finals-infrastructure` repository.
 
 1. Create `opts.yaml` file based on the example provided in `opts.example.yaml` (note there is configuration for 3 VMs, in this step you only need to configure `master` VM);
 2. Run `bundle` to install necessary Ruby gems;
@@ -109,27 +108,27 @@ The following actions are supposed to be executed in the directory with the clon
 
 **Windows specific** See [this gist](https://gist.github.com/aspyatkin/2a70736080835ac594ba) to discover how to install [Berkshelf](https://github.com/berkshelf/berkshelf) on Cygwin x64.
 
-**Windows specific 2** Note the last command - you need to pass an additional parameter `--ssh-control-master=no`
+**Windows specific 2** Note the last command - you will need to pass an additional parameter `--ssh-control-master=no`
 
 ## Contest
-Contest configuration and management is done on the guest virtual machine (`master`). To connect to the machine, you should run the following commands:
+Contest configuration and management are done on the guest virtual machine (`master`). In order to get access to this machine, you should run the following commands:
 
 ```sh
 $ cd ~/Documents/projects/whatever/themis-finals-infrastructure
 $ vagrant ssh master
 ```
-Now you have SSH connection to the machine. To edit the files on the VM, you can use SFTP, shared folders, whatever you like most.
 
 ### Configuration file
 Create configuration file
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ cp config.rb.example config.rb
 ```
-All system settings are stored in `config.rb` file, including network options, teams and services data.
+All system settings are stored in `config.rb` file, including network, team and service options.
 
-You should specify a host machine's IP address in `network` section. For instance,
+#### Network options
+Internal network is a network from which contest organisers manage the competition state. In this particular case,
 
 ``` ruby
 network do
@@ -138,7 +137,9 @@ network do
 end
 ```
 
-Each team is described in its own section. There should be specified a team alias (for internal use), team name, subnetwork address and game machine's address. For instance,
+#### Team options
+
+Each team is described in its own section. There should be specified a team alias (for internal use), team name, network and game machine (the one with vulnerable services) address. For instance,
 
 ``` ruby
 team 'team_1' do
@@ -147,6 +148,8 @@ team 'team_1' do
     host '172.20.1.2'
 end
 ```
+
+#### Service options
 
 Each service is described in its own section. There should be specified a service alias (for internal use) along with service name. For instance,
 
@@ -168,12 +171,12 @@ Instead of deploying this stuff manually, you can write a Chef cookbook to autom
 
 ### Management
 There are some command line tools to manage the contest.
-To use these tools, you should ensure you're in `/var/themis/finals` directory.
 
 #### Reset
+Use before starting new contest. These commands re-create a system's database.
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ bundle exec rake db:reset
 $ bundle exec rake contest:init
 ```
@@ -190,33 +193,35 @@ $
 #### Schedule start contest
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ bundle exec rake contest:start_async
 ```
-This command does not start contest immediately. Contest will be started automatically when the first flags will have become created.
+
+Contest will be started automatically after the first flags will have become created.
 Assuming `master` virtual machine has an IP address `172.20.0.2`, you can navigate to `http://172.20.0.2/` in your browser to see system's frontend.
 
 #### Pause contest
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ bundle exec rake contest:pause
 ```
 
 #### Resume contest
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ bundle exec rake contest:resume
 ```
 
 #### Schedule complete contest
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ bundle exec rake contest:complete_async
 ```
-This does not stop the contest at once. Contest will be stopped automatically in several minutes after when all flags will have become expired and all scores will have become recalculated.
+
+Contest will be stopped automatically after all flags will have become expired and all scores will have become recalculated.
 
 #### Stop processes
 
@@ -227,10 +232,10 @@ $ sudo -s
 $
 ```
 
-To start new contest, you should reset it at first.
+To start new contest, you should stop running processes and reset.
 
 #### Restart your checker's process
-Sometimes things get messed up and you end up rewriting your service's checker while a contest is running. Obviously you will need a way to restart checker's process.
+Sometimes things get messed up and you end up rewriting your service's checker during a running contest. Here is a way to restart checker's process.
 
 ```sh
 $ sudo -s
@@ -243,19 +248,29 @@ $
 ### Disabling scoreboard (for team and guest networks)
 
 ```sh
-$ cd /var/themis/finals
+$ cd /var/themis/finals/backend
 $ bundle exec rake scoreboard:disable
 ```
 
 ### Attacking
-You can attack only from some team's network. To accomplish this, you should run another virtual machine with an appropriate IP address. Example `opts.example.yaml` file contains configuration for extra VM instances - `team1` and `team2` (Ubuntu Desktop). Inside a team's machine, you can use several options to perform an attack. Please refer to [themis-attack-protocol](https://github.com/aspyatkin/themis-attack-protocol) and [themis-attack-py](https://github.com/aspyatkin/themis-attack-py) to discover them.
+You can attack only from team networks. To accomplish this, you should run another virtual machine with an appropriate IP address. Example `opts.example.yaml` file contains configuration for extra VM instances - `team1` and `team2` (Ubuntu Desktop). Inside a team's machine, you can use several options to perform an attack. Please refer to [themis-attack-protocol](https://github.com/aspyatkin/themis-attack-protocol) and [themis-attack-py](https://github.com/aspyatkin/themis-attack-py) to discover them.
+
+You can manage team virtual machines with Chef as well. Each machine should be resolved as `teamN.finals.volgactf.dev` where `N` stands for the team number. For instance, `team1.finals.volgactf.dev` is a domain name for team #1. Assuming your network is `172.20.0.0/16`, team #1 virtual machine will have an IP address `172.20.1.2`. The next instructions are pretty similar to the process of configuring `master` instance:
+1. Map `team1.finals.volgactf.dev` in your system's hosts file to an IP address specified for team #1 in `opts.yaml` file;
+2. Launch virtual machine with `vagrant up team1`;
+3. Install Chef on target machine with `bundle exec knife solo prepare team1.finals.volgactf.dev`;
+4. Provision virtual machine with `bundle exec knife solo cook team1.finals.volgactf.dev`;
+5. Repeat steps 1-4 for the other team virtual machines specified in `opts.yaml` file.
+
+Inside a team's virtual machine, you can use a pre-installed (if instance is managed with Chef) utility [themis-attack](https://github.com/aspyatkin/themis-attack-py) to send flags to the checking system.
 
 ### Tips
 To find out some flags to test attacks, open `/var/themis/finals/logs/queue.log`.
 
 ## See also
-- [themis-finals](https://github.com/aspyatkin/themis-finals)
-- [themis-finals-guidelines](https://github.com/aspyatkin/themis-finals-guidelines)
+- [themis-finals-backend](https://github.com/aspyatkin/themis-finals-backend)
+- [themis-finals-frontend](https://github.com/aspyatkin/themis-finals-frontend)
+- [themis-finals-stream](https://github.com/aspyatkin/themis-finals-stream)
 - [themis-attack-protocol](https://github.com/aspyatkin/themis-attack-protocol)
 - [themis-attack-py](https://github.com/aspyatkin/themis-attack-py)
 - [themis-attack-result](https://github.com/aspyatkin/themis-attack-result)
