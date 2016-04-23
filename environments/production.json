@@ -1,0 +1,39 @@
+{
+  "name": "production",
+  "description": "Production environment",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "override_attributes": {
+    "dotfiles": {
+      "users": [
+        "root",
+        "vagrant"
+      ]
+    }
+  },
+  "default_attributes": {
+    "resolver": {
+      "nameservers": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "208.67.222.222",
+        "208.67.220.220"
+      ]
+    },
+    "themis-finals": {
+      "backend": {
+        "debug": false,
+        "queue": {
+          "processes": 4
+        },
+        "app": {
+          "processes": 4
+        }
+      },
+      "stream": {
+        "debug": false,
+        "processes": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "environment": "production",
+  "run_list": [
+    "recipe[resolver::default]",
+    "recipe[python::default]",
+    "recipe[latest-git::default]",
+    "recipe[dotfiles::default]",
+    "recipe[themis-finals::default]"
+  ],
+  "automatic": {
+    "ipaddress": "finals.samaractf.ru"
+  }
+}
