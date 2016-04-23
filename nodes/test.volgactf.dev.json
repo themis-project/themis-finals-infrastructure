@@ -1,0 +1,15 @@
+{
+  "environment": "staging",
+  "run_list": [
+    "recipe[resolver::default]",
+    "recipe[python::default]",
+    "recipe[latest-git::default]",
+    "recipe[dotfiles::default]",
+    "recipe[themis-finals::default]",
+    "recipe[themis-finals-sample-checker-rb::default]",
+    "recipe[themis-finals-sample-checker-py::default]"
+  ],
+  "automatic": {
+    "ipaddress": "test.volgactf.dev"
+  }
+}
