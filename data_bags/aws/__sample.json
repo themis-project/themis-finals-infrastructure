@@ -1,0 +1,9 @@
+{
+  "id": "__sample",
+  "credentials": {
+    "access_key_id": "",  // AWS Access Key ID
+    "secret_access_key": "",  // AWS Secret Access Key
+    "bucket": "",  // AWS S3 Bucket
+    "region": ""  // AWS S3 Region
+  }
+}
