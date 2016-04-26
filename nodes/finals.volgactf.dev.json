@@ -7,7 +7,11 @@
     "recipe[dotfiles::default]",
     "recipe[themis-finals::default]",
     "recipe[themis-finals-sample-checker-rb::default]",
-    "recipe[themis-finals-sample-checker-py::default]"
+    "recipe[themis-finals-sample-checker-py::default]",
+    "recipe[themis-finals-lib-checker-py::default]",
+    "recipe[themis-finals-lib-checker-result-rb::default]",
+    "recipe[themis-finals-lib-checker-server-rb::default]",
+    "recipe[themis-finals-lib-attack-result-rb::default]"
   ],
   "automatic": {
     "ipaddress": "finals.volgactf.dev"

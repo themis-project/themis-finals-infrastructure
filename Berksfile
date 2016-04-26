@@ -13,7 +13,17 @@ cookbook 'themis-finals-sample-checker-rb', git: 'https://github.com/aspyatkin/t
 cookbook 'themis-finals-sample-checker-py', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook', tag: 'v1.1.0'
 cookbook 'themis-finals-sample-image', git: 'https://github.com/aspyatkin/themis-finals-sample-image-cookbook', tag: 'v1.0.0'
 
+cookbook 'themis-finals-lib-attack-result-rb', git: 'https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook', tag: 'v1.0.0'
+cookbook 'themis-finals-lib-checker-py', git: 'https://github.com/aspyatkin/themis-finals-lib-checker-py-cookbook', tag: 'v1.0.0'
+cookbook 'themis-finals-lib-checker-result-rb', git: 'https://github.com/aspyatkin/themis-finals-lib-checker-result-rb-cookbook', tag: 'v1.0.0'
+cookbook 'themis-finals-lib-checker-server-rb', git: 'https://github.com/aspyatkin/themis-finals-lib-checker-server-rb-cookbook', tag: 'v1.0.0'
+
 # cookbook 'themis-finals', path: '../themis-finals-cookbook'
 # cookbook 'themis-finals-sample-checker-rb', path: '../themis-finals-sample-checker-rb-cookbook'
 # cookbook 'themis-finals-sample-checker-py', path: '../themis-finals-sample-checker-py-cookbook'
 # cookbook 'themis-finals-sample-image', path: '../themis-finals-sample-image-cookbook'
+
+# cookbook 'themis-finals-lib-attack-result-rb', path: 'site-cookbooks/attack-result-rb'
+# cookbook 'themis-finals-lib-checker-py', path: 'site-cookbooks/checker-py'
+# cookbook 'themis-finals-lib-checker-result-rb', path: 'site-cookbooks/checker-result-rb'
+# cookbook 'themis-finals-lib-checker-server-rb', path: 'site-cookbooks/checker-server-rb'
