@@ -162,10 +162,10 @@ end
 ### Service checker
 Service checker should be placed into a separate subfolder in `/var/themis/finals/checkers` folder. You can check out the examples in `/var/themis/finals/checkers/sample-checker-rb` and `/var/themis/finals/checkers/sample-checker-py`.
 
-Service checker is launched with process manager [God](https://github.com/mojombo/god), so you should provide a configuration file in `/var/themis/finals/god.d` (check out samples `sample-checker-py.god` and `sample-checker-rb.god` in that directory). You should specify program's run command, working directory, log file paths and several internal options:  
-1. `TUBE_LISTEN` - `themis.service.SERVICE_ALIAS.listen`,  
-2. `TUBE_REPORT` - `themis.service.SERVICE_ALIAS.report`,  
-where `SERVICE_ALIAS` stands for service alias, which you've specified in `config.rb` file.
+Service checker is launched by [Supervisor](http://supervisord.org), so you should create a configuration file in `/etc/supervisor.d` (check out samples `themis.finals.service.service_1.checker.conf` and `themis.finals.service.service_2.checker.conf` in that directory). You should specify program's run command, working directory, log file paths and several internal options:  
+1. `TUBE_LISTEN` - `themis.finals.service.SERVICE_ALIAS.listen`,  
+2. `TUBE_REPORT` - `themis.finals.service.SERVICE_ALIAS.report`,  
+where `SERVICE_ALIAS` stands for service alias which you've specified in `config.rb` file.
 
 Instead of deploying this stuff manually, you can write a Chef cookbook to automate deployment (this is done for sample checkers).
 
@@ -184,9 +184,9 @@ $ bundle exec rake contest:init
 #### Start processes
 
 ```sh
-$ sudo -s
-# god -c /var/themis/finals/god.conf
-# exit
+$ sudo supervisorctl
+> start all
+> exit
 $
 ```
 
@@ -226,9 +226,9 @@ Contest will be stopped automatically after all flags will have become expired a
 #### Stop processes
 
 ```sh
-$ sudo -s
-# god terminate
-# exit
+$ sudo supervisorctl
+> stop all
+> exit
 $
 ```
 
@@ -238,10 +238,10 @@ To start new contest, you should stop running processes and reset.
 Sometimes things get messed up and you end up rewriting your service's checker during a running contest. Here is a way to restart checker's process.
 
 ```sh
-$ sudo -s
-# god status  // find your checker's process name
-# god restart my-service-checker
-# exit
+$ sudo supervisorctl
+> status
+> restart themis.finals.service.SERVICE_ALIAS:*
+> exit
 $
 ```
 
@@ -265,7 +265,10 @@ You can manage team virtual machines with Chef as well. Each machine should be r
 Inside a team's virtual machine, you can use a pre-installed (if instance is managed with Chef) utility [themis-attack](https://github.com/aspyatkin/themis-attack-py) to send flags to the checking system.
 
 ### Tips
+#### Getting hold of issued flags
 To find out some flags to test attacks, open `/var/themis/finals/logs/queue.log`.
+#### Supervisor web interface
+You can use web interface to start processes, view log tails etc. It's available on port 9001 of the master instance (e.g. `http://172.20.0.2:9001` in your web browser's address bar).
 
 ## See also
 - [themis-finals-backend](https://github.com/aspyatkin/themis-finals-backend)
