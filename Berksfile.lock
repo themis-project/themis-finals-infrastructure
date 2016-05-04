@@ -19,6 +19,14 @@ DEPENDENCIES
     git: https://github.com/aspyatkin/latest-redis
     revision: 86af17e5d446da6e6a0486e472d3c51400dbafe1
     tag: v1.1.2
+  libffi
+    git: https://github.com/aspyatkin/libffi-cookbook
+    revision: 71ab54a5bfd882338e6f601a2da9be4919d717fa
+    tag: v1.0.0
+  libxslt
+    git: https://github.com/aspyatkin/libxslt-cookbook
+    revision: 551bec22d0f84c391ed7d5750d40a1fca1426d1d
+    tag: v1.0.0
   modern_nginx
     git: https://github.com/aspyatkin/modern_nginx
     revision: 8ff307bd1d28684eb91f42d38cf9c8847ebdf221
@@ -26,8 +34,8 @@ DEPENDENCIES
   python (~> 1.4.6)
   themis-finals
     git: https://github.com/aspyatkin/themis-finals-cookbook
-    revision: fbf8d5039287191a284157ec77771fcb22b769d0
-    tag: v1.1.4
+    revision: d4666c1b0ffdc5192fd3155b546792bd2f21e310
+    tag: v1.1.5
   themis-finals-lib-attack-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook
     revision: 3eb301a9704ab3c3a4a735b0670651dffc5bd23d
@@ -46,12 +54,12 @@ DEPENDENCIES
     tag: v1.0.1
   themis-finals-sample-checker-py
     git: https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook
-    revision: 780a9b846bd5cf120969ea8721bbb2ff34c9d14b
-    tag: v1.1.3
+    revision: 53fada8bc08c460ca37b628d1d53acaa01c63e8a
+    tag: v1.1.4
   themis-finals-sample-checker-rb
     git: https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook
-    revision: 85f499c9b716c2d902bf481d0047c9fd1d06d34b
-    tag: v1.1.3
+    revision: 04034f5bcd73ba4217d34436d5b6581a92679606
+    tag: v1.1.4
   themis-finals-sample-image
     git: https://github.com/aspyatkin/themis-finals-sample-image-cookbook
     revision: 62c46f88dc491f1444a3e86a0b6130b504018f8a
@@ -95,6 +103,15 @@ GRAPH
     nodejs (~> 2.4.4)
   latest-redis (1.1.2)
     redisio (~> 2.3.0)
+  libffi (1.0.0)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
+  libxml2 (0.1.1)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
+  libxslt (1.0.0)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
   modern_nginx (1.2.5)
     nginx (= 2.7.6)
   mysql (7.0.0)
@@ -160,13 +177,16 @@ GRAPH
     user (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.1.4)
+  themis-finals (1.1.5)
     beanstalkd (~> 0.1.5)
     database (~> 4.0.9)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
     latest-nodejs (~> 1.2.4)
     latest-redis (~> 1.1.2)
+    libffi (~> 1.0.0)
+    libxml2 (~> 0.1.1)
+    libxslt (~> 1.0.0)
     modern_nginx (~> 1.2.5)
     ntp (~> 1.9.1)
     postgresql (~> 4.0.0)
@@ -188,13 +208,13 @@ GRAPH
   themis-finals-lib-checker-server-rb (1.0.1)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
-  themis-finals-sample-checker-py (1.1.3)
+  themis-finals-sample-checker-py (1.1.4)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
     python (~> 1.4.6)
     supervisor (~> 0.4.12)
     themis-finals (~> 1.1.4)
-  themis-finals-sample-checker-rb (1.1.3)
+  themis-finals-sample-checker-rb (1.1.4)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
     rbenv (= 1.7.1)
