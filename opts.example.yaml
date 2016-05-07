@@ -1,10 +1,10 @@
 vms:
   master:
     box: aspyatkin/ubuntu-14.04-server-amd64
-    name: finals.volgactf.dev
+    name: master.finals.themis-project.com
     memory: 2048
     cpus: 2
-    hostname: finals.volgactf.dev
+    hostname: master.finals.themis-project.com
     network:
       private:
         - ip: 172.20.0.2
@@ -16,13 +16,13 @@ vms:
           disabled: yes
   team1:
     box: box-cutter/ubuntu1404-desktop
-    name: team1.finals.volgactf.dev
+    name: team1.finals.themis-project.com
     memory: 1024
     cpus: 2
-    hostname: team1.finals.volgactf.dev
+    hostname: team1.finals.themis-project.com
     network:
       private:
-        - ip: 172.20.1.2
+        - ip: 172.20.1.3
           netmask: 255.255.0.0
     synced_folders:
       - host: .
@@ -31,13 +31,13 @@ vms:
           disabled: yes
   team2:
     box: box-cutter/ubuntu1404-desktop
-    name: team2.finals.volgactf.dev
+    name: team2.finals.themis-project.com
     memory: 1024
     cpus: 2
-    hostname: team2.finals.volgactf.dev
+    hostname: team2.finals.themis-project.com
     network:
       private:
-        - ip: 172.20.2.2
+        - ip: 172.20.2.3
           netmask: 255.255.0.0
     synced_folders:
       - host: .

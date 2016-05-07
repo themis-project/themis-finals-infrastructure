@@ -14,6 +14,6 @@
     "recipe[themis-finals-lib-attack-result-rb::default]"
   ],
   "automatic": {
-    "ipaddress": "finals.volgactf.dev"
+    "ipaddress": "master.finals.themis-project.com"
   }
 }

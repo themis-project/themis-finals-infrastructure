@@ -10,7 +10,7 @@ cookbook 'git2', git: 'https://github.com/aspyatkin/git2-cookbook', tag: 'v1.0.0
 cookbook 'libxslt', git: 'https://github.com/aspyatkin/libxslt-cookbook', tag: 'v1.0.0'
 cookbook 'libffi', git: 'https://github.com/aspyatkin/libffi-cookbook', tag: 'v1.0.0'
 
-cookbook 'themis-finals', git: 'https://github.com/aspyatkin/themis-finals-cookbook', tag: 'v1.1.5'
+cookbook 'themis-finals', git: 'https://github.com/aspyatkin/themis-finals-cookbook', tag: 'v1.1.6'
 cookbook 'themis-finals-sample-checker-rb', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook', tag: 'v1.1.4'
 cookbook 'themis-finals-sample-checker-py', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook', tag: 'v1.1.4'
 cookbook 'themis-finals-sample-image', git: 'https://github.com/aspyatkin/themis-finals-sample-image-cookbook', tag: 'v1.0.0'
@@ -19,6 +19,11 @@ cookbook 'themis-finals-lib-attack-result-rb', git: 'https://github.com/aspyatki
 cookbook 'themis-finals-lib-checker-py', git: 'https://github.com/aspyatkin/themis-finals-lib-checker-py-cookbook', tag: 'v1.0.1'
 cookbook 'themis-finals-lib-checker-result-rb', git: 'https://github.com/aspyatkin/themis-finals-lib-checker-result-rb-cookbook', tag: 'v1.0.1'
 cookbook 'themis-finals-lib-checker-server-rb', git: 'https://github.com/aspyatkin/themis-finals-lib-checker-server-rb-cookbook', tag: 'v1.0.1'
+
+cookbook 'rcc-2016-finals-digidocs-checker', git: 'git@bitbucket.org:VolgaCTF/rcc-2016-finals-digidocs-checker-cookbook.git', tag: 'v1.0.0'
+cookbook 'rcc-2016-finals-mobile-profile-checker', git: 'git@bitbucket.org:VolgaCTF/rcc-2016-finals-mobile-profile-checker-cookbook.git', tag: 'v1.0.0'
+cookbook 'rcc-2016-finals-sociality-checker', git: 'git@bitbucket.org:VolgaCTF/rcc-2016-finals-sociality-checker-cookbook.git', tag: 'v1.0.0'
+cookbook 'rcc-2016-finals-weather-checker', git: 'git@bitbucket.org:VolgaCTF/rcc-2016-finals-weather-checker-cookbook.git', tag: 'v1.0.0'
 
 # cookbook 'themis-finals', path: '../themis-finals-cookbook'
 # cookbook 'themis-finals-sample-checker-rb', path: '../themis-finals-sample-checker-rb-cookbook'
@@ -29,3 +34,8 @@ cookbook 'themis-finals-lib-checker-server-rb', git: 'https://github.com/aspyatk
 # cookbook 'themis-finals-lib-checker-py', path: '../themis-finals-lib-checker-py-cookbook'
 # cookbook 'themis-finals-lib-checker-result-rb', path: '../themis-finals-lib-checker-result-rb-cookbook'
 # cookbook 'themis-finals-lib-checker-server-rb', path: '../themis-finals-lib-checker-server-rb-cookbook'
+
+# cookbook 'rcc-2016-finals-digidocs-checker', path: '../rcc-2016-finals-digidocs-checker-cookbook'
+# cookbook 'rcc-2016-finals-mobile-profile-checker', path: '../rcc-2016-finals-mobile-profile-checker-cookbook'
+# cookbook 'rcc-2016-finals-sociality-checker', path: '../rcc-2016-finals-sociality-checker-cookbook'
+# cookbook 'rcc-2016-finals-weather-checker', path: '../rcc-2016-finals-weather-checker-cookbook'

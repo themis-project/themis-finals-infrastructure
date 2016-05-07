@@ -1,0 +1,8 @@
+{
+  "id": "__sample",
+  "secret_key": "",  // Sentry secret key
+  "dsn": {
+    "SERVICE_1_ALIAS": "SERVICE_1_SENTRY_DSN",  // Sentry DSN for Service 1
+    "SERVICE_2_ALIAS": "SERVICE_2_SENTRY_DSN"  // Sentry DSN for Service 2
+  }
+}
