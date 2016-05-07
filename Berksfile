@@ -10,7 +10,7 @@ cookbook 'git2', git: 'https://github.com/aspyatkin/git2-cookbook', tag: 'v1.0.0
 cookbook 'libxslt', git: 'https://github.com/aspyatkin/libxslt-cookbook', tag: 'v1.0.0'
 cookbook 'libffi', git: 'https://github.com/aspyatkin/libffi-cookbook', tag: 'v1.0.0'
 
-cookbook 'themis-finals', git: 'https://github.com/aspyatkin/themis-finals-cookbook', tag: 'v1.1.6'
+cookbook 'themis-finals', git: 'https://github.com/aspyatkin/themis-finals-cookbook', tag: 'v1.1.7'
 cookbook 'themis-finals-sample-checker-rb', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook', tag: 'v1.1.4'
 cookbook 'themis-finals-sample-checker-py', git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook', tag: 'v1.1.4'
 cookbook 'themis-finals-sample-image', git: 'https://github.com/aspyatkin/themis-finals-sample-image-cookbook', tag: 'v1.0.0'

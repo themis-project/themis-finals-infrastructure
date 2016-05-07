@@ -34,8 +34,8 @@ DEPENDENCIES
   python (~> 1.4.6)
   themis-finals
     git: https://github.com/aspyatkin/themis-finals-cookbook
-    revision: 377f4e46d7d649b5acc15e1387898261ecbcaf9d
-    tag: v1.1.6
+    revision: 6a9f96782dfd24959976e14e1daaac421baf648d
+    tag: v1.1.7
   themis-finals-lib-attack-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook
     revision: 3eb301a9704ab3c3a4a735b0670651dffc5bd23d
@@ -177,7 +177,7 @@ GRAPH
     user (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.1.6)
+  themis-finals (1.1.7)
     beanstalkd (~> 0.1.5)
     database (~> 4.0.9)
     git2 (~> 1.0.0)
