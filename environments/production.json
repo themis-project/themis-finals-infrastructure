@@ -3,14 +3,6 @@
   "description": "Production environment",
   "json_class": "Chef::Environment",
   "chef_type": "environment",
-  "override_attributes": {
-    "dotfiles": {
-      "users": [
-        "root",
-        "vagrant"
-      ]
-    }
-  },
   "default_attributes": {
     "resolver": {
       "nameservers": [
@@ -20,20 +12,19 @@
         "208.67.220.220"
       ]
     },
-    "themis-finals": {
-      "backend": {
-        "debug": false,
-        "queue": {
-          "processes": 4
-        },
-        "app": {
-          "processes": 4
-        }
-      },
-      "stream": {
-        "debug": false,
-        "processes": 4
-      }
+    "python": {
+      "install_method": "source",
+      "prefix_dir": "/usr/local",
+      "binary": "/usr/local/bin/python",
+      "version": "2.7.11",
+      "checksum": "82929b96fd6afc8da838b149107078c02fa1744b7e60999a8babbc0d3fa86fc6",
+      "configure_options": [
+        "--prefix=/usr/local"
+      ],
+      "pip_location": "/usr/local/bin/pip",
+      "virtualenv_location": "/usr/local/bin/virtualenv",
+      "setuptools_version": null,
+      "virtualenv_version": null
     }
   }
 }
