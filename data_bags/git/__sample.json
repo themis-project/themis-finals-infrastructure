@@ -1,0 +1,7 @@
+{
+  "id": "__sample",
+  "config": {
+    "user.name": "",  // first and last name
+    "user.email": ""  // email address
+  }
+}

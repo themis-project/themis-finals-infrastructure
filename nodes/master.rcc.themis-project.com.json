@@ -1,0 +1,17 @@
+{
+  "environment": "integration",
+  "run_list": [
+    "recipe[resolver::default]",
+    "recipe[python::default]",
+    "recipe[latest-git::default]",
+    "recipe[dotfiles::default]",
+    "recipe[themis-finals::default]",
+    "recipe[rcc-2016-finals-digidocs-checker::default]",
+    "recipe[rcc-2016-finals-mobile-profile-checker::default]",
+    "recipe[rcc-2016-finals-sociality-checker::default]",
+    "recipe[rcc-2016-finals-weather-checker::default]"
+  ],
+  "automatic": {
+    "ipaddress": "master.rcc.themis-project.com"
+  }
+}
