@@ -1,7 +1,9 @@
 vms:
   master:
-    box: aspyatkin/ubuntu-14.04-server-amd64
+    box: aspyatkin/ubuntu-16.04-server-amd64
+    box_version: ~> 1.0.0
     name: master.finals.themis-project.com
+    ssh_insert_key: no
     memory: 2048
     cpus: 2
     hostname: master.finals.themis-project.com
@@ -15,8 +17,10 @@ vms:
         opts:
           disabled: yes
   team1:
-    box: box-cutter/ubuntu1404-desktop
+    box: box-cutter/ubuntu1604-desktop
+    box_version: ~> 2.0.18
     name: team1.finals.themis-project.com
+    ssh_insert_key: no
     memory: 1024
     cpus: 2
     hostname: team1.finals.themis-project.com
@@ -30,8 +34,10 @@ vms:
         opts:
           disabled: yes
   team2:
-    box: box-cutter/ubuntu1404-desktop
+    box: box-cutter/ubuntu1604-desktop
+    box_version: ~> 2.0.18
     name: team2.finals.themis-project.com
+    ssh_insert_key: no
     memory: 1024
     cpus: 2
     hostname: team2.finals.themis-project.com
