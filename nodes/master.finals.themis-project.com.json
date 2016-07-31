@@ -13,6 +13,21 @@
     "recipe[themis-finals-lib-checker-server-rb::default]",
     "recipe[themis-finals-lib-attack-result-rb::default]"
   ],
+  "themis-finals": {
+    "fqdn": "master.finals.themis-project.com"
+  },
+  "themis-finals-sample-checker-rb": {
+    "fqdn": "service_1.checker.finals.themis-project.com"
+  },
+  "themis-finals-lib-attack-result-rb": {
+    "revision": "develop"
+  },
+  "themis-finals-lib-checker-result-rb": {
+    "revision": "develop"
+  },
+  "themis-finals-lib-checker-server-rb": {
+    "revision": "develop"
+  },
   "automatic": {
     "ipaddress": "master.finals.themis-project.com"
   }

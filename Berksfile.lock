@@ -32,26 +32,10 @@ DEPENDENCIES
     revision: 6f1f9ee3c958868821164ae6a099dbb0d9e84eae
     tag: v1.2.7
   python (~> 1.4.6)
-  rcc-2016-finals-digidocs-checker
-    git: git@bitbucket.org:VolgaCTF/rcc-2016-finals-digidocs-checker-cookbook.git
-    revision: 2bd28c585039b00f03cd3b9d19e1cf5e7dccae59
-    tag: v1.0.0
-  rcc-2016-finals-mobile-profile-checker
-    git: git@bitbucket.org:VolgaCTF/rcc-2016-finals-mobile-profile-checker-cookbook.git
-    revision: 1fd220170c45d419156ce9b83b4905a396404a6f
-    tag: v1.0.0
-  rcc-2016-finals-sociality-checker
-    git: git@bitbucket.org:VolgaCTF/rcc-2016-finals-sociality-checker-cookbook.git
-    revision: fcbe3801da3d437ac178341ff9836dd3cdfe758e
-    tag: v1.0.0
-  rcc-2016-finals-weather-checker
-    git: git@bitbucket.org:VolgaCTF/rcc-2016-finals-weather-checker-cookbook.git
-    revision: 12068100cfc301d1cf57078d33c2ef36a1851670
-    tag: v1.0.0
   themis-finals
     git: https://github.com/aspyatkin/themis-finals-cookbook
-    revision: 88ff4639f316294dac68f416481fc44d0d0e3a39
-    tag: v1.1.8
+    revision: 4103edb34bcbea90d88b6e8721ace51b3e752e78
+    tag: v1.1.9
   themis-finals-lib-attack-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook
     revision: 6e34da7aa1c76602b7e597f5d4145ee21fbd820f
@@ -74,8 +58,8 @@ DEPENDENCIES
     tag: v1.1.5
   themis-finals-sample-checker-rb
     git: https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook
-    revision: c8813302a291ec3adbdb48e9a2f54a35f210946e
-    tag: v1.1.5
+    revision: e8777b95eaf5dbbf3a077aefa6ad8f145bb0cc15
+    tag: v1.1.6
   themis-finals-sample-image
     git: https://github.com/aspyatkin/themis-finals-sample-image-cookbook
     revision: 62c46f88dc491f1444a3e86a0b6130b504018f8a
@@ -96,9 +80,9 @@ GRAPH
     rsyslog (>= 2.0)
   build-essential (2.4.0)
     7-zip (>= 0.0.0)
-  chef-sugar (3.3.0)
+  chef-sugar (3.4.0)
   chef_handler (1.4.0)
-  compat_resource (12.10.6)
+  compat_resource (12.10.7)
   database (5.1.2)
     postgresql (>= 1.0.0)
   dmg (2.4.0)
@@ -133,9 +117,7 @@ GRAPH
     yum (>= 0.0.0)
   modern_nginx (1.2.7)
     nginx (= 2.7.6)
-  mysql (7.2.0)
-    smf (>= 0.0.0)
-    yum-mysql-community (>= 0.0.0)
+  mysql (8.0.1)
   nginx (2.7.6)
     apt (~> 2.2)
     bluepill (~> 2.3)
@@ -154,9 +136,9 @@ GRAPH
   ohai (2.1.0)
   openssl (4.4.0)
     chef-sugar (>= 3.1.1)
-  packagecloud (0.2.3)
+  packagecloud (0.2.4)
   partial_search (1.0.9)
-  php (1.9.0)
+  php (1.10.0)
     build-essential (>= 0.0.0)
     iis (>= 0.0.0)
     mysql (>= 6.0.0)
@@ -170,52 +152,22 @@ GRAPH
   python (1.4.6)
     build-essential (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  rbac (1.0.3)
   rbenv (1.7.1)
     apt (>= 0.0.0)
     build-essential (>= 0.0.0)
     git (>= 0.0.0)
     ohai (>= 1.1)
-  rcc-2016-finals-digidocs-checker (1.0.0)
-    git2 (~> 1.0.0)
-    latest-git (~> 1.1.6)
-    python (~> 1.4.6)
-    ssh_known_hosts (~> 2.0.0)
-    supervisor (~> 0.4.12)
-    themis-finals (~> 1.1.4)
-  rcc-2016-finals-mobile-profile-checker (1.0.0)
-    git2 (~> 1.0.0)
-    latest-git (~> 1.1.6)
-    python (~> 1.4.6)
-    ssh_known_hosts (~> 2.0.0)
-    supervisor (~> 0.4.12)
-    themis-finals (~> 1.1.4)
-  rcc-2016-finals-sociality-checker (1.0.0)
-    git2 (~> 1.0.0)
-    latest-git (~> 1.1.6)
-    python (~> 1.4.6)
-    ssh_known_hosts (~> 2.0.0)
-    supervisor (~> 0.4.12)
-    themis-finals (~> 1.1.4)
-  rcc-2016-finals-weather-checker (1.0.0)
-    git2 (~> 1.0.0)
-    latest-git (~> 1.1.6)
-    python (~> 1.4.6)
-    ssh_known_hosts (~> 2.0.0)
-    supervisor (~> 0.4.12)
-    themis-finals (~> 1.1.4)
   redisio (2.4.2)
     build-essential (>= 0.0.0)
     ulimit (>= 0.1.2)
   resolver (1.3.0)
-  rsyslog (4.0.0)
+  rsyslog (4.0.1)
     compat_resource (>= 0.0.0)
-  runit (1.7.8)
+  runit (1.8.0)
     packagecloud (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   seven_zip (2.0.1)
     windows (>= 1.2.2)
-  smf (2.2.8)
-    rbac (>= 1.0.1)
   ssh-util (0.6.3)
   ssh_known_hosts (2.0.0)
     partial_search (>= 0.0.0)
@@ -224,7 +176,7 @@ GRAPH
     user (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.1.8)
+  themis-finals (1.1.9)
     beanstalkd (~> 0.1.5)
     database (~> 5.1.2)
     git2 (~> 1.0.0)
@@ -261,9 +213,10 @@ GRAPH
     python (~> 1.4.6)
     supervisor (~> 0.4.12)
     themis-finals (~> 1.1.4)
-  themis-finals-sample-checker-rb (1.1.5)
+  themis-finals-sample-checker-rb (1.1.6)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
+    modern_nginx (~> 1.2.7)
     rbenv (= 1.7.1)
     supervisor (~> 0.4.12)
     themis-finals (~> 1.1.4)
@@ -280,6 +233,4 @@ GRAPH
   yum (3.11.0)
   yum-epel (0.7.0)
     yum (>= 3.6.3)
-  yum-mysql-community (0.2.0)
-    yum (>= 3.2)
   zsh (1.0.3)
