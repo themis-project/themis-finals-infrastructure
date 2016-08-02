@@ -1,7 +1,7 @@
 vms:
   master:
     box: aspyatkin/ubuntu-16.04-server-amd64
-    box_version: ~> 1.0.0
+    box_version: ~> 1.0.3
     name: master.finals.themis-project.com
     ssh_insert_key: no
     memory: 2048

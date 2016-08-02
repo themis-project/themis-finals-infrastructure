@@ -58,8 +58,8 @@ DEPENDENCIES
     tag: v1.1.5
   themis-finals-sample-checker-rb
     git: https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook
-    revision: e8777b95eaf5dbbf3a077aefa6ad8f145bb0cc15
-    tag: v1.1.6
+    revision: da1feeef327608724c5a8e8a7729b0a5d6d174e7
+    tag: v1.1.7
   themis-finals-sample-image
     git: https://github.com/aspyatkin/themis-finals-sample-image-cookbook
     revision: 62c46f88dc491f1444a3e86a0b6130b504018f8a
@@ -213,7 +213,7 @@ GRAPH
     python (~> 1.4.6)
     supervisor (~> 0.4.12)
     themis-finals (~> 1.1.4)
-  themis-finals-sample-checker-rb (1.1.6)
+  themis-finals-sample-checker-rb (1.1.7)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
     modern_nginx (~> 1.2.7)
