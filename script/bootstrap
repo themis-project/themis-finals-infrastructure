@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+bundle install
+bundle exec berks install
+vagrant plugin install --plugin-version 1.4.2 vagrant-helpers

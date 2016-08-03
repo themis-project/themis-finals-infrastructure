@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+bundle exec knife solo cook "$1.finals.themis-project.com"

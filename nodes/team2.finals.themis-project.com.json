@@ -2,9 +2,17 @@
   "environment": "development",
   "run_list": [
     "recipe[resolver::default]",
-    "recipe[python::default]",
+    "recipe[latest-git::default]",
+    "recipe[poise-python::default]",
+    "recipe[dotfiles::default]",
     "recipe[themis-finals-sample-image::default]"
   ],
+  "dotfiles": {
+    "users": [
+      "root",
+      "vagrant"
+    ]
+  },
   "automatic": {
     "ipaddress": "team2.finals.themis-project.com"
   }

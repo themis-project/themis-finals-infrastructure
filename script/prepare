@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+bundle exec knife solo prepare "$1.finals.themis-project.com"
