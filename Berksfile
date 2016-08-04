@@ -10,15 +10,17 @@ cookbook 'dotfiles',
 
 cookbook 'latest-git',
          git: 'https://github.com/aspyatkin/latest-git',
-         tag: 'v1.1.9'
+         tag: 'v1.1.10'
 
 cookbook 'latest-nodejs',
+         # path: '../latest-nodejs'
          git: 'https://github.com/aspyatkin/latest-nodejs',
-         tag: 'v1.2.6'
+         tag: 'v1.2.7'
 
 cookbook 'latest-redis',
+         # path: '../latest-redis'
          git: 'https://github.com/aspyatkin/latest-redis',
-         tag: 'v1.1.3'
+         tag: 'v1.1.4'
 
 cookbook 'modern_nginx',
          git: 'https://github.com/aspyatkin/modern_nginx',
