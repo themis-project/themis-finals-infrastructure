@@ -1,0 +1,7 @@
+{
+  "id": "__sample",
+  "keys": {
+    "master": "GL2PetjQERzPbS3muClzS9uT6Qfyt_tZofiMGW6UFOOEpdzWropDps3ekD3JbswdQ5aMkvXvVUyBRxOofMJtXQ==",  // Themis Finals master key
+    "checker": "TkcD7VIujqImgdXfmt_wauWMldOyOf10Z5m0Rwp-8dzyX7c_YbV317ktvsl9PfnjqHr9riCngpIN8HUwHNxF6w=="  // Themis Finals checker key
+  }
+}

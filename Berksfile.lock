@@ -35,8 +35,8 @@ DEPENDENCIES
   resolver (~> 1.3.0)
   themis-finals
     git: https://github.com/aspyatkin/themis-finals-cookbook
-    revision: e5e722ce4419e9926284e195081315edd00aafc6
-    tag: v1.1.11
+    revision: 08c65135ee6f9f8ce09f7c510c81ade5a37fa361
+    tag: v1.1.12
   themis-finals-lib-attack-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook
     revision: f2f5677248de881fd2103ee708e40ca2dc96b02e
@@ -59,8 +59,8 @@ DEPENDENCIES
     tag: v1.1.7
   themis-finals-sample-checker-rb
     git: https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook
-    revision: a5247086d4428affd9bcd1b9051744a93ced15af
-    tag: v1.1.9
+    revision: 5bde2e6b5be8dcc3f0f8ad14158a5631d7b67286
+    tag: v1.1.10
   themis-finals-sample-image
     git: https://github.com/aspyatkin/themis-finals-sample-image-cookbook
     revision: cd2a44f3d1ad6574eadf54d8bb966d461e4fcfe9
@@ -98,7 +98,7 @@ GRAPH
   git2 (1.0.0)
   homebrew (2.1.0)
     build-essential (>= 2.1.2)
-  iis (4.1.10)
+  iis (4.2.0)
     windows (>= 1.34.6)
   latest-git (1.1.10)
     git (~> 4.6.0)
@@ -138,7 +138,7 @@ GRAPH
   ohai (2.1.0)
   openssl (4.4.0)
     chef-sugar (>= 3.1.1)
-  packagecloud (0.2.4)
+  packagecloud (0.2.5)
   partial_search (1.0.9)
   php (1.10.0)
     build-essential (>= 0.0.0)
@@ -187,7 +187,7 @@ GRAPH
     user (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.1.11)
+  themis-finals (1.1.12)
     beanstalkd (~> 0.1.5)
     database (~> 5.1.2)
     git2 (~> 1.0.0)
@@ -223,7 +223,7 @@ GRAPH
     poise-python (~> 1.4.0)
     supervisor (~> 0.4.12)
     themis-finals (~> 1.1.4)
-  themis-finals-sample-checker-rb (1.1.9)
+  themis-finals-sample-checker-rb (1.1.10)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.9)
     modern_nginx (~> 1.3.0)

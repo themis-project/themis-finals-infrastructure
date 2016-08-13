@@ -6,12 +6,12 @@
 Vagrant development environment and Chef server configuration for Themis Finals. Part of [Themis Finals](https://github.com/aspyatkin/themis-finals) project.
 
 ## Prerequisites
-1. [VirtualBox](https://virtualbox.org) 5.0.14 or later;
-2. [Vagrant](https://www.vagrantup.com/) 1.8.1 or later;
+1. [VirtualBox](https://virtualbox.org) 5.0.26;
+2. [Vagrant](https://www.vagrantup.com/) 1.8.4;
 3. *nix shell (use Cygwin x64 on Windows);
 4. Git 2.x;
-5. Ruby 2.2.x;
-6. [vagrant-helpers](https://github.com/aspyatkin/vagrant-helpers) plugin;
+5. Ruby 2.2.x or 2.3.x;
+6. [vagrant-helpers](https://github.com/aspyatkin/vagrant-helpers) plugin, version 1.4.2;
 7. [Bundler](http://bundler.io/).
 
 **Windows specific** See [this gist](https://gist.github.com/aspyatkin/2a1305cceb9101caa2f6) to find out how to install Ruby 2.2.4 on Cygwin x64.
@@ -19,7 +19,7 @@ Vagrant development environment and Chef server configuration for Themis Finals.
 ## Get the code
 ```sh
 $ cd ~/Documents/projects
-$ git clone -b develop https://github.com/aspyatkin/themis-finals-infrastructure
+$ git clone https://github.com/aspyatkin/themis-finals-infrastructure
 ```
 
 ## Configuring
@@ -95,20 +95,45 @@ Below is the sample:
 }
 ```
 
+#### *themis-finals* data bag
+Contains master and checker secret keys. To create a data bag, run
+
+```sh
+$ cd ~/Documents/projects/themis-finals-infrastructure
+$ knife solo data bag create themis-finals development
+```
+
+Below is the sample:
+
+```json
+{
+  "id": "__sample",
+  "keys": {
+    "master": "GL2PetjQ........fMJtXQ==",  // Themis Finals master key
+    "checker": "TkcD7VIu........HNxF6w=="  // Themis Finals checker key
+  }
+}
+```
+
+Keys may be created using the following snippet (Ruby):
+
+```ruby
+require 'securerandom'
+require 'base64'
+
+::Base64.urlsafe_encode64 ::SecureRandom.random_bytes 64
+```
+
 ## Setup
 The following actions should be executed in a directory with `themis-finals-infrastructure` repository.
 
 1. Create `opts.yaml` file based on the example provided in `opts.example.yaml` (note there is configuration for 3 VMs, in this step you only need to configure `master` VM);
-2. Run `bundle` to install necessary Ruby gems;
-3. Run `bundle exec berks install` to install Chef cookbooks;
-4. Map `finals.volgactf.dev` in your system's hosts file to an IP address specified in `opts.yaml` file;
+2. Run `script/bootstrap` to install necessary Ruby gems and Chef cookbooks;
 5. Launch virtual machine with `vagrant up master`;
-6. Install Chef on target machine with `bundle exec knife solo prepare finals.volgactf.dev`;
-7. Provision virtual machine with `bundle exec knife solo cook finals.volgactf.dev`.
+6. Install Chef on target machine with `script/prepare master`;
+7. Provision virtual machine with `script/provision master`.
 
 **Windows specific** See [this gist](https://gist.github.com/aspyatkin/2a70736080835ac594ba) to discover how to install [Berkshelf](https://github.com/berkshelf/berkshelf) on Cygwin x64.
-
-**Windows specific 2** Note the last command - you will need to pass an additional parameter `--ssh-control-master=no`
 
 ## Contest
 Contest configuration and management are done on the guest virtual machine (`master`). In order to get access to this machine, you should run the following commands:
@@ -132,8 +157,8 @@ Internal network is a network from which contest organisers manage the competiti
 
 ``` ruby
 network do
-    internal '172.20.0.0/24'
-    # other settings
+  internal '172.20.0.0/24'
+  # other settings
 end
 ```
 
@@ -143,9 +168,9 @@ Each team is described in its own section. There should be specified a team alia
 
 ``` ruby
 team 'team_1' do
-    name 'Team #1'
-    network '172.20.1.0/24'
-    host '172.20.1.2'
+  name 'Team #1'
+  network '172.20.1.0/24'
+  host '172.20.1.2'
 end
 ```
 
@@ -155,11 +180,17 @@ Each service is described in its own section. There should be specified a servic
 
 ``` ruby
 service 'service_1' do
-    name 'Service #1'
+  name 'Service #1'
+  # uncomment next lines if service checker complies with next version
+  # protocol 2
+  # metadata(
+  #   push_url: 'http://service_1.checker.finals.themis-project.com/push',
+  #   pull_url: 'http://service_1.checker.finals.themis-project.com/pull'
+  # )
 end
 ```
 
-### Service checker
+### Service checker (current version)
 Service checker should be placed into a separate subfolder in `/var/themis/finals/checkers` folder. You can check out the examples in `/var/themis/finals/checkers/sample-checker-rb` and `/var/themis/finals/checkers/sample-checker-py`.
 
 Service checker is launched by [Supervisor](http://supervisord.org), so you should create a configuration file in `/etc/supervisor.d` (check out samples `themis.finals.service.service_1.checker.conf` and `themis.finals.service.service_2.checker.conf` in that directory). You should specify program's run command, working directory, log file paths and several internal options:  
@@ -168,6 +199,9 @@ Service checker is launched by [Supervisor](http://supervisord.org), so you shou
 where `SERVICE_ALIAS` stands for service alias which you've specified in `config.rb` file.
 
 Instead of deploying this stuff manually, you can write a Chef cookbook to automate deployment (this is done for sample checkers).
+
+### Service checker (next version)
+Under development. See [this document](https://github.com/aspyatkin/themis-finals-checker-protocol) with specification.
 
 ### Management
 There are some command line tools to manage the contest.
@@ -255,12 +289,11 @@ $ bundle exec rake scoreboard:disable
 ### Attacking
 You can attack only from team networks. To accomplish this, you should run another virtual machine with an appropriate IP address. Example `opts.example.yaml` file contains configuration for extra VM instances - `team1` and `team2` (Ubuntu Desktop). Inside a team's machine, you can use several options to perform an attack. Please refer to [themis-attack-protocol](https://github.com/aspyatkin/themis-attack-protocol) and [themis-attack-py](https://github.com/aspyatkin/themis-attack-py) to discover them.
 
-You can manage team virtual machines with Chef as well. Each machine should be resolved as `teamN.finals.volgactf.dev` where `N` stands for the team number. For instance, `team1.finals.volgactf.dev` is a domain name for team #1. Assuming your network is `172.20.0.0/16`, team #1 virtual machine will have an IP address `172.20.1.2`. The next instructions are pretty similar to the process of configuring `master` instance:
-1. Map `team1.finals.volgactf.dev` in your system's hosts file to an IP address specified for team #1 in `opts.yaml` file;
-2. Launch virtual machine with `vagrant up team1`;
-3. Install Chef on target machine with `bundle exec knife solo prepare team1.finals.volgactf.dev`;
-4. Provision virtual machine with `bundle exec knife solo cook team1.finals.volgactf.dev`;
-5. Repeat steps 1-4 for the other team virtual machines specified in `opts.yaml` file.
+You can manage team virtual machines with Chef as well. Each machine should be resolved as `teamN.finals.themis-project.com` where `N` stands for the team number. For instance, `team1.finals.themis-project.com` is a domain name for team #1. Assuming your network is `172.20.0.0/16`, team #1 virtual machine will have an IP address `172.20.1.2`. The next instructions are pretty similar to the process of configuring `master` instance:
+1. Launch virtual machine with `vagrant up team1`;
+2. Install Chef on target machine with `script/prepare team1`;
+3. Provision virtual machine with `script/provision team1`;
+4. Repeat steps 1-4 for the other team virtual machines specified in `opts.yaml` file.
 
 Inside a team's virtual machine, you can use a pre-installed (if instance is managed with Chef) utility [themis-attack](https://github.com/aspyatkin/themis-attack-py) to send flags to the checking system.
 
