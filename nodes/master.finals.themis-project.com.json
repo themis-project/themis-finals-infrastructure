@@ -21,7 +21,16 @@
     ]
   },
   "themis-finals": {
-    "fqdn": "master.finals.themis-project.com"
+    "fqdn": "master.finals.themis-project.com",
+    "backend": {
+      "revision": "develop"
+    },
+    "frontend": {
+      "revision": "develop"
+    },
+    "stream": {
+      "revision": "develop"
+    }
   },
   "themis-finals-sample-checker-rb": {
     "fqdn": "service_1.checker.finals.themis-project.com"

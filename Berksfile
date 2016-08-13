@@ -41,17 +41,17 @@ cookbook 'libffi',
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-cookbook',
-         tag: 'v1.1.12'
+         tag: 'v1.1.13'
 
 cookbook 'themis-finals-sample-checker-rb',
          # path: '../themis-finals-sample-checker-rb-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook',
-         tag: 'v1.1.10'
+         tag: 'v1.1.11'
 
 cookbook 'themis-finals-sample-checker-py',
          # path: '../themis-finals-sample-checker-py-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook',
-         tag: 'v1.1.7'
+         tag: 'v1.1.8'
 
 cookbook 'themis-finals-sample-image',
          # path: '../themis-finals-sample-image-cookbook'
