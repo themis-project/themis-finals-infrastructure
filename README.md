@@ -107,7 +107,7 @@ Below is the sample:
 
 ```json
 {
-  "id": "__sample",
+  "id": "development",
   "keys": {
     "master": "GL2PetjQ........fMJtXQ==",  // Themis Finals master key
     "checker": "TkcD7VIu........HNxF6w=="  // Themis Finals checker key
