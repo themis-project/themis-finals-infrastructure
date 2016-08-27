@@ -1,5 +1,7 @@
 source 'https://api.berkshelf.com'
 
+cookbook 'apt'
+cookbook 'build-essential'
 cookbook 'poise-python', '~> 1.4.0'
 
 cookbook 'resolver', '~> 1.3.0'
@@ -9,8 +11,9 @@ cookbook 'dotfiles',
          tag: 'v1.2.1'
 
 cookbook 'latest-git',
+         # path: '../latest-git'
          git: 'https://github.com/aspyatkin/latest-git',
-         tag: 'v1.1.10'
+         tag: 'v1.1.11'
 
 cookbook 'latest-nodejs',
          # path: '../latest-nodejs'
@@ -41,22 +44,22 @@ cookbook 'libffi',
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-cookbook',
-         tag: 'v1.1.14'
+         tag: 'v1.1.15'
 
 cookbook 'themis-finals-sample-checker-rb',
          # path: '../themis-finals-sample-checker-rb-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook',
-         tag: 'v1.1.11'
+         tag: 'v1.1.12'
 
 cookbook 'themis-finals-sample-checker-py',
          # path: '../themis-finals-sample-checker-py-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook',
-         tag: 'v1.1.8'
+         tag: 'v1.1.9'
 
 cookbook 'themis-finals-sample-image',
          # path: '../themis-finals-sample-image-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-sample-image-cookbook',
-         tag: 'v1.0.1'
+         tag: 'v1.0.2'
 
 cookbook 'themis-finals-lib-attack-result-rb',
          # path: '../themis-finals-lib-attack-result-rb-cookbook'

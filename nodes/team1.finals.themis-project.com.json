@@ -3,7 +3,7 @@
   "run_list": [
     "recipe[resolver::default]",
     "recipe[latest-git::default]",
-    "recipe[poise-python::default]",
+    "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
     "recipe[themis-finals-sample-image::default]"
   ],

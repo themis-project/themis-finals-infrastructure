@@ -1,0 +1,29 @@
+{
+  "environment": "development",
+  "run_list": [
+    "recipe[resolver::default]",
+    "recipe[latest-git::default]",
+    "recipe[themis-finals::python2]",
+    "recipe[dotfiles::default]",
+    "recipe[themis-finals::prerequisite_ssh_keys]",
+    "recipe[themis-finals-sample-checker-py::default]"
+  ],
+  "dotfiles": {
+    "users": [
+      "root",
+      "vagrant"
+    ]
+  },
+  "latest-redis": {
+    "listen": {
+      "host": "127.0.0.1",
+      "port": 6379
+    }
+  },
+  "themis-finals-sample-checker-py": {
+    "fqdn": "service2.checker.finals.themis-project.com"
+  },
+  "automatic": {
+    "ipaddress": "service2.checker.finals.themis-project.com"
+  }
+}

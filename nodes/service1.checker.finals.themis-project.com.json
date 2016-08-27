@@ -6,9 +6,8 @@
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
     "recipe[themis-finals::prerequisite_ssh_keys]",
-    "recipe[themis-finals-lib-attack-result-rb::default]",
     "recipe[themis-finals-lib-checker-result-rb::default]",
-    "recipe[themis-finals::default]"
+    "recipe[themis-finals-sample-checker-rb::default]"
   ],
   "dotfiles": {
     "users": [
@@ -16,25 +15,25 @@
       "vagrant"
     ]
   },
-  "themis-finals": {
-    "fqdn": "master.finals.themis-project.com",
-    "backend": {
-      "revision": "develop"
-    },
-    "frontend": {
-      "revision": "develop"
-    },
-    "stream": {
-      "revision": "develop"
-    }
+  "rbenv": {
+    "group_users": [
+      "root",
+      "vagrant"
+    ]
   },
-  "themis-finals-lib-attack-result-rb": {
-    "revision": "develop"
+  "latest-redis": {
+    "listen": {
+      "host": "127.0.0.1",
+      "port": 6379
+    }
   },
   "themis-finals-lib-checker-result-rb": {
     "revision": "develop"
   },
+  "themis-finals-sample-checker-rb": {
+    "fqdn": "service1.checker.finals.themis-project.com"
+  },
   "automatic": {
-    "ipaddress": "master.finals.themis-project.com"
+    "ipaddress": "service1.checker.finals.themis-project.com"
   }
 }
