@@ -64,7 +64,7 @@ cookbook 'themis-finals-sample-image',
 cookbook 'themis-finals-lib-attack-result-rb',
          # path: '../themis-finals-lib-attack-result-rb-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook',
-         tag: 'v1.0.3'
+         tag: 'v1.0.4'
 
 cookbook 'themis-finals-lib-checker-py',
          # path: '../themis-finals-lib-checker-py-cookbook'
@@ -74,7 +74,7 @@ cookbook 'themis-finals-lib-checker-py',
 cookbook 'themis-finals-lib-checker-result-rb',
          # path: '../themis-finals-lib-checker-result-rb-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-lib-checker-result-rb-cookbook',
-         tag: 'v1.0.3'
+         tag: 'v1.0.4'
 
 cookbook 'themis-finals-lib-checker-server-rb',
          # path: '../themis-finals-lib-checker-server-rb-cookbook'

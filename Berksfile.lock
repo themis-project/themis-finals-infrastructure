@@ -41,16 +41,16 @@ DEPENDENCIES
     tag: v1.1.15
   themis-finals-lib-attack-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook
-    revision: f2f5677248de881fd2103ee708e40ca2dc96b02e
-    tag: v1.0.3
+    revision: df73887a1dc43ead98fd7e3350b7914d7361c308
+    tag: v1.0.4
   themis-finals-lib-checker-py
     git: https://github.com/aspyatkin/themis-finals-lib-checker-py-cookbook
     revision: 265c1fbc5527b0b71acfb7a871af846bd1bb3200
     tag: v1.0.3
   themis-finals-lib-checker-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-checker-result-rb-cookbook
-    revision: c7bc9e12dee4180ba11526de05b731059f426d23
-    tag: v1.0.3
+    revision: ef9d1548c94c53b49e74f7e01a64c8f54725aaa5
+    tag: v1.0.4
   themis-finals-lib-checker-server-rb
     git: https://github.com/aspyatkin/themis-finals-lib-checker-server-rb-cookbook
     revision: 8cf25b1e411cb7ea92561541de65dca2d283ba3e
@@ -85,7 +85,7 @@ GRAPH
     7-zip (>= 0.0.0)
   chef-sugar (3.4.0)
   chef_handler (1.4.0)
-  compat_resource (12.13.38)
+  compat_resource (12.14.0)
   database (5.1.2)
     postgresql (>= 1.0.0)
   dmg (2.4.0)
@@ -208,15 +208,15 @@ GRAPH
     ssh_known_hosts (~> 2.0.0)
     ssh_user (~> 0.1.1)
     supervisor (~> 0.4.12)
-  themis-finals-lib-attack-result-rb (1.0.3)
+  themis-finals-lib-attack-result-rb (1.0.4)
     git2 (~> 1.0.0)
-    latest-git (~> 1.1.6)
+    latest-git (~> 1.1.11)
   themis-finals-lib-checker-py (1.0.3)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)
-  themis-finals-lib-checker-result-rb (1.0.3)
+  themis-finals-lib-checker-result-rb (1.0.4)
     git2 (~> 1.0.0)
-    latest-git (~> 1.1.6)
+    latest-git (~> 1.1.11)
   themis-finals-lib-checker-server-rb (1.0.3)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.6)

@@ -28,12 +28,6 @@
       "revision": "develop"
     }
   },
-  "themis-finals-lib-attack-result-rb": {
-    "revision": "develop"
-  },
-  "themis-finals-lib-checker-result-rb": {
-    "revision": "develop"
-  },
   "automatic": {
     "ipaddress": "master.finals.themis-project.com"
   }
