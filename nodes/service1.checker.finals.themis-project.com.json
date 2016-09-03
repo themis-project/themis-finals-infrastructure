@@ -1,7 +1,6 @@
 {
   "environment": "development",
   "run_list": [
-    "recipe[resolver::default]",
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
