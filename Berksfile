@@ -46,10 +46,10 @@ cookbook 'themis-finals',
          git: 'https://github.com/aspyatkin/themis-finals-cookbook',
          tag: 'v1.1.15'
 
-cookbook 'themis-finals-sample-checker-rb',
-         # path: '../themis-finals-sample-checker-rb-cookbook'
-         git: 'https://github.com/aspyatkin/themis-finals-sample-checker-rb-cookbook',
-         tag: 'v1.1.12'
+cookbook 'themis-finals-service1-checker',
+         # path: '../themis-finals-service1-checker-cookbook'
+         git: 'https://github.com/aspyatkin/themis-finals-service1-checker-cookbook',
+         tag: 'v1.1.13'
 
 cookbook 'themis-finals-sample-checker-py',
          # path: '../themis-finals-sample-checker-py-cookbook'
