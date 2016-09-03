@@ -51,10 +51,25 @@ cookbook 'themis-finals-service1-checker',
          git: 'https://github.com/aspyatkin/themis-finals-service1-checker-cookbook',
          tag: 'v1.1.13'
 
-cookbook 'themis-finals-sample-checker-py',
-         # path: '../themis-finals-sample-checker-py-cookbook'
-         git: 'https://github.com/aspyatkin/themis-finals-sample-checker-py-cookbook',
-         tag: 'v1.1.9'
+cookbook 'themis-finals-service2-checker',
+         # path: '../themis-finals-service2-checker-cookbook'
+         git: 'https://github.com/aspyatkin/themis-finals-service2-checker-cookbook',
+         tag: 'v1.1.10'
+
+cookbook 'themis-finals-checker-app-py-lib',
+         # path: '../themis-finals-checker-app-py-lib-cookbook'
+         git: 'https://github.com/aspyatkin/themis-finals-checker-app-py-lib-cookbook',
+         tag: 'v1.0.0'
+
+cookbook 'themis-finals-checker-result-py-lib',
+         # path: '../themis-finals-checker-result-py-lib-cookbook'
+         git: 'https://github.com/aspyatkin/themis-finals-checker-result-py-lib-cookbook',
+         tag: 'v1.0.0'
+
+cookbook 'themis-finals-api-auth-py-lib',
+         # path: '../themis-finals-api-auth-py-lib-cookbook'
+         git: 'https://github.com/aspyatkin/themis-finals-api-auth-py-lib-cookbook',
+         tag: 'v1.0.0'
 
 cookbook 'themis-finals-sample-image',
          # path: '../themis-finals-sample-image-cookbook'
@@ -65,11 +80,6 @@ cookbook 'themis-finals-lib-attack-result-rb',
          # path: '../themis-finals-lib-attack-result-rb-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook',
          tag: 'v1.0.4'
-
-cookbook 'themis-finals-lib-checker-py',
-         # path: '../themis-finals-lib-checker-py-cookbook'
-         git: 'https://github.com/aspyatkin/themis-finals-lib-checker-py-cookbook',
-         tag: 'v1.0.3'
 
 cookbook 'themis-finals-lib-checker-result-rb',
          # path: '../themis-finals-lib-checker-result-rb-cookbook'
