@@ -1,0 +1,36 @@
+{
+  "environment": "production",
+  "run_list": [
+    "recipe[latest-git::default]",
+    "recipe[themis-finals::python2]",
+    "recipe[dotfiles::default]",
+    "recipe[themis-finals::prerequisite_ssh_keys]",
+    "recipe[themis-finals::default]"
+  ],
+  "build-essential": {
+    "compile_time": true
+  },
+  "dotfiles": {
+    "users": [
+      "root",
+      "vctf"
+    ]
+  },
+  "themis-finals": {
+    "user": "vctf",
+    "group": "vctf",
+    "fqdn": "master.finals.volgactf.ru",
+    "backend": {
+      "revision": "develop"
+    },
+    "frontend": {
+      "revision": "develop"
+    },
+    "stream": {
+      "revision": "develop"
+    }
+  },
+  "automatic": {
+    "ipaddress": "master.finals.volgactf.ru"
+  }
+}

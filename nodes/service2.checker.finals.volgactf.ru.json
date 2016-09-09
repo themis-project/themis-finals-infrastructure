@@ -1,0 +1,32 @@
+{
+  "environment": "production",
+  "run_list": [
+    "recipe[latest-git::default]",
+    "recipe[themis-finals::python2]",
+    "recipe[dotfiles::default]",
+    "recipe[themis-finals::prerequisite_ssh_keys]",
+    "recipe[themis-finals-service2-checker::default]"
+  ],
+  "dotfiles": {
+    "users": [
+      "root",
+      "vctf"
+    ]
+  },
+  "latest-redis": {
+    "listen": {
+      "host": "127.0.0.1",
+      "port": 6379
+    }
+  },
+  "themis-finals-service2-checker": {
+    "user": "vctf",
+    "group": "vctf",
+    "revision": "develop",
+    "fqdn": "service2.checker.finals.volgactf.ru",
+    "source_packages": false
+  },
+  "automatic": {
+    "ipaddress": "service2.checker.finals.volgactf.ru"
+  }
+}

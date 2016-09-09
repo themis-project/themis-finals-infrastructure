@@ -71,6 +71,11 @@ cookbook 'themis-finals-api-auth-py-lib',
          git: 'https://github.com/aspyatkin/themis-finals-api-auth-py-lib-cookbook',
          tag: 'v1.0.0'
 
+cookbook 'themis-finals-service3-checker',
+         # path: '../themis-finals-service3-checker-cookbook'
+         git: 'https://github.com/aspyatkin/themis-finals-service3-checker-cookbook',
+         tag: 'v1.0.0'
+
 cookbook 'themis-finals-sample-image',
          # path: '../themis-finals-sample-image-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-sample-image-cookbook',
