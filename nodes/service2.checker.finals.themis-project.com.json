@@ -4,7 +4,6 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
-    "recipe[themis-finals::prerequisite_ssh_keys]",
     "recipe[themis-finals-service2-checker::default]"
   ],
   "dotfiles": {
@@ -32,6 +31,9 @@
   },
   "themis-finals-api-auth-py-lib": {
     "revision": "develop"
+  },
+  "supervisor": {
+    "inet_port": "0.0.0.0:9001"
   },
   "automatic": {
     "ipaddress": "service2.checker.finals.themis-project.com"
