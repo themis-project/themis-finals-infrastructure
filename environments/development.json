@@ -7,7 +7,72 @@
     "themis-finals": {
       "supervisor_namespace": "themis.finals",
       "key_nonce_size": 16,
-      "auth_token_header": "X-Themis-Finals-Auth-Token"
+      "auth_token_header": "X-Themis-Finals-Auth-Token",
+      "config": {
+        "internal_networks": [
+          "172.20.0.0/24"
+        ],
+        "contest": {
+          "flag_lifetime": 300,
+          "push_period": 120,
+          "poll_period": 60,
+          "poll_count": 2,
+          "update_period": 60,
+          "attack_limit": {
+            "attempts": 200,
+            "time": 60
+          }
+        },
+        "teams": {
+          "team1": {
+            "name": "Team #1",
+            "network": "172.20.1.0/24",
+            "host": "172.20.1.3"
+          },
+          "team2": {
+            "name": "Team #2",
+            "network": "172.20.2.0/24",
+            "host": "172.20.2.3"
+          },
+          "team3": {
+            "name": "Team #3",
+            "network": "172.20.3.0/24",
+            "host": "172.20.3.3"
+          }
+        },
+        "services": {
+          "service1": {
+            "name": "Service #1",
+            "protocol": 2,
+            "metadata": {
+              "push_url": "http://service1.checker.finals.themis-project.com/push",
+              "pull_url": "http://service1.checker.finals.themis-project.com/pull"
+            }
+          },
+          "service2": {
+            "name": "Service #2",
+            "protocol": 2,
+            "metadata": {
+              "push_url": "http://service2.checker.finals.themis-project.com/push",
+              "pull_url": "http://service2.checker.finals.themis-project.com/pull"
+            }
+          },
+          "service3": {
+            "name": "Service #3",
+            "protocol": 2,
+            "metadata": {
+              "push_url": "http://service3.checker.finals.themis-project.com/push",
+              "pull_url": "http://service3.checker.finals.themis-project.com/pull"
+            }
+          }
+        }
+      }
+    },
+    "modern_nginx": {
+      "with_http2": false,
+      "with_ipv6": false,
+      "with_dhparam": false,
+      "with_ct": false
     }
   }
 }

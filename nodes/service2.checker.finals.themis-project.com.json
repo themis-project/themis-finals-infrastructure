@@ -21,7 +21,9 @@
   "themis-finals-service2-checker": {
     "revision": "develop",
     "fqdn": "service2.checker.finals.themis-project.com",
-    "source_packages": false
+    "source_packages": false,
+    "debug": true,
+    "autostart": true
   },
   "themis-finals-checker-app-py-lib": {
     "revision": "develop"

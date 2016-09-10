@@ -25,7 +25,9 @@
     }
   },
   "themis-finals-service1-checker": {
-    "fqdn": "service1.checker.finals.themis-project.com"
+    "fqdn": "service1.checker.finals.themis-project.com",
+    "debug": true,
+    "autostart": true
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"

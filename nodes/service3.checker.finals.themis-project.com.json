@@ -20,7 +20,9 @@
   },
   "themis-finals-service3-checker": {
     "revision": "develop",
-    "fqdn": "service3.checker.finals.themis-project.com"
+    "fqdn": "service3.checker.finals.themis-project.com",
+    "debug": true,
+    "autostart": true
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"

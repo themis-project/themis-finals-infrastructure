@@ -16,6 +16,8 @@
   },
   "themis-finals": {
     "fqdn": "master.finals.themis-project.com",
+    "debug": true,
+    "autostart": true,
     "backend": {
       "revision": "develop"
     },

@@ -46,17 +46,17 @@ cookbook 'ssh-private-keys', '~> 1.0.0'
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-cookbook',
-         tag: 'v1.2.0'
+         tag: 'v1.2.1'
 
 cookbook 'themis-finals-service1-checker',
          # path: '../themis-finals-service1-checker-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-service1-checker-cookbook',
-         tag: 'v1.2.0'
+         tag: 'v1.2.1'
 
 cookbook 'themis-finals-service2-checker',
          # path: '../themis-finals-service2-checker-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-service2-checker-cookbook',
-         tag: 'v1.2.0'
+         tag: 'v1.2.1'
 
 cookbook 'themis-finals-checker-app-py-lib',
          # path: '../themis-finals-checker-app-py-lib-cookbook'
@@ -76,7 +76,7 @@ cookbook 'themis-finals-api-auth-py-lib',
 cookbook 'themis-finals-service3-checker',
          # path: '../themis-finals-service3-checker-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-service3-checker-cookbook',
-         tag: 'v1.1.0'
+         tag: 'v1.1.1'
 
 cookbook 'themis-finals-sample-image',
          # path: '../themis-finals-sample-image-cookbook'
