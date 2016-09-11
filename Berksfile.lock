@@ -38,8 +38,8 @@ DEPENDENCIES
   ssh-private-keys (~> 1.0.0)
   themis-finals
     git: https://github.com/aspyatkin/themis-finals-cookbook
-    revision: 59e59c208de90694e4c8e16e3dd2cc3da8dccec1
-    tag: v1.2.1
+    revision: 1846e730f5678c5d5120c22927ba984ec8ba25e0
+    tag: v1.2.2
   themis-finals-api-auth-py-lib
     git: https://github.com/aspyatkin/themis-finals-api-auth-py-lib-cookbook
     revision: 3ae9ae2514b011003d441156340dadaa77fe4624
@@ -196,7 +196,7 @@ GRAPH
     partial_search (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.2.1)
+  themis-finals (1.2.2)
     database (~> 5.1.2)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.9)
