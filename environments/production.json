@@ -4,5 +4,141 @@
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
+    "themis-finals": {
+      "supervisor_namespace": "themis.finals",
+      "key_nonce_size": 16,
+      "auth_token_header": "X-Themis-Finals-Auth-Token",
+      "config": {
+        "internal_networks": [
+          "10.0.100.0/24",
+          "10.0.200.0/24"
+        ],
+        "contest": {
+          "flag_lifetime": 300,
+          "push_period": 120,
+          "poll_period": 60,
+          "poll_count": 2,
+          "update_period": 60,
+          "attack_limit": {
+            "attempts": 200,
+            "time": 60
+          }
+        },
+        "teams": {
+          "team1": {
+            "name": "Team #1",
+            "network": "10.0.1.0/24",
+            "host": "10.0.1.3"
+          },
+          "team2": {
+            "name": "Team #2",
+            "network": "10.0.2.0/24",
+            "host": "10.0.2.3"
+          },
+          "team3": {
+            "name": "Team #3",
+            "network": "10.0.3.0/24",
+            "host": "10.0.3.3"
+          },
+          "team4": {
+            "name": "Team #4",
+            "network": "10.0.4.0/24",
+            "host": "10.0.4.3"
+          },
+          "team5": {
+            "name": "Team #5",
+            "network": "10.0.5.0/24",
+            "host": "10.0.5.3"
+          },
+          "team6": {
+            "name": "Team #6",
+            "network": "10.0.6.0/24",
+            "host": "10.0.6.3"
+          },
+          "team7": {
+            "name": "Team #7",
+            "network": "10.0.7.0/24",
+            "host": "10.0.7.3"
+          },
+          "team8": {
+            "name": "Team #8",
+            "network": "10.0.8.0/24",
+            "host": "10.0.8.3"
+          },
+          "team9": {
+            "name": "Team #9",
+            "network": "10.0.9.0/24",
+            "host": "10.0.9.3"
+          },
+          "team10": {
+            "name": "Team #10",
+            "network": "10.0.10.0/24",
+            "host": "10.0.10.3"
+          },
+          "team11": {
+            "name": "Team #11",
+            "network": "10.0.11.0/24",
+            "host": "10.0.11.3"
+          },
+          "team12": {
+            "name": "Team #12",
+            "network": "10.0.12.0/24",
+            "host": "10.0.12.3"
+          },
+          "team13": {
+            "name": "Team #13",
+            "network": "10.0.13.0/24",
+            "host": "10.0.13.3"
+          },
+          "team14": {
+            "name": "Team #14",
+            "network": "10.0.14.0/24",
+            "host": "10.0.14.3"
+          },
+          "team15": {
+            "name": "Team #15",
+            "network": "10.0.15.0/24",
+            "host": "10.0.15.3"
+          },
+          "team16": {
+            "name": "Team #16",
+            "network": "10.0.16.0/24",
+            "host": "10.0.16.3"
+          }
+        },
+        "services": {
+          "service1": {
+            "name": "Service #1",
+            "protocol": 2,
+            "metadata": {
+              "push_url": "http://service1.checker.finals.volgactf.ru/push",
+              "pull_url": "http://service1.checker.finals.volgactf.ru/pull"
+            }
+          },
+          "service2": {
+            "name": "Service #2",
+            "protocol": 2,
+            "metadata": {
+              "push_url": "http://service2.checker.finals.volgactf.ru/push",
+              "pull_url": "http://service2.checker.finals.volgactf.ru/pull"
+            }
+          },
+          "service3": {
+            "name": "Service #3",
+            "protocol": 2,
+            "metadata": {
+              "push_url": "http://service3.checker.finals.volgactf.ru/push",
+              "pull_url": "http://service3.checker.finals.volgactf.ru/pull"
+            }
+          }
+        }
+      }
+    },
+    "modern_nginx": {
+      "with_http2": false,
+      "with_ipv6": false,
+      "with_dhparam": false,
+      "with_ct": false
+    }
   }
 }

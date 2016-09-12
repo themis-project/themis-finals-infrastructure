@@ -4,6 +4,7 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
+    "recipe[netdata::default]",
     "recipe[themis-finals-lib-attack-result-rb::default]",
     "recipe[themis-finals-lib-checker-result-rb::default]",
     "recipe[themis-finals::default]"
@@ -19,13 +20,25 @@
     "debug": true,
     "autostart": true,
     "backend": {
-      "revision": "develop"
+      "revision": "develop",
+      "server": {
+        "processes": 4
+      },
+      "queue": {
+        "processes": 4
+      }
     },
     "frontend": {
       "revision": "develop"
     },
     "stream": {
       "revision": "develop"
+    },
+    "live": {
+      "fqdn": "live.finals.themis-project.com",
+      "server_username": "titan",
+      "server_hostname": "aspyatkin.com",
+      "remote_port": "5000"
     }
   },
   "latest-redis": {

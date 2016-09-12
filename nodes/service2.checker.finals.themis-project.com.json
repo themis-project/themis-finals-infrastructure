@@ -4,6 +4,7 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
+    "recipe[netdata::default]",
     "recipe[themis-finals-service2-checker::default]"
   ],
   "dotfiles": {
@@ -23,7 +24,10 @@
     "fqdn": "service2.checker.finals.themis-project.com",
     "source_packages": false,
     "debug": true,
-    "autostart": true
+    "autostart": true,
+    "queue": {
+      "processes": 4
+    }
   },
   "themis-finals-checker-app-py-lib": {
     "revision": "develop"

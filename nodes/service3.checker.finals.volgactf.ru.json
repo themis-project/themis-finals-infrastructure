@@ -1,22 +1,16 @@
 {
-  "environment": "development",
+  "environment": "production",
   "run_list": [
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
     "recipe[netdata::default]",
-    "recipe[themis-finals-service1-checker::default]"
+    "recipe[themis-finals-service3-checker::default]"
   ],
   "dotfiles": {
     "users": [
       "root",
-      "vagrant"
-    ]
-  },
-  "rbenv": {
-    "group_users": [
-      "root",
-      "vagrant"
+      "vctf"
     ]
   },
   "latest-redis": {
@@ -25,18 +19,18 @@
       "port": 6379
     }
   },
-  "themis-finals-service1-checker": {
-    "fqdn": "service1.checker.finals.themis-project.com",
+  "themis-finals-service3-checker": {
+    "user": "vctf",
+    "group": "vctf",
+    "revision": "develop",
+    "fqdn": "service3.checker.finals.volgactf.ru",
     "debug": true,
-    "autostart": true,
-    "queue": {
-      "processes": 4
-    }
+    "autostart": true
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"
   },
   "automatic": {
-    "ipaddress": "service1.checker.finals.themis-project.com"
+    "ipaddress": "service3.checker.finals.volgactf.ru"
   }
 }

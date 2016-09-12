@@ -5,6 +5,7 @@ cookbook 'build-essential'
 cookbook 'poise-python', '~> 1.4.0'
 
 cookbook 'resolver', '~> 1.3.0'
+cookbook 'netdata', '~> 0.1.5'
 
 cookbook 'dotfiles',
          git: 'https://github.com/aspyatkin/dotfiles-cookbook',
@@ -46,7 +47,7 @@ cookbook 'ssh-private-keys', '~> 1.0.0'
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/aspyatkin/themis-finals-cookbook',
-         tag: 'v1.2.2'
+         tag: 'v1.2.3'
 
 cookbook 'themis-finals-service1-checker',
          # path: '../themis-finals-service1-checker-cookbook'

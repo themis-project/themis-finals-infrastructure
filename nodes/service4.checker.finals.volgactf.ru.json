@@ -1,0 +1,18 @@
+{
+  "environment": "production",
+  "run_list": [
+    "recipe[latest-git::default]",
+    "recipe[themis-finals::python2]",
+    "recipe[dotfiles::default]",
+    "recipe[netdata::default]"
+  ],
+  "dotfiles": {
+    "users": [
+      "root",
+      "vctf"
+    ]
+  },
+  "automatic": {
+    "ipaddress": "service4.checker.finals.volgactf.ru"
+  }
+}

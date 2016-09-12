@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+if [ "$3" != "" ]; then
+  DETECTED_ENV="$3"
+else
+  DETECTED_ENV="development"
+fi
+CHEF_ENV="$DETECTED_ENV" bundle exec knife solo data bag "$1" "$2" "$DETECTED_ENV"

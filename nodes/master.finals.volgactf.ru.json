@@ -4,7 +4,7 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
-    "recipe[themis-finals::prerequisite_ssh_keys]",
+    "recipe[netdata::default]",
     "recipe[themis-finals::default]"
   ],
   "build-essential": {
@@ -20,6 +20,8 @@
     "user": "vctf",
     "group": "vctf",
     "fqdn": "master.finals.volgactf.ru",
+    "debug": true,
+    "autostart": true,
     "backend": {
       "revision": "develop"
     },
@@ -29,6 +31,15 @@
     "stream": {
       "revision": "develop"
     }
+  },
+  "latest-redis": {
+    "listen": {
+      "host": "127.0.0.1",
+      "port": 6379
+    }
+  },
+  "supervisor": {
+    "inet_port": "0.0.0.0:9001"
   },
   "automatic": {
     "ipaddress": "master.finals.volgactf.ru"

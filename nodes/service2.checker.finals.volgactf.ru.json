@@ -4,7 +4,7 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
-    "recipe[themis-finals::prerequisite_ssh_keys]",
+    "recipe[netdata::default]",
     "recipe[themis-finals-service2-checker::default]"
   ],
   "dotfiles": {
@@ -24,7 +24,12 @@
     "group": "vctf",
     "revision": "develop",
     "fqdn": "service2.checker.finals.volgactf.ru",
-    "source_packages": false
+    "source_packages": false,
+    "debug": true,
+    "autostart": true
+  },
+  "supervisor": {
+    "inet_port": "0.0.0.0:9001"
   },
   "automatic": {
     "ipaddress": "service2.checker.finals.volgactf.ru"

@@ -4,6 +4,7 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
+    "recipe[netdata::default]",
     "recipe[themis-finals-service3-checker::default]"
   ],
   "dotfiles": {
@@ -22,7 +23,10 @@
     "revision": "develop",
     "fqdn": "service3.checker.finals.themis-project.com",
     "debug": true,
-    "autostart": true
+    "autostart": true,
+    "queue": {
+      "processes": 4
+    }
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"
