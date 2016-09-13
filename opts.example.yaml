@@ -18,7 +18,7 @@ vms:
           disabled: yes
   team1:
     box: box-cutter/ubuntu1604-desktop
-    box_version: ~> 2.0.18
+    box_version: ~> 2.0.21
     name: team1.finals.themis-project.com
     ssh_insert_key: no
     memory: 1024
@@ -35,7 +35,7 @@ vms:
           disabled: yes
   team2:
     box: box-cutter/ubuntu1604-desktop
-    box_version: ~> 2.0.18
+    box_version: ~> 2.0.21
     name: team2.finals.themis-project.com
     ssh_insert_key: no
     memory: 1024

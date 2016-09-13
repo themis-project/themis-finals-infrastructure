@@ -39,20 +39,28 @@ DEPENDENCIES
   ssh-private-keys (~> 1.0.0)
   themis-finals
     git: https://github.com/aspyatkin/themis-finals-cookbook
-    revision: 0098163f5fe9f175d08e4d6b1af044ff5a148254
-    tag: v1.2.3
+    revision: 331ac7b9e59e8e1a8249f4b2a8d85c2deaca4a5c
+    tag: v1.2.4
   themis-finals-api-auth-py-lib
     git: https://github.com/aspyatkin/themis-finals-api-auth-py-lib-cookbook
-    revision: 3ae9ae2514b011003d441156340dadaa77fe4624
-    tag: v1.1.0
+    revision: d73c01c5a68c20128fd099e50cea585f3a637981
+    tag: v1.1.1
+  themis-finals-attack-helper-py-lib
+    git: https://github.com/aspyatkin/themis-finals-attack-helper-py-lib-cookbook
+    revision: 48fc57c37f3af58798673a1410fd4236fd931154
+    tag: v1.0.0
+  themis-finals-attack-result-py-lib
+    git: https://github.com/aspyatkin/themis-finals-attack-result-py-lib-cookbook
+    revision: e20fa316934a63f4be4e5fc4959ac94bb04cfa99
+    tag: v1.0.0
   themis-finals-checker-app-py-lib
     git: https://github.com/aspyatkin/themis-finals-checker-app-py-lib-cookbook
-    revision: 3d0d2c2ad342652007b3c0df5ac6b2f50061ea9a
-    tag: v1.1.0
+    revision: 313ca42cc1e9155ab1724b3b7876c7d253117fd9
+    tag: v1.1.1
   themis-finals-checker-result-py-lib
     git: https://github.com/aspyatkin/themis-finals-checker-result-py-lib-cookbook
-    revision: ee349dff989e4ac799c94cd32b5bee5c555ed924
-    tag: v1.1.0
+    revision: ba41864ab60c89948e15fb6f70f2f653dc0aca0a
+    tag: v1.1.1
   themis-finals-lib-attack-result-rb
     git: https://github.com/aspyatkin/themis-finals-lib-attack-result-rb-cookbook
     revision: f84f06ae882525de158da3f7b639aa1a7004c687
@@ -63,8 +71,8 @@ DEPENDENCIES
     tag: v1.1.0
   themis-finals-sample-image
     git: https://github.com/aspyatkin/themis-finals-sample-image-cookbook
-    revision: 0b680a0305909d8fc29f328705fb169c894b1e37
-    tag: v1.0.2
+    revision: e2ba8dce9c5f5a86695bb13693ba07ddfc6861a1
+    tag: v1.1.0
   themis-finals-service1-checker
     git: https://github.com/aspyatkin/themis-finals-service1-checker-cookbook
     revision: 116532eef9670d0f023cc6b135318237323de856
@@ -91,7 +99,7 @@ GRAPH
   build-essential (2.4.0)
     7-zip (>= 0.0.0)
   chef-sugar (3.4.0)
-  compat_resource (12.14.2)
+  compat_resource (12.14.3)
   composer (2.4.0)
     apt (>= 0.0.0)
     php (>= 0.0.0)
@@ -199,7 +207,7 @@ GRAPH
     partial_search (>= 0.0.0)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.2.3)
+  themis-finals (1.2.4)
     database (~> 5.1.2)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.9)
@@ -216,15 +224,23 @@ GRAPH
     ssh-private-keys (~> 1.0.0)
     ssh_known_hosts (~> 2.0.0)
     supervisor (~> 0.4.12)
-  themis-finals-api-auth-py-lib (1.1.0)
+  themis-finals-api-auth-py-lib (1.1.1)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.11)
     ssh-private-keys (~> 1.0.0)
-  themis-finals-checker-app-py-lib (1.1.0)
+  themis-finals-attack-helper-py-lib (1.0.0)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.11)
     ssh-private-keys (~> 1.0.0)
-  themis-finals-checker-result-py-lib (1.1.0)
+  themis-finals-attack-result-py-lib (1.0.0)
+    git2 (~> 1.0.0)
+    latest-git (~> 1.1.11)
+    ssh-private-keys (~> 1.0.0)
+  themis-finals-checker-app-py-lib (1.1.1)
+    git2 (~> 1.0.0)
+    latest-git (~> 1.1.11)
+    ssh-private-keys (~> 1.0.0)
+  themis-finals-checker-result-py-lib (1.1.1)
     git2 (~> 1.0.0)
     latest-git (~> 1.1.11)
     ssh-private-keys (~> 1.0.0)
@@ -236,7 +252,7 @@ GRAPH
     git2 (~> 1.0.0)
     latest-git (~> 1.1.11)
     ssh-private-keys (~> 1.0.0)
-  themis-finals-sample-image (1.0.2)
+  themis-finals-sample-image (1.1.0)
     poise-python (~> 1.4.0)
   themis-finals-service1-checker (1.2.1)
     git2 (~> 1.0.0)

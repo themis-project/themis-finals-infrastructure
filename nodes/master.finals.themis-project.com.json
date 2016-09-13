@@ -20,7 +20,7 @@
     "debug": true,
     "autostart": true,
     "backend": {
-      "revision": "develop",
+      "revision": "availability",
       "server": {
         "processes": 4
       },
@@ -29,7 +29,7 @@
       }
     },
     "frontend": {
-      "revision": "develop"
+      "revision": "availability"
     },
     "stream": {
       "revision": "develop"

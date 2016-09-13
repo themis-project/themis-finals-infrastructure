@@ -4,7 +4,9 @@
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
-    "recipe[themis-finals-sample-image::default]"
+    "recipe[themis-finals-sample-image::default]",
+    "recipe[themis-finals-attack-result-py-lib::default]",
+    "recipe[themis-finals-attack-helper-py-lib::default]"
   ],
   "dotfiles": {
     "users": [

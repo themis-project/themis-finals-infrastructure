@@ -1,9 +1,0 @@
-{
-  "id": "production",
-  "config": {
-    "encrypted_data": "ZSXY1ACAKxCITUSH1ZFp2P9gKNfpGFECKaxTng9itvM=\n",
-    "iv": "Z5EfabQY3g970R4EkbUmGw==\n",
-    "version": 1,
-    "cipher": "aes-256-cbc"
-  }
-}

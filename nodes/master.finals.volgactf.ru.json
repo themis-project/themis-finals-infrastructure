@@ -23,13 +23,25 @@
     "debug": true,
     "autostart": true,
     "backend": {
-      "revision": "develop"
+      "revision": "availability",
+      "server": {
+        "processes": 4
+      },
+      "queue": {
+        "processes": 4
+      }
     },
     "frontend": {
-      "revision": "develop"
+      "revision": "availability"
     },
     "stream": {
       "revision": "develop"
+    },
+    "live": {
+      "fqdn": "live.finals.volgactf.ru",
+      "server_username": "titan",
+      "server_hostname": "aspyatkin.com",
+      "remote_port": "5500"
     }
   },
   "latest-redis": {
