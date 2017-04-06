@@ -2,3 +2,4 @@
 /cookbooks/
 opts.yaml
 .DS_Store
+.env

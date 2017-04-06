@@ -6,15 +6,15 @@
 Vagrant development environment and Chef server configuration for Themis Finals. Part of [Themis Finals](https://github.com/aspyatkin/themis-finals) project.
 
 ## Prerequisites
-1. [VirtualBox](https://virtualbox.org) 5.0.26;
-2. [Vagrant](https://www.vagrantup.com/) 1.8.4;
+1. [VirtualBox](https://virtualbox.org) 5.1.18;
+2. [Vagrant](https://www.vagrantup.com/) 1.9.3;
 3. *nix shell (use Cygwin x64 on Windows);
 4. Git 2.x;
-5. Ruby 2.2.x or 2.3.x;
+5. Ruby 2.3.x;
 6. [vagrant-helpers](https://github.com/aspyatkin/vagrant-helpers) plugin, version 1.4.2;
 7. [Bundler](http://bundler.io/).
 
-**Windows specific** See [this gist](https://gist.github.com/aspyatkin/2a1305cceb9101caa2f6) to find out how to install Ruby 2.2.4 on Cygwin x64.
+**Windows specific** See [this gist](https://gist.github.com/aspyatkin/2a1305cceb9101caa2f6) to find out how to install Ruby 2.3.x on Cygwin x64.
 
 ## Get the code
 ```sh
@@ -121,7 +121,7 @@ Keys may be created using the following snippet (Ruby):
 require 'securerandom'
 require 'base64'
 
-::Base64.urlsafe_encode64 ::SecureRandom.random_bytes 64
+::Base64.urlsafe_encode64 ::SecureRandom.random_bytes(64)
 ```
 
 ## Setup
@@ -179,13 +179,13 @@ end
 Each service is described in its own section. There should be specified a service alias (for internal use) along with service name. For instance,
 
 ``` ruby
-service 'service_1' do
+service 'service1' do
   name 'Service #1'
   # uncomment next lines if service checker complies with next version
   # protocol 2
   # metadata(
-  #   push_url: 'http://service_1.checker.finals.themis-project.com/push',
-  #   pull_url: 'http://service_1.checker.finals.themis-project.com/pull'
+  #   push_url: 'http://service1.checker.finals.themis-project.com/push',
+  #   pull_url: 'http://service1.checker.finals.themis-project.com/pull'
   # )
 end
 ```
@@ -193,7 +193,7 @@ end
 ### Service checker (current version)
 Service checker should be placed into a separate subfolder in `/var/themis/finals/checkers` folder. You can check out the examples in `/var/themis/finals/checkers/sample-checker-rb` and `/var/themis/finals/checkers/sample-checker-py`.
 
-Service checker is launched by [Supervisor](http://supervisord.org), so you should create a configuration file in `/etc/supervisor.d` (check out samples `themis.finals.service.service_1.checker.conf` and `themis.finals.service.service_2.checker.conf` in that directory). You should specify program's run command, working directory, log file paths and several internal options:  
+Service checker is launched by [Supervisor](http://supervisord.org), so you should create a configuration file in `/etc/supervisor.d` (check out samples `themis.finals.service.service1.checker.conf` and `themis.finals.service.service2.checker.conf` in that directory). You should specify program's run command, working directory, log file paths and several internal options:  
 1. `TUBE_LISTEN` - `themis.finals.service.SERVICE_ALIAS.listen`,  
 2. `TUBE_REPORT` - `themis.finals.service.SERVICE_ALIAS.report`,  
 where `SERVICE_ALIAS` stands for service alias which you've specified in `config.rb` file.
@@ -231,7 +231,7 @@ $ cd /var/themis/finals/backend
 $ bundle exec rake contest:start_async
 ```
 
-Contest will be started automatically after the first flags will have become created.
+Contest will be started automatically after the first flags will have been created.
 Assuming `master` virtual machine has an IP address `172.20.0.2`, you can navigate to `http://172.20.0.2/` in your browser to see system's frontend.
 
 #### Pause contest
@@ -268,8 +268,8 @@ $
 
 To start new contest, you should stop running processes and reset.
 
-#### Restart your checker's process
-Sometimes things get messed up and you end up rewriting your service's checker during a running contest. Here is a way to restart checker's process.
+#### Restart your checker processes
+Sometimes things get messed up and you end up rewriting your service checker during a running contest. Here is a way to restart checker processes.
 
 ```sh
 $ sudo supervisorctl

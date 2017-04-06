@@ -20,7 +20,7 @@
     "debug": true,
     "autostart": true,
     "backend": {
-      "revision": "availability",
+      "revision": "master",
       "server": {
         "processes": 4
       },
@@ -29,10 +29,10 @@
       }
     },
     "frontend": {
-      "revision": "availability"
+      "revision": "master"
     },
     "stream": {
-      "revision": "develop"
+      "revision": "master"
     },
     "live": {
       "fqdn": "live.finals.themis-project.com",
