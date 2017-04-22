@@ -6,6 +6,10 @@
   "default_attributes": {
     "themis-finals": {
       "supervisor_namespace": "themis.finals",
+      "flag_wrap": {
+        "prefix": "ThemisFinals{",
+        "suffix": "}"
+      },
       "key_nonce_size": 16,
       "auth_token_header": "X-Themis-Finals-Auth-Token",
       "config": {
@@ -134,10 +138,19 @@
       }
     },
     "modern_nginx": {
+      "with_openssl": false,
       "with_http2": false,
       "with_ipv6": false,
-      "with_dhparam": false,
-      "with_ct": false
+      "with_ct": false,
+      "with_status": true
+    },
+    "ntp": {
+      "servers": [
+        "0.pool.ntp.org",
+        "1.pool.ntp.org",
+        "2.pool.ntp.org",
+        "3.pool.ntp.org"
+      ]
     }
   }
 }

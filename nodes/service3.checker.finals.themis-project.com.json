@@ -1,10 +1,14 @@
 {
   "environment": "development",
   "run_list": [
+    "recipe[ntp::default]",
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
     "recipe[netdata::default]",
+    "recipe[latest-redis::default]",
+    "recipe[modern_nginx::default]",
+    "recipe[supervisor::default]",
     "recipe[themis-finals-service3-checker::default]"
   ],
   "dotfiles": {

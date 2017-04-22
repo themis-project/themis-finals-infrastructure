@@ -1,10 +1,16 @@
 {
   "environment": "development",
   "run_list": [
+    "recipe[ntp::default]",
     "recipe[latest-git::default]",
     "recipe[themis-finals::python2]",
     "recipe[dotfiles::default]",
     "recipe[netdata::default]",
+    "recipe[latest-redis::default]",
+    "recipe[latest-nodejs::default]",
+    "recipe[modern_nginx::default]",
+    "recipe[supervisor::default]",
+    "recipe[yarn::default]",
     "recipe[themis-finals-lib-attack-result-rb::default]",
     "recipe[themis-finals-lib-checker-result-rb::default]",
     "recipe[themis-finals::default]"
@@ -20,7 +26,7 @@
     "debug": true,
     "autostart": true,
     "backend": {
-      "revision": "master",
+      "revision": "develop",
       "server": {
         "processes": 4
       },
@@ -29,12 +35,13 @@
       }
     },
     "frontend": {
-      "revision": "master"
+      "revision": "develop"
     },
     "stream": {
-      "revision": "master"
+      "revision": "develop"
     },
     "live": {
+      "enable": false,
       "fqdn": "live.finals.themis-project.com",
       "server_username": "titan",
       "server_hostname": "aspyatkin.com",
@@ -46,6 +53,10 @@
       "host": "127.0.0.1",
       "port": 6379
     }
+  },
+  "latest-nodejs": {
+    "install": "lts",
+    "binary": true
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"
