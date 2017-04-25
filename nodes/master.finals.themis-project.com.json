@@ -26,7 +26,7 @@
     "debug": true,
     "autostart": true,
     "backend": {
-      "revision": "develop",
+      "revision": "master",
       "server": {
         "processes": 4
       },
@@ -35,10 +35,10 @@
       }
     },
     "frontend": {
-      "revision": "develop"
+      "revision": "master"
     },
     "stream": {
-      "revision": "develop"
+      "revision": "master"
     },
     "live": {
       "enable": false,

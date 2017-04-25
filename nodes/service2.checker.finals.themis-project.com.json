@@ -24,7 +24,7 @@
     }
   },
   "themis-finals-service2-checker": {
-    "revision": "develop",
+    "revision": "master",
     "fqdn": "service2.checker.finals.themis-project.com",
     "source_packages": true,
     "debug": true,

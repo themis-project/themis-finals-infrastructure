@@ -5,6 +5,24 @@
   "chef_type": "environment",
   "default_attributes": {
     "themis-finals": {
+      "sentry": {
+        "config": {
+          "organization": "Themis Finals",
+          "teams": [
+            "Backend",
+            "Frontend",
+            "Stream",
+            "Checkers"
+          ],
+          "projects": {
+            "Checkers": [
+              "Service #1",
+              "Service #2",
+              "Service #3"
+            ]
+          }
+        }
+      },
       "supervisor_namespace": "themis.finals",
       "flag_wrap": {
         "prefix": "ThemisFinals{",
