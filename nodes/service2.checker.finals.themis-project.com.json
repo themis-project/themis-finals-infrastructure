@@ -31,6 +31,10 @@
     "autostart": true,
     "queue": {
       "processes": 4
+    },
+    "dashboard": {
+      "host": "0.0.0.0",
+      "port": 9181
     }
   },
   "themis-finals-checker-app-py-lib": {

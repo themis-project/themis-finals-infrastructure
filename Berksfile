@@ -57,7 +57,7 @@ cookbook 'themis-finals-service1-checker',
 cookbook 'themis-finals-service2-checker',
          # path: '../themis-finals-service2-checker-cookbook'
          git: 'https://github.com/themis-project/themis-finals-service2-checker-cookbook',
-         tag: 'v1.3.3'
+         tag: 'v1.3.4'
 
 cookbook 'themis-finals-checker-app-py-lib',
          # path: '../themis-finals-checker-app-py-lib-cookbook'
