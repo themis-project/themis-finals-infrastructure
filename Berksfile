@@ -47,7 +47,7 @@ cookbook 'libffi',
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/themis-project/themis-finals-cookbook',
-         tag: 'v1.3.2'
+         tag: 'v1.3.3'
 
 cookbook 'themis-finals-service1-checker',
          # path: '../themis-finals-service1-checker-cookbook'
@@ -103,3 +103,13 @@ cookbook 'themis-finals-attack-helper-py-lib',
          # path: '../themis-finals-attack-helper-py-lib-cookbook'
          git: 'https://github.com/themis-project/themis-finals-attack-helper-py-lib-cookbook',
          tag: 'v1.0.1'
+
+cookbook 'themis-finals-customize-default',
+         # path: '../themis-finals-customize-default-cookbook'
+         git: 'https://github.com/themis-project/themis-finals-customize-default-cookbook',
+         tag: 'v1.0.0'
+
+cookbook 'themis-finals-customize-volgactf-2016-finals',
+         # path: '../../VolgaCTF/themis-finals-customize-volgactf-2016-finals-cookbook'
+         git: 'https://github.com/VolgaCTF/themis-finals-customize-volgactf-2016-finals-cookbook',
+         tag: 'v1.0.0'

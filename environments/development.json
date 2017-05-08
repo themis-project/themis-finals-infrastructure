@@ -23,6 +23,12 @@
           }
         }
       },
+      "customize_cookbook": "themis-finals-customize-default",
+      "frontend_customize_module": "frontend/customize.js",
+      "frontend_extra_files": {
+      },
+      "team_logo_files": {
+      },
       "supervisor_namespace": "themis.finals",
       "flag_wrap": {
         "prefix": "ThemisFinals{",
