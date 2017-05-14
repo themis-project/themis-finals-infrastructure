@@ -6,6 +6,7 @@ cookbook 'poise-python', '~> 1.6.0'
 cookbook 'ntp', '~> 3.3.1'
 cookbook 'netdata', '~> 0.1.9'
 cookbook 'yarn', '~> 0.3.0'
+cookbook 'locale', '~> 2.0.1'
 
 cookbook 'dotfiles',
          # path: '../../aspyatkin/dotfiles-cookbook'
@@ -47,7 +48,7 @@ cookbook 'libffi',
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/themis-project/themis-finals-cookbook',
-         tag: 'v1.3.3'
+         tag: 'v1.3.4'
 
 cookbook 'themis-finals-service1-checker',
          # path: '../themis-finals-service1-checker-cookbook'
@@ -112,4 +113,9 @@ cookbook 'themis-finals-customize-default',
 cookbook 'themis-finals-customize-volgactf-2016-finals',
          # path: '../../VolgaCTF/themis-finals-customize-volgactf-2016-finals-cookbook'
          git: 'https://github.com/VolgaCTF/themis-finals-customize-volgactf-2016-finals-cookbook',
+         tag: 'v1.0.0'
+
+cookbook 'themis-finals-customize-rcc-2017',
+         # path: '../../VolgaCTF/themis-finals-customize-rcc-2017-cookbook'
+         git: 'https://github.com/VolgaCTF/themis-finals-customize-rcc-2017-cookbook',
          tag: 'v1.0.0'

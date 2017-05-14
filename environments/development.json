@@ -41,6 +41,7 @@
           "172.20.0.0/24"
         ],
         "contest": {
+          "title": "Themis Finals",
           "flag_lifetime": 300,
           "push_period": 120,
           "poll_period": 60,

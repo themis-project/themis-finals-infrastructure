@@ -6,7 +6,6 @@ else
 fi
 case "$DETECTED_ENV" in
   "development") DETECTED_DOMAIN="finals.themis-project.com";;
-  "production") DETECTED_DOMAIN="finals.volgactf.ru";;
   *) echo "Unsupported environment $DETECTED_ENV"
     exit 2
     ;;

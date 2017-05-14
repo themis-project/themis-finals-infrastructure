@@ -4,4 +4,10 @@ if [ "$3" != "" ]; then
 else
   DETECTED_ENV="development"
 fi
+case "$DETECTED_ENV" in
+  "development") ;;
+  *) echo "Unsupported environment $DETECTED_ENV"
+    exit 2
+    ;;
+esac
 CHEF_ENV="$DETECTED_ENV" bundle exec knife solo data bag "$1" "$2" "$DETECTED_ENV"
