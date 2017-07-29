@@ -48,7 +48,7 @@ cookbook 'libffi',
 cookbook 'themis-finals',
          # path: '../themis-finals-cookbook'
          git: 'https://github.com/themis-project/themis-finals-cookbook',
-         tag: 'v1.3.4'
+         tag: 'v1.4.0'
 
 cookbook 'themis-finals-service1-checker',
          # path: '../themis-finals-service1-checker-cookbook'
