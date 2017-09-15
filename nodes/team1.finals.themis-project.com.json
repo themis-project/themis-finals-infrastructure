@@ -3,19 +3,13 @@
   "run_list": [
     "recipe[locale::default]",
     "recipe[latest-git::default]",
-    "recipe[themis-finals::python2]",
+    "recipe[poise-python::default]",
     "recipe[dotfiles::default]",
     "recipe[themis-finals-sample-image::default]",
     "recipe[themis-finals-attack-result-py-lib::default]",
     "recipe[themis-finals-attack-helper-py-lib::default]"
   ],
-  "dotfiles": {
-    "users": [
-      "root",
-      "vagrant"
-    ]
-  },
   "automatic": {
-    "ipaddress": "team1.finals.themis-project.com"
+    "fqdn": "team1.finals.themis-project.com"
   }
 }

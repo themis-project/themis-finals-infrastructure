@@ -4,7 +4,7 @@
     "recipe[locale::default]",
     "recipe[ntp::default]",
     "recipe[latest-git::default]",
-    "recipe[themis-finals::python2]",
+    "recipe[poise-python::default]",
     "recipe[dotfiles::default]",
     "recipe[netdata::default]",
     "recipe[latest-redis::default]",
@@ -16,11 +16,11 @@
     "recipe[themis-finals-lib-checker-result-rb::default]",
     "recipe[themis-finals::default]"
   ],
-  "dotfiles": {
-    "users": [
-      "root",
-      "vagrant"
-    ]
+  "automatic": {
+    "fqdn": "master.finals.themis-project.com"
+  },
+  "modern_nginx": {
+    "with_realip": true
   },
   "themis-finals": {
     "fqdn": "master.finals.themis-project.com",
@@ -40,19 +40,6 @@
     },
     "stream": {
       "revision": "master"
-    },
-    "live": {
-      "enable": false,
-      "fqdn": "live.finals.themis-project.com",
-      "server_username": "titan",
-      "server_hostname": "aspyatkin.com",
-      "remote_port": "5000"
-    }
-  },
-  "latest-redis": {
-    "listen": {
-      "host": "127.0.0.1",
-      "port": 6379
     }
   },
   "latest-nodejs": {
@@ -61,8 +48,5 @@
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"
-  },
-  "automatic": {
-    "ipaddress": "master.finals.themis-project.com"
   }
 }

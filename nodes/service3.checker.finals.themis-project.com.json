@@ -4,7 +4,7 @@
     "recipe[locale::default]",
     "recipe[ntp::default]",
     "recipe[latest-git::default]",
-    "recipe[themis-finals::python2]",
+    "recipe[poise-python::default]",
     "recipe[dotfiles::default]",
     "recipe[netdata::default]",
     "recipe[latest-redis::default]",
@@ -12,17 +12,8 @@
     "recipe[supervisor::default]",
     "recipe[themis-finals-service3-checker::default]"
   ],
-  "dotfiles": {
-    "users": [
-      "root",
-      "vagrant"
-    ]
-  },
-  "latest-redis": {
-    "listen": {
-      "host": "127.0.0.1",
-      "port": 6379
-    }
+  "automatic": {
+    "fqdn": "service3.checker.finals.themis-project.com"
   },
   "themis-finals-service3-checker": {
     "revision": "master",
@@ -35,8 +26,5 @@
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"
-  },
-  "automatic": {
-    "ipaddress": "service3.checker.finals.themis-project.com"
   }
 }

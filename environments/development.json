@@ -111,11 +111,13 @@
           },
           "team15": {
             "name": "Team #15",
-            "network": "172.20.15.0/24"
+            "network": "172.20.15.0/24",
+            "guest": true
           },
           "team16": {
             "name": "Team #16",
-            "network": "172.20.16.0/24"
+            "network": "172.20.16.0/24",
+            "guest": true
           }
         },
         "services": {
@@ -146,12 +148,20 @@
         }
       }
     },
+    "latest-redis": {
+      "listen": {
+        "host": "127.0.0.1",
+        "port": 6379
+      }
+    },
     "modern_nginx": {
+      "install": "mainline",
       "with_openssl": false,
       "with_http2": false,
       "with_ipv6": false,
       "with_ct": false,
-      "with_status": true
+      "with_status": true,
+      "with_debug": true
     },
     "ntp": {
       "servers": [
@@ -160,6 +170,10 @@
         "2.pool.ntp.org",
         "3.pool.ntp.org"
       ]
+    },
+    "poise-python": {
+      "install_python2": true,
+      "install_python3": false
     }
   }
 }
