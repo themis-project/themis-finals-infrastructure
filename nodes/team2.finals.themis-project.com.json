@@ -2,12 +2,12 @@
   "environment": "development",
   "run_list": [
     "recipe[locale::default]",
+    "recipe[build-essential::default]",
     "recipe[latest-git::default]",
     "recipe[poise-python::default]",
     "recipe[dotfiles::default]",
     "recipe[themis-finals-sample-image::default]",
-    "recipe[themis-finals-attack-result-py-lib::default]",
-    "recipe[themis-finals-attack-helper-py-lib::default]"
+    "recipe[themis-finals-py-lib::default]"
   ],
   "automatic": {
     "fqdn": "team2.finals.themis-project.com"

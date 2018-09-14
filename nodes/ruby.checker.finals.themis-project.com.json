@@ -1,0 +1,44 @@
+{
+  "environment": "development",
+  "run_list": [
+    "role[base]",
+    "recipe[ngx::default]",
+    "recipe[supervisor::default]",
+    "recipe[htpasswd::default]",
+    "recipe[themis-finals-ruby-service-checker::default]"
+  ],
+  "automatic": {
+    "fqdn": "ruby.checker.finals.themis-project.com"
+  },
+  "firewall": {
+    "rules": [
+      {
+        "http": {
+          "port": 80,
+          "protocol": "tcp",
+          "source": "172.20.0.0/24"
+        }
+      },
+      {
+        "supervisor": {
+          "port": 9001,
+          "protocol": "tcp",
+          "source": "172.20.0.0/24"
+        }
+      }
+    ]
+  },
+  "themis-finals-ruby-service-checker": {
+    "fqdn": "ruby.checker.finals.themis",
+    "revision": "master",
+    "debug": true,
+    "autostart": true,
+    "queue": {
+      "redis_db": 10,
+      "processes": 4
+    }
+  },
+  "supervisor": {
+    "inet_port": "0.0.0.0:9001"
+  }
+}

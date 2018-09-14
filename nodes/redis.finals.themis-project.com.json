@@ -1,0 +1,32 @@
+{
+  "environment": "development",
+  "run_list": [
+    "role[base]",
+    "recipe[themis-finals-utils::sysctl]",
+    "recipe[latest-redis::default]"
+  ],
+  "automatic": {
+    "fqdn": "redis.finals.themis-project.com"
+  },
+  "firewall": {
+    "rules": [
+      {
+        "redis": {
+          "port": 6379,
+          "protocol": "tcp",
+          "source": "172.20.0.0/24"
+        }
+      }
+    ]
+  },
+  "sysctl": [
+    {
+      "key": "net.core.somaxconn",
+      "value": 512
+    },
+    {
+      "key": "vm.overcommit_memory",
+      "value": 1
+    }
+  ]
+}

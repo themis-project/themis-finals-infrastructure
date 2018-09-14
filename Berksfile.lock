@@ -5,200 +5,170 @@ DEPENDENCIES
     git: https://github.com/aspyatkin/dotfiles-cookbook
     revision: 5a1675c593b603fd4c0e6ce6b7ddd0076c662fe9
     tag: v1.4.0
+  git (~> 9.0.0)
   git2
     git: https://github.com/aspyatkin/git2-cookbook
     revision: 33e0d02179735822efe7b74f11e6274641644036
     tag: v1.0.0
+  htpasswd (~> 0.3.0)
   latest-git
     git: https://github.com/aspyatkin/latest-git-cookbook
-    revision: cc1b997196c25a34d7df6f43853099d0878a5d7f
-    tag: v1.4.0
+    revision: f4f2273e5f93ca6eabc2a6231b0ccafe0c58240e
+    tag: v1.5.0
   latest-nodejs
     git: https://github.com/aspyatkin/latest-nodejs-cookbook
-    revision: ee77836d31d859ddd6f93a69e7e5f08121d85356
-    tag: v1.4.0
+    revision: b29f87aa451d21aec1ddd899dd006fe6c9dff30b
+    tag: v1.6.0
+  latest-postgres
+    git: https://github.com/aspyatkin/latest-postgres-cookbook
+    revision: 032ff4f4ec6296f827158c5dbe9450ada305dd37
+    tag: v0.3.0
   latest-redis
     git: https://github.com/aspyatkin/latest-redis-cookbook
-    revision: 5e9b50ca7875a315578547d2da17a8fd99992575
-    tag: v1.2.0
-  libffi
-    git: https://github.com/aspyatkin/libffi-cookbook
-    revision: 57aa3eb9e173c223dda49cbc912acd5bbb5f8de8
-    tag: v1.0.1
-  libxslt
-    git: https://github.com/aspyatkin/libxslt-cookbook
-    revision: 57828d13c8d4b875e336255c10ce5be2def72b57
-    tag: v1.0.1
+    revision: 875f3de3ff8966e8d90beac8abefdb49c80daee1
+    tag: v1.3.1
+  localdns
+    git: https://github.com/aspyatkin/localdns-cookbook
+    revision: 26af85e3d8117375dd56b7ef1bdc92b5974cb5ff
+    tag: v1.3.1
   locale (~> 2.0.1)
-  modern_nginx
-    git: https://github.com/aspyatkin/modern_nginx
-    revision: e4799e3a27c9944e6c5e25f369b75f405e442526
-    tag: v2.7.0
-  netdata (~> 0.1.9)
-  ntp (~> 3.3.1)
-  poise-python (~> 1.6.0)
+  ngx (~> 1.1.1)
+  ntp
+  poise-python (~> 1.7.0)
+  ssh_known_hosts (~> 6.1.0)
+  supervisor (~> 0.4.12)
   themis-finals
     git: https://github.com/themis-project/themis-finals-cookbook
-    revision: 45c90407d12e3c91de53d4d03ef196da538ee67e
-    tag: v1.6.0
-  themis-finals-api-auth-py-lib
-    git: https://github.com/themis-project/themis-finals-api-auth-py-lib-cookbook
-    revision: d13ff694aff3abc41c5cf6423b283d5d59ae6952
-    tag: v1.2.0
-  themis-finals-attack-helper-py-lib
-    git: https://github.com/themis-project/themis-finals-attack-helper-py-lib-cookbook
-    revision: ab438c95ea62734a0ec47e74c3f2f51c18a95ab0
-    tag: v1.1.0
-  themis-finals-attack-result-py-lib
-    git: https://github.com/themis-project/themis-finals-attack-result-py-lib-cookbook
-    revision: 89df6f52de73357b4bc69031a42afaaea0ba9006
-    tag: v1.1.0
+    revision: d7d1d5d96a00c644b947e597f720162df11065f8
+    tag: v2.1.0
+  themis-finals-checker
+    git: https://github.com/themis-project/themis-finals-checker-cookbook
+    revision: fc8853920dc82d28907e34408a25a36105f79278
+    tag: v1.0.0
   themis-finals-checker-app-py-lib
     git: https://github.com/themis-project/themis-finals-checker-app-py-lib-cookbook
-    revision: 4b679dcbc0605d288248bc194ab1d92470bd75f3
-    tag: v1.2.0
+    revision: 6179ba586b479405315fc7a93467a540140f159f
+    tag: v1.3.0
   themis-finals-checker-result-py-lib
     git: https://github.com/themis-project/themis-finals-checker-result-py-lib-cookbook
-    revision: 1a9dd03ef0420627a9203f9a3fd53a73d27c41bf
-    tag: v1.2.0
+    revision: 275e8d70595d41649d797ead8e8b355695bce964
+    tag: v1.3.0
   themis-finals-customize-default
     git: https://github.com/themis-project/themis-finals-customize-default-cookbook
-    revision: e388f20df6ec4329e2783e946a28605d13062c11
-    tag: v1.0.0
-  themis-finals-customize-rcc-2017
-    git: https://github.com/VolgaCTF/themis-finals-customize-rcc-2017-cookbook
-    revision: 0ebfa44ee39763fc324f6bea9a8ff11cd477ac1d
-    tag: v1.0.0
-  themis-finals-customize-volgactf-2016-finals
-    git: https://github.com/VolgaCTF/themis-finals-customize-volgactf-2016-finals-cookbook
-    revision: 43234717ab6b4d829f9fe4c7a2c75c35223f2a6c
-    tag: v1.0.0
-  themis-finals-customize-volgactf-2017-finals
-    git: https://github.com/VolgaCTF/themis-finals-customize-volgactf-2017-finals-cookbook
-    revision: 4655c1b5a68a640950e072b00a159ce95273ec05
-    tag: v1.0.0
+    revision: e7d7d99f75b9cf8235bf661706dcd65972f770d0
+    tag: v1.0.1
   themis-finals-lib-attack-result-rb
     git: https://github.com/themis-project/themis-finals-lib-attack-result-rb-cookbook
-    revision: 55326ca185dcc67253da987e15e4d404c4e9dfea
-    tag: v1.2.0
+    revision: 21c6da84a5e791af73cf828c1433f44c2658f09c
+    tag: v1.3.0
   themis-finals-lib-checker-result-rb
     git: https://github.com/themis-project/themis-finals-lib-checker-result-rb-cookbook
-    revision: f2ab318a1eb70af9a17b966a3bea1710ed11e066
-    tag: v1.2.0
+    revision: 642470e2ed2841d1f50cf64bf5338d2c755c830f
+    tag: v1.3.0
+  themis-finals-py-lib
+    git: https://github.com/themis-project/themis-finals-py-lib-cookbook
+    revision: 66b6409f0935d91772022d8e7942486c17f275b5
+    tag: v1.0.0
+  themis-finals-python-service-checker
+    git: https://github.com/themis-project/themis-finals-python-service-checker-cookbook
+    revision: 613caf1932d25969284b68d49bdaa7a9a45f6d29
+    tag: v2.0.0
+  themis-finals-ruby-service-checker
+    git: https://github.com/themis-project/themis-finals-ruby-service-checker-cookbook
+    revision: 3e547000f161dcf8d79c0c9e57e2fc7f0e6e0688
+    tag: v2.0.0
   themis-finals-sample-image
     git: https://github.com/themis-project/themis-finals-sample-image-cookbook
-    revision: 4168a94452c9ea4bae63d78d7b6c4c6c4ed71556
-    tag: v1.1.1
-  themis-finals-service1-checker
-    git: https://github.com/themis-project/themis-finals-service1-checker-cookbook
-    revision: 1db56560bce99d523e44844e83be9b4343e70dad
-    tag: v1.5.0
-  themis-finals-service2-checker
-    git: https://github.com/themis-project/themis-finals-service2-checker-cookbook
-    revision: 83b88cf9570769d12445c1191bc24d1d73de3a61
-    tag: v1.5.0
-  themis-finals-service3-checker
-    git: https://github.com/themis-project/themis-finals-service3-checker-cookbook
-    revision: fb99aa15510022c081b80efcc92aca6de73efbe1
-    tag: v1.4.0
+    revision: ab7ef372f68201a9c1fceb2ebd5e1c8cca5e3edb
+    tag: v1.2.0
   themis-finals-utils
     git: https://github.com/themis-project/themis-finals-utils-cookbook
-    revision: 2b89ddf7fe311898eb92b90470aa9adddf7201d7
+    revision: 0776b5d59cee1d45e891ab48044791a5c6d433c4
+    tag: v1.2.0
+  ufw (~> 3.1.1)
+  volgactf-2018-final-customizer
+    git: https://github.com/VolgaCTF/2018-final-customizer-cookbook
+    revision: fdb4257f2208fd1213c84285af4055133d975dcb
     tag: v1.0.0
-  yarn (~> 0.3.3)
+  yarn (~> 0.4.0)
 
 GRAPH
-  apt (6.1.4)
-  ark (3.1.0)
+  apt (7.1.0)
+  ark (4.0.0)
     build-essential (>= 0.0.0)
     seven_zip (>= 0.0.0)
-    windows (>= 0.0.0)
-  build-essential (8.0.3)
+  build-essential (8.2.1)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
-  chef-sugar (3.4.0)
-  chef_nginx (6.1.1)
-    build-essential (>= 0.0.0)
-    compat_resource (>= 12.16.3)
-    ohai (>= 4.1.0)
-    yum-epel (>= 0.0.0)
-    zypper (>= 0.0.0)
-  compat_resource (12.19.0)
-  composer (2.4.0)
-    apt (>= 0.0.0)
-    php (>= 0.0.0)
-    windows (>= 0.0.0)
-  database (5.1.2)
+  chef-sugar (4.1.0)
+  compat_resource (12.19.1)
+  database (6.1.1)
     postgresql (>= 1.0.0)
   dhparam (1.0.0)
+  docker (4.6.5)
   dotfiles (1.4.0)
     vim (~> 2.0.2)
     zsh (~> 2.0.0)
-  git (8.0.0)
-    build-essential (>= 0.0.0)
-    homebrew (>= 0.0.0)
+  firewall (2.6.5)
+    chef-sugar (>= 0.0.0)
+  git (9.0.1)
+    build-essential (>= 5.0.0)
   git2 (1.0.0)
-  homebrew (4.2.0)
-  iis (6.7.3)
-    windows (>= 2.0)
-  instance (1.0.0)
-  latest-git (1.4.0)
+  htpasswd (0.3.0)
+    poise-python (>= 0.0.0)
+  instance (2.0.0)
+  latest-git (1.5.0)
     apt (>= 0.0.0)
-    git (~> 8.0.0)
-  latest-nodejs (1.4.0)
-    nodejs (~> 4.0.0)
-  latest-redis (1.2.0)
-    redisio (~> 2.6.1)
-  libffi (1.0.1)
+    git (>= 0.0.0)
+  latest-nodejs (1.6.0)
+    nodejs (~> 5.0.0)
+  latest-postgres (0.3.0)
+    instance (~> 2.0.0)
+    postgresql (~> 6.1.1)
+    secret (~> 1.0.0)
+  latest-redis (1.3.1)
+    redisio (~> 2.7.1)
+    secret (~> 1.0.0)
+  libmaxminddb (1.0.0)
     apt (>= 0.0.0)
-    yum (>= 0.0.0)
-  libxml2 (0.1.1)
-    apt (>= 0.0.0)
-    yum (>= 0.0.0)
-  libxslt (1.0.1)
-    apt (>= 0.0.0)
-    yum (>= 0.0.0)
+  localdns (1.3.1)
+    patch (~> 2.2.1)
   locale (2.0.1)
   logrotate (2.2.0)
-  mingw (2.0.1)
+  mingw (2.1.0)
     seven_zip (>= 0.0.0)
-  modern_nginx (2.7.0)
-    chef_nginx (~> 6.1.1)
-    dhparam (~> 1.0.0)
-    logrotate (~> 2.2.0)
   multipackage (3.0.30)
     compat_resource (>= 0.0.0)
-  mysql (8.5.1)
-  netdata (0.1.9)
+  nginx (8.1.5)
+    build-essential (>= 5.0)
+    ohai (>= 4.1.0)
     yum-epel (>= 0.0.0)
-  nodejs (4.0.0)
+    zypper (>= 0.0.0)
+  ngx (1.1.1)
+    dhparam (~> 1.0.0)
+    libmaxminddb (~> 1.0.0)
+    logrotate (~> 2.2.0)
+    nginx (>= 8.1.5)
+  nodejs (5.0.0)
     ark (>= 2.0.2)
     build-essential (>= 0.0.0)
-    compat_resource (>= 12.16)
-  ntp (3.3.1)
-  ohai (5.2.0)
-  openssl (4.4.0)
-    chef-sugar (>= 3.1.1)
-  php (1.10.1)
-    build-essential (>= 0.0.0)
-    iis (>= 0.0.0)
-    mysql (>= 6.0.0)
-    windows (>= 1.39.1)
-    xml (>= 0.0.0)
-    yum-epel (>= 0.0.0)
-  poise (2.8.1)
+  ntp (3.6.0)
+  ohai (5.2.5)
+  openssl (8.5.5)
+  patch (2.2.1)
+  poise (2.8.2)
   poise-archive (1.5.0)
     poise (~> 2.6)
-  poise-languages (2.1.1)
+  poise-languages (2.1.2)
     poise (~> 2.5)
     poise-archive (~> 1.0)
-  poise-python (1.6.0)
+  poise-python (1.7.0)
     poise (~> 2.7)
     poise-languages (~> 2.0)
-  postgresql (4.0.6)
-    apt (>= 1.9.0)
-    build-essential (>= 0.0.0)
-    openssl (~> 4.0)
+  postgresql (6.1.4)
+    build-essential (>= 2.0.0)
+    compat_resource (>= 12.16.3)
+    openssl (>= 4.0)
   python (1.4.6)
     build-essential (>= 0.0.0)
     yum-epel (>= 0.0.0)
@@ -207,134 +177,118 @@ GRAPH
     build-essential (>= 0.0.0)
     git (>= 0.0.0)
     ohai (>= 1.1)
-  redisio (2.6.1)
+  redisio (2.7.1)
     build-essential (>= 0.0.0)
     selinux_policy (>= 0.0.0)
     ulimit (>= 0.1.2)
-  selinux_policy (2.0.1)
-    compat_resource (>= 12.16.3)
-  seven_zip (2.0.2)
-    windows (>= 1.2.2)
+  secret (1.0.0)
+    instance (~> 2.0.0)
+  selinux_policy (2.1.0)
+  seven_zip (3.0.0)
+    windows (>= 0.0.0)
   ssh-private-keys (2.0.0)
-  ssh_known_hosts (4.0.0)
+  ssh_known_hosts (6.1.3)
   supervisor (0.4.12)
     python (>= 0.0.0)
-  themis-finals (1.6.0)
-    chef_nginx (~> 6.1.1)
-    database (~> 5.1.2)
-    git (~> 8.0.0)
+  sysctl (1.0.5)
+    ohai (>= 5.0)
+  themis-finals (2.1.0)
+    database (~> 6.1.1)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
-    libffi (~> 1.0.1)
-    libxml2 (~> 0.1.1)
-    libxslt (~> 1.0.1)
-    poise-python (~> 1.6.0)
-    postgresql (~> 4.0.6)
+    htpasswd (~> 0.3.0)
+    instance (~> 2.0.0)
+    localdns (~> 1.3.0)
+    nginx (>= 0.0.0)
+    poise-python (>= 1.6.0)
     rbenv (= 1.7.1)
+    secret (~> 1.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
+    ssh_known_hosts (>= 0.0.0)
     supervisor (~> 0.4.12)
     themis-finals-customize-default (~> 1.0.0)
-    themis-finals-customize-rcc-2017 (~> 1.0.0)
-    themis-finals-customize-volgactf-2016-finals (~> 1.0.0)
-    themis-finals-customize-volgactf-2017-finals (~> 1.0.0)
-    themis-finals-utils (~> 1.0.0)
-    yarn (~> 0.3.3)
-  themis-finals-api-auth-py-lib (1.2.0)
-    git (~> 8.0.0)
+    themis-finals-utils (~> 1.2.0)
+    volgactf-2018-final-customizer (~> 1.0.0)
+    yarn (~> 0.4.0)
+  themis-finals-checker (1.0.0)
+    docker (~> 4.6.5)
+    instance (~> 2.0.0)
+    localdns (~> 1.3.1)
+    nginx (>= 0.0.0)
+    secret (~> 1.0.0)
+  themis-finals-checker-app-py-lib (1.3.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    instance (~> 2.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-attack-helper-py-lib (1.1.0)
-    git (~> 8.0.0)
+    ssh_known_hosts (>= 0.0.0)
+  themis-finals-checker-result-py-lib (1.3.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    instance (~> 2.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-attack-result-py-lib (1.1.0)
-    git (~> 8.0.0)
+    ssh_known_hosts (>= 0.0.0)
+  themis-finals-customize-default (1.0.1)
+  themis-finals-lib-attack-result-rb (1.3.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    instance (~> 2.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-checker-app-py-lib (1.2.0)
-    git (~> 8.0.0)
+    ssh_known_hosts (>= 0.0.0)
+  themis-finals-lib-checker-result-rb (1.3.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    instance (~> 2.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-checker-result-py-lib (1.2.0)
-    git (~> 8.0.0)
+    ssh_known_hosts (>= 0.0.0)
+  themis-finals-py-lib (1.0.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    instance (~> 2.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-customize-default (1.0.0)
-  themis-finals-customize-rcc-2017 (1.0.0)
-  themis-finals-customize-volgactf-2016-finals (1.0.0)
-  themis-finals-customize-volgactf-2017-finals (1.0.0)
-  themis-finals-lib-attack-result-rb (1.2.0)
-    git (~> 8.0.0)
+    ssh_known_hosts (>= 0.0.0)
+  themis-finals-python-service-checker (2.0.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    htpasswd (~> 0.3.0)
+    instance (~> 2.0.0)
+    localdns (~> 1.3.0)
+    nginx (>= 0.0.0)
+    poise-python (>= 1.6.0)
+    secret (~> 1.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-lib-checker-result-rb (1.2.0)
-    git (~> 8.0.0)
+    ssh_known_hosts (>= 0.0.0)
+    supervisor (~> 0.4.12)
+    themis-finals-checker-app-py-lib (~> 1.3.0)
+    themis-finals-checker-result-py-lib (~> 1.3.0)
+  themis-finals-ruby-service-checker (2.0.0)
+    git (>= 0.0.0)
     git2 (~> 1.0.0)
-    instance (~> 1.0.0)
-    ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-  themis-finals-sample-image (1.1.1)
-    poise-python (~> 1.6.0)
-  themis-finals-service1-checker (1.5.0)
-    chef_nginx (~> 6.1.1)
-    git (~> 8.0.0)
-    git2 (~> 1.0.0)
-    instance (~> 1.0.0)
+    htpasswd (~> 0.3.0)
+    instance (~> 2.0.0)
+    localdns (~> 1.3.0)
+    nginx (>= 0.0.0)
     rbenv (= 1.7.1)
+    secret (~> 1.0.0)
     ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
+    ssh_known_hosts (>= 0.0.0)
     supervisor (~> 0.4.12)
-    themis-finals-utils (~> 1.0.0)
-  themis-finals-service2-checker (1.5.0)
-    chef_nginx (~> 6.1.1)
-    git (~> 8.0.0)
-    git2 (~> 1.0.0)
-    instance (~> 1.0.0)
-    poise-python (~> 1.6.0)
-    ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-    supervisor (~> 0.4.12)
-    themis-finals-api-auth-py-lib (~> 1.2.0)
-    themis-finals-checker-app-py-lib (~> 1.2.0)
-    themis-finals-checker-result-py-lib (~> 1.2.0)
-  themis-finals-service3-checker (1.4.0)
-    apt (>= 0.0.0)
-    chef_nginx (~> 6.1.1)
-    composer (~> 2.4.0)
-    git (~> 8.0.0)
-    git2 (~> 1.0.0)
-    instance (~> 1.0.0)
-    php (~> 1.10.1)
-    ssh-private-keys (~> 2.0.0)
-    ssh_known_hosts (~> 4.0.0)
-    supervisor (~> 0.4.12)
-  themis-finals-utils (1.0.0)
-    instance (~> 1.0.0)
+    themis-finals-utils (~> 1.2.0)
+  themis-finals-sample-image (1.2.0)
+    poise-python (>= 1.6.0)
+  themis-finals-utils (1.2.0)
+    instance (~> 2.0.0)
     rbenv (= 1.7.1)
-  ulimit (0.4.0)
+    sysctl (~> 1.0.4)
+  ufw (3.1.1)
+    firewall (>= 2.0)
+  ulimit (1.0.0)
   vim (2.0.2)
-  windows (3.1.2)
-    ohai (>= 4.0.0)
-  xml (3.1.2)
-    build-essential (>= 0.0.0)
-  yarn (0.3.3)
+  volgactf-2018-final-customizer (1.0.0)
+  windows (5.1.1)
+  yarn (0.4.1)
     apt (>= 0.0.0)
-  yum (5.0.1)
-  yum-epel (2.1.2)
-    compat_resource (>= 12.16.3)
+  yum-epel (3.2.0)
   zsh (2.0.0)
     multipackage (~> 3.0)
   zypper (0.4.0)

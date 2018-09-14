@@ -1,29 +1,47 @@
 {
   "environment": "development",
   "run_list": [
-    "recipe[locale::default]",
-    "recipe[ntp::default]",
-    "recipe[latest-git::default]",
-    "recipe[poise-python::default]",
-    "recipe[dotfiles::default]",
-    "recipe[netdata::default]",
-    "recipe[latest-redis::default]",
-    "recipe[latest-nodejs::default]",
-    "recipe[modern_nginx::default]",
+    "role[base]",
+    "recipe[latest-postgres::client]",
+    "recipe[ngx::default]",
     "recipe[supervisor::default]",
+    "recipe[latest-nodejs::default]",
     "recipe[yarn::default]",
     "recipe[themis-finals-lib-attack-result-rb::default]",
     "recipe[themis-finals-lib-checker-result-rb::default]",
+    "recipe[htpasswd::default]",
     "recipe[themis-finals::default]"
   ],
   "automatic": {
     "fqdn": "master.finals.themis-project.com"
   },
-  "modern_nginx": {
-    "with_realip": true
+  "firewall": {
+    "rules": [
+      {
+        "http": {
+          "port": 80,
+          "protocol": "tcp",
+          "source": "0.0.0.0/0"
+        }
+      },
+      {
+        "supervisor": {
+          "port": 9001,
+          "protocol": "tcp",
+          "source": "172.20.0.0/24"
+        }
+      }
+    ]
+  },
+  "ngx": {
+    "with_realip": true,
+    "with_njs": true
   },
   "themis-finals": {
-    "fqdn": "master.finals.themis-project.com",
+    "fqdn": "master.finals.themis",
+    "extra_fqdn": [
+      "finals.themis-project.com"
+    ],
     "debug": true,
     "autostart": true,
     "backend": {
@@ -41,10 +59,6 @@
     "stream": {
       "revision": "master"
     }
-  },
-  "latest-nodejs": {
-    "install": "lts",
-    "binary": true
   },
   "supervisor": {
     "inet_port": "0.0.0.0:9001"

@@ -4,29 +4,73 @@
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
-    "themis-finals": {
-      "sentry": {
-        "config": {
-          "organization": "Themis Finals",
-          "teams": [
-            "Backend",
-            "Frontend",
-            "Stream",
-            "Checkers"
-          ],
-          "projects": {
-            "Checkers": [
-              "Service #1",
-              "Service #2",
-              "Service #3"
-            ]
-          }
+    "localdns": {
+      "records": [
+        {
+          "type": "A",
+          "name": "redis.finals.themis",
+          "ipv4_address": "172.20.0.5"
+        },
+        {
+          "type": "SRV",
+          "service": "redis",
+          "protocol": "tcp",
+          "domain": "finals.themis",
+          "target": "redis.finals.themis",
+          "port": 6379
+        },
+        {
+          "type": "A",
+          "name": "postgres.finals.themis",
+          "ipv4_address": "172.20.0.6"
+        },
+        {
+          "type": "SRV",
+          "service": "postgres",
+          "protocol": "tcp",
+          "domain": "finals.themis",
+          "target": "postgres.finals.themis",
+          "port": 5432
+        },
+        {
+          "type": "A",
+          "name": "master.finals.themis",
+          "ipv4_address": "172.20.0.10"
+        },
+        {
+          "type": "A",
+          "name": "ruby.checker.finals.themis",
+          "ipv4_address": "172.20.0.11"
+        },
+        {
+          "type": "A",
+          "name": "python2.checker.finals.themis",
+          "ipv4_address": "172.20.0.12"
+        },
+        {
+          "type": "A",
+          "name": "python3.checker.finals.themis",
+          "ipv4_address": "172.20.0.13"
+        },
+        {
+          "type": "A",
+          "name": "python.checker.finals.themis",
+          "ipv4_address": "172.20.0.14"
         }
-      },
-      "customize_cookbook": "themis-finals-customize-default",
-      "frontend_customize_module": "frontend/customize.js",
-      "frontend_extra_files": {
-      },
+      ]
+    },
+    "themis": {
+      "finals": {
+        "ns": "finals.themis"
+      }
+    },
+    "themis-finals": {
+    "customize_cookbook": "volgactf-2018-final-customizer",
+    "frontend_customize_module": "frontend/customize.js",
+    "frontend_extra_files": {
+      "frontend/volgactf-logo.svg": "src/images/volgactf-logo.svg",
+      "frontend/volgactf-notify-logo.png": "src/images/volgactf-notify-logo.png"
+    },
       "team_logo_files": {
       },
       "supervisor_namespace": "themis.finals",
@@ -34,19 +78,32 @@
         "prefix": "ThemisFinals{",
         "suffix": "}"
       },
-      "key_nonce_size": 16,
-      "auth_token_header": "X-Themis-Finals-Auth-Token",
       "config": {
         "internal_networks": [
           "172.20.0.0/24"
         ],
-        "contest": {
-          "title": "Themis Finals",
-          "flag_lifetime": 300,
-          "push_period": 120,
-          "poll_period": 60,
-          "poll_count": 2,
-          "update_period": 60,
+        "api_req_limits": {
+          "flag_info": {
+            "rate": "5r/m",
+            "burst": 5,
+            "nodelay": true
+          },
+          "flag_submit": {
+            "rate": "5r/m",
+            "burst": 5,
+            "nodelay": true
+          }
+        },
+        "competition": {
+          "title": "Themis Finals"
+        },
+        "settings": {
+          "flag_lifetime": 360,
+          "round_timespan": 120,
+          "poll_timespan": 35,
+          "poll_delay": 40
+        },
+        "deprecated_settings": {
           "attack_limit": {
             "attempts": 200,
             "time": 60
@@ -67,7 +124,8 @@
           },
           "team4": {
             "name": "Team #4",
-            "network": "172.20.4.0/24"
+            "network": "172.20.4.0/24",
+            "guest": true
           },
           "team5": {
             "name": "Team #5",
@@ -83,78 +141,66 @@
           },
           "team8": {
             "name": "Team #8",
-            "network": "172.20.8.0/24"
-          },
-          "team9": {
-            "name": "Team #9",
-            "network": "172.20.9.0/24"
-          },
-          "team10": {
-            "name": "Team #10",
-            "network": "172.20.10.0/24"
-          },
-          "team11": {
-            "name": "Team #11",
-            "network": "172.20.11.0/24"
-          },
-          "team12": {
-            "name": "Team #12",
-            "network": "172.20.12.0/24"
-          },
-          "team13": {
-            "name": "Team #13",
-            "network": "172.20.13.0/24"
-          },
-          "team14": {
-            "name": "Team #14",
-            "network": "172.20.14.0/24"
-          },
-          "team15": {
-            "name": "Team #15",
-            "network": "172.20.15.0/24",
-            "guest": true
-          },
-          "team16": {
-            "name": "Team #16",
-            "network": "172.20.16.0/24",
+            "network": "172.20.8.0/24",
             "guest": true
           }
         },
-        "services": {
-          "service1": {
-            "name": "Service #1",
-            "hostmask": "0.0.0.3",
-            "metadata": {
-              "push_url": "http://service1.checker.finals.themis-project.com/push",
-              "pull_url": "http://service1.checker.finals.themis-project.com/pull"
+        "domain_files": [
+          {
+            "name": "init-10",
+            "type": "competition_init",
+            "services": {
+              "ruby": {
+                "name": "Ruby",
+                "hostmask": "0.0.0.3",
+                "checker_endpoint": "http://ruby.checker.finals.themis",
+                "attack_priority": true
+              }
             }
           },
-          "service2": {
-            "name": "Service #2",
-            "hostmask": "0.0.0.3",
-            "metadata": {
-              "push_url": "http://service2.checker.finals.themis-project.com/push",
-              "pull_url": "http://service2.checker.finals.themis-project.com/pull"
-            }
-          },
-          "service3": {
-            "name": "Service #3",
-            "hostmask": "0.0.0.3",
-            "metadata": {
-              "push_url": "http://service3.checker.finals.themis-project.com/push",
-              "pull_url": "http://service3.checker.finals.themis-project.com/pull"
+          {
+            "name": "update-20",
+            "type": "service_init",
+            "services": {
+              "python": {
+                "name": "Python",
+                "hostmask": "0.0.0.3",
+                "checker_endpoint": "http://python.checker.finals.themis",
+                "attack_priority": true
+              }
             }
           }
-        }
+        ]
       }
+    },
+    "htpasswd": {
+      "install_method": "ruby"
+    },
+    "latest-nodejs": {
+      "install": "current"
     },
     "latest-redis": {
       "listen": {
-        "host": "127.0.0.1",
+        "address": "172.20.0.5",
         "port": 6379
       }
     },
-    "modern_nginx": {
+    "latest-postgres": {
+      "listen": {
+        "address": "172.20.0.6",
+        "port": 5432
+      },
+      "pg_hba": [
+        {
+          "type": "host",
+          "db": "all",
+          "user": "all",
+          "addr": "172.20.0.0/24",
+          "method": "md5"
+        }
+      ]
+    },
+    "ngx": {
       "install": "mainline",
       "with_openssl": false,
       "with_http2": false,
@@ -174,6 +220,9 @@
     "poise-python": {
       "install_python2": true,
       "install_python3": false
+    },
+    "secret": {
+      "prefix_fqdn": false
     }
   }
 }

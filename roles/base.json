@@ -1,0 +1,37 @@
+{
+  "name": "base",
+  "description": "Base role",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "override_attributes": {
+    "build-essential": {
+      "compile_time": true
+    },
+    "firewall": {
+      "ufw": {
+        "defaults": {
+          "ipv6": "no",
+          "manage_builtins": "no",
+          "ipt_sysctl": "/etc/ufw/sysctl.conf",
+          "ipt_modules": "nf_conntrack_ftp nf_nat_ftp nf_conntrack_netbios_ns",
+          "policy": {
+            "input": "DROP",
+            "output": "ACCEPT",
+            "forward": "DROP",
+            "application": "SKIP"
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "recipe[locale::default]",
+    "recipe[build-essential::default]",
+    "recipe[localdns::default]",
+    "recipe[ufw::default]",
+    "recipe[ntp::default]",
+    "recipe[latest-git::default]",
+    "recipe[poise-python::default]",
+    "recipe[dotfiles::default]"
+  ]
+}

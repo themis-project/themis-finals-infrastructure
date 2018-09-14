@@ -1,0 +1,21 @@
+{
+  "environment": "development",
+  "run_list": [
+    "role[base]",
+    "recipe[latest-postgres::default]"
+  ],
+  "automatic": {
+    "ipaddress": "postgres.finals.themis-project.com"
+  },
+  "firewall": {
+    "rules": [
+      {
+        "postgres": {
+          "port": 5432,
+          "protocol": "tcp",
+          "source": "172.20.0.0/24"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "environment": "development",
+  "run_list": [
+    "role[base]",
+    "recipe[ngx::default]",
+    "recipe[themis-finals-checker::default]"
+  ],
+  "automatic": {
+    "ipaddress": "python.checker.finals.themis-project.com"
+  },
+  "firewall": {
+    "rules": [
+      {
+        "http": {
+          "port": 80,
+          "protocol": "tcp",
+          "source": "172.20.0.0/24"
+        },
+        "dnsmasq_tcp": {
+          "port": 53,
+          "protocol": "tcp",
+          "source": "192.168.163.0/24"
+        },
+        "dnsmasq_udp": {
+          "port": 53,
+          "protocol": "udp",
+          "source": "192.168.163.0/24"
+        }
+      }
+    ]
+  },
+  "localdns": {
+    "listen_address": "0.0.0.0"
+  },
+  "themis-finals-checker": {
+    "service_alias": "python",
+    "network": {
+      "name": "themis-finals-devenv-checker"
+    },
+    "image": {
+      "name": "themis-finals-devenv-checker",
+      "registry": "docker.volgactf.org",
+      "repo": "themis-finals-devenv-checker",
+      "tag": "v1.2.0"
+    },
+    "deployment": {
+      "env": {
+        "THEMIS_FINALS_PING_ENABLED": "no"
+      }
+    }
+  }
+}
