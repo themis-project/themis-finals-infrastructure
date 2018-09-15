@@ -58,6 +58,14 @@
     },
     "stream": {
       "revision": "master"
+    },
+    "tasks": {
+      "cleanup_upload_dir": {
+        "enabled": true,
+        "cron": {
+          "minute": "*/5"
+        }
+      }
     }
   },
   "supervisor": {

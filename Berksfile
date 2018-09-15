@@ -54,7 +54,7 @@ cookbook 'themis-finals-utils',
 cookbook 'themis-finals',
          # path: '~/Projects/github.com/themis-project/themis-finals-cookbook'
          git: 'https://github.com/themis-project/themis-finals-cookbook',
-         tag: 'v2.1.0'
+         tag: 'v2.2.0'
 
 cookbook 'themis-finals-ruby-service-checker',
          # path: '~/Projects/github.com/themis-project/themis-finals-ruby-service-checker-cookbook'
