@@ -65,12 +65,12 @@
       }
     },
     "themis-finals": {
-    "customize_cookbook": "volgactf-2018-final-customizer",
-    "frontend_customize_module": "frontend/customize.js",
-    "frontend_extra_files": {
-      "frontend/volgactf-logo.svg": "src/images/volgactf-logo.svg",
-      "frontend/volgactf-notify-logo.png": "src/images/volgactf-notify-logo.png"
-    },
+      "customize_cookbook": "volgactf-2018-final-customizer",
+      "frontend_customize_module": "frontend/customize.js",
+      "frontend_extra_files": {
+        "frontend/volgactf-logo.svg": "src/images/volgactf-logo.svg",
+        "frontend/volgactf-notify-logo.png": "src/images/volgactf-notify-logo.png"
+      },
       "team_logo_files": {
       },
       "supervisor_namespace": "themis.finals",

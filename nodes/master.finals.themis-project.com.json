@@ -10,7 +10,8 @@
     "recipe[themis-finals-lib-attack-result-rb::default]",
     "recipe[themis-finals-lib-checker-result-rb::default]",
     "recipe[htpasswd::default]",
-    "recipe[themis-finals::default]"
+    "recipe[themis-finals::default]",
+    "recipe[themis-finals::monitoring]"
   ],
   "automatic": {
     "fqdn": "master.finals.themis-project.com"
@@ -65,7 +66,16 @@
         "cron": {
           "minute": "*/5"
         }
+      },
+      "backup": {
+        "enabled": true,
+        "cron": {
+          "minute": "0"
+        }
       }
+    },
+    "monitoring": {
+      "fqdn": "netdata.finals.themis-project.com"
     }
   },
   "supervisor": {

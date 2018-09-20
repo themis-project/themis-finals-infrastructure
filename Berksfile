@@ -10,7 +10,7 @@ cookbook 'ufw', '~> 3.1.1'
 cookbook 'poise-python', '~> 1.7.0'
 cookbook 'locale', '~> 2.0.1'
 cookbook 'supervisor', '~> 0.4.12'
-cookbook 'yarn', '~> 0.4.0'
+cookbook 'yarn', '~> 0.4.2'
 cookbook 'ssh_known_hosts', '~> 6.1.0'
 cookbook 'htpasswd', '~> 0.3.0'
 cookbook 'ngx', '~> 1.1.1'
@@ -31,12 +31,12 @@ cookbook 'latest-nodejs',
 cookbook 'latest-redis',
          # path: '~/Projects/github.com/aspyatkin/latest-redis-cookbook'
          git: 'https://github.com/aspyatkin/latest-redis-cookbook',
-         tag: 'v1.3.1'
+         tag: 'v1.3.2'
 
 cookbook 'latest-postgres',
          # path: '~/Projects/github.com/aspyatkin/latest-postgres-cookbook'
          git: 'https://github.com/aspyatkin/latest-postgres-cookbook',
-         tag: 'v0.3.0'
+         tag: 'v0.3.1'
 
 cookbook 'localdns',
          git: 'https://github.com/aspyatkin/localdns-cookbook',
@@ -54,7 +54,7 @@ cookbook 'themis-finals-utils',
 cookbook 'themis-finals',
          # path: '~/Projects/github.com/themis-project/themis-finals-cookbook'
          git: 'https://github.com/themis-project/themis-finals-cookbook',
-         tag: 'v2.2.0'
+         tag: 'v2.2.1'
 
 cookbook 'themis-finals-ruby-service-checker',
          # path: '~/Projects/github.com/themis-project/themis-finals-ruby-service-checker-cookbook'
